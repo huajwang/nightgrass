@@ -1,0 +1,11 @@
+example.property: "I AM IN THE DEFAULT"
+
+spring.jpa.database: "POSTGRESQL"
+spring.datasource.platform:  "postgres"
+spring.jpa.show-sql: "true"
+spring:
+  datasource:
+    driver-class-name: "org.postgresql.Driver"
+    url: "jdbc:postgresql://database:5432/eagle_eye_local"
+    username: "postgres"
+    password: "Gold1Silver2"
