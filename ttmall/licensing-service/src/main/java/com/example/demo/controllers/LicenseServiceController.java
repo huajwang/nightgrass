@@ -27,14 +27,14 @@ public class LicenseServiceController {
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
-
+        printf()
         return licenseService.getLicensesByOrg(organizationId);
     }
 
     @RequestMapping(value="/{licenseId}",method = RequestMethod.GET)
     public License getLicenses( @PathVariable("organizationId") String organizationId,
                                 @PathVariable("licenseId") String licenseId) {
-
+	System.out.println("La La laND");
         return licenseService.getLicense(organizationId,licenseId);
     }
 
