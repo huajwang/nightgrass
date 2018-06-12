@@ -1,0 +1,20 @@
+language: java
+cache:
+  directories:
+  - $HOME/.m2
+jdk:
+- oraclejdk8
+sudo: required
+services:
+- docker
+notifications:
+  slack: teamcarnell:zhTADgjsb7yJ5RPEd7LPNFwI
+  email:
+  - cse63152@gmail.com
+  on_success: always
+  on_failure: always
+script:
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- mvn clean package docker:build
+- docker push huajwang/ttmall-licensing-service:chapter3
+- docker push huajwang/ttmall-confsvr:chapter3
