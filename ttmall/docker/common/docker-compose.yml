@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   configserver:
     image: huajwang/ttmall-confsvr:chapter3
@@ -7,13 +7,14 @@ services:
     environment:
       ENCRYPT_KEY:       "IMSYMMETRIC"
   database:
-    image: postgres:9.5
+    image: mysql
     ports:
-      - "5432:5432"
+      - "3306:3306"
     environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "Gold1Silver2"
-      POSTGRES_DB:       "eagle_eye_local"
+        - MYSQL_ROOT_PASSWORD=Gold1Silver2
+        - MYSQL_DATABASE=eagle_eye_local
+
+     
   licensingservice:
     image: huajwang/ttmall-licensing-service:chapter3
     ports:
