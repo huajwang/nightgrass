@@ -1,4 +1,5 @@
 .classpath
+*.log
 .mvn/
 .project
 .settings
