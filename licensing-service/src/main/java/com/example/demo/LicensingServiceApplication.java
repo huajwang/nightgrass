@@ -9,7 +9,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 public class LicensingServiceApplication {
 
 	public static void main(String[] args) {
-		System.out.println("retry image push...");
+		System.out.println("new change...");
 		SpringApplication.run(LicensingServiceApplication.class, args);
 	}
 }
