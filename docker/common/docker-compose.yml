@@ -18,7 +18,7 @@ services:
       - "3306:3306"
     environment:
         - MYSQL_ROOT_PASSWORD=Gold1Silver2
-        - MYSQL_DATABASE=eagle_eye_local
+        - MYSQL_DATABASE=emall
      
   licensingservice:
     image: huajwang/ttmall-licensing-service:chapter3
