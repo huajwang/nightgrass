@@ -1,13 +1,6 @@
 example.property: "I AM IN THE DEFAULT"
 
-spring:
-  datasource:
-    driver-class-name: "com.mysql.jdbc.Driver"
-    url: "jdbc:mysql://database:3306/eagle_eye_local"
-    username: "root"
-    password: "Gold1Silver2"
-  jpa:
-    database-platform: "org.hibernate.dialect.MySQLDialect"
+
 
     
     
