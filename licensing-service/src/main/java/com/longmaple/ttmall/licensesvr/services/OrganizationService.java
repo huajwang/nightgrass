@@ -1,4 +1,4 @@
-package com.example.demo.services;
+package com.longmaple.ttmall.licensesvr.services;
 
 import org.springframework.stereotype.Service;
 

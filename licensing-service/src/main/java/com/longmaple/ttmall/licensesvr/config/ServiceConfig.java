@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.longmaple.ttmall.licensesvr.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

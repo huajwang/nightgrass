@@ -1,8 +1,8 @@
-package com.example.demo.repository;
+package com.longmaple.ttmall.licensesvr.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.demo.model.License;
+import com.longmaple.ttmall.licensesvr.model.License;
 
 import java.util.List;
 

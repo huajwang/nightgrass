@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.longmaple.ttmall.licensesvr.model;
 
 
 import javax.persistence.Column;

@@ -1,14 +1,17 @@
-package com.example.demo.controllers;
+package com.longmaple.ttmall.licensesvr.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.config.ServiceConfig;
-import com.example.demo.model.License;
-import com.example.demo.services.LicenseService;
+import com.longmaple.ttmall.licensesvr.config.ServiceConfig;
+import com.longmaple.ttmall.licensesvr.model.License;
+import com.longmaple.ttmall.licensesvr.services.LicenseService;
+import com.longmaple.ttmall.licensesvr.utils.UserContextHolder;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,9 @@ import java.util.List;
 @RestController
 @RequestMapping(value="v1/organizations/{organizationId}/licenses")
 public class LicenseServiceController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
+	
     @Autowired
     private LicenseService licenseService;
 
@@ -27,7 +33,7 @@ public class LicenseServiceController {
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
-        System.out.println("kkkkkkkkkkkkkkkkkk");
+    	logger.debug("LicenseServiceController Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
         return licenseService.getLicensesByOrg(organizationId);
     }
 

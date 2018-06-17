@@ -1,4 +1,8 @@
-example.property: "I AM IN THE DEFAULT"
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.longmaple: DEBUG
 
 
 
