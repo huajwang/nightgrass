@@ -1,12 +1,12 @@
 version: '3'
 services:
   eurekaserver:
-    image:   huajwang/ttmall-eurekasvr:chapter4
+    image:   huajwang/ttmall-eurekasvr:chapter6
     ports:
       - "8761:8761"
 	  
   configserver:
-    image: huajwang/ttmall-confsvr:chapter3
+    image: huajwang/ttmall-confsvr:chapter6
     ports:
        - "8888:8888"
     environment:
@@ -37,7 +37,7 @@ services:
         - MYSQL_DATABASE=emall
      
   licensingservice:
-    image: huajwang/ttmall-licensing-service:chapter3
+    image: huajwang/ttmall-licensing-service:chapter6
     ports:
       - "8080:8080"
     environment:
@@ -51,7 +51,7 @@ services:
       ENCRYPT_KEY:       "IMSYMMETRIC"
     
   organizationservice:
-    image: huajwang/ttmall-organization-service:chapter4
+    image: huajwang/ttmall-organization-service:chapter6
     ports:
       - "8181:8181"
     environment:

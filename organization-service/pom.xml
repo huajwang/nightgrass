@@ -25,7 +25,7 @@
 		<spring-cloud.version>Finchley.RC2</spring-cloud.version>
 		<start-class>com.longmaple.ttmall.orgsvr.Application</start-class>
 		<docker.image.name>huajwang/ttmall-organization-service</docker.image.name>
-		<docker.image.tag>chapter4</docker.image.tag>
+		<docker.image.tag>chapter6</docker.image.tag>
 	</properties>
 
 	<dependencies>

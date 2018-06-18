@@ -15,10 +15,10 @@ notifications:
 script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
-- docker push huajwang/ttmall-licensing-service:chapter3
-- docker push huajwang/ttmall-confsvr:chapter3
-- docker push huajwang/ttmall-eurekasvr:chapter4
-- docker push huajwang/ttmall-organization-service:chapter4
+- docker push huajwang/ttmall-licensing-service:chapter6
+- docker push huajwang/ttmall-confsvr:chapter6
+- docker push huajwang/ttmall-eurekasvr:chapter6
+- docker push huajwang/ttmall-organization-service:chapter6
 - docker push huajwang/ttmall-zuulsvr:chapter6
 env:
   global:
