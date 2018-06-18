@@ -12,7 +12,8 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.longmaple: DEBUG
-
+    
+example.property: "I AM IN THE DEFAULT - directly from project config "
 
 
     
