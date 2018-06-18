@@ -30,6 +30,11 @@ public class LicenseServiceController {
 
     @Autowired
     private ServiceConfig serviceConfig;
+    
+    @RequestMapping("/test")
+    public void test() {
+    	System.out.println("vvvvvvvvvvvvvvvvvvvvv = " + serviceConfig.getExampleProperty());
+    }
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
