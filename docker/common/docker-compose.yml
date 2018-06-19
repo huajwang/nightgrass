@@ -4,7 +4,6 @@ services:
     image:   huajwang/ttmall-eurekasvr:chapter6
     ports:
       - "8761:8761"
-	  
   configserver:
     image: huajwang/ttmall-confsvr:chapter6
     ports:
@@ -13,7 +12,6 @@ services:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-	  
   zuulserver:
     image: huajwang/ttmall-zuulsvr:chapter6
     ports:
@@ -27,7 +25,6 @@ services:
       DATABASESERVER_PORT:      "3306"
       CONFIGSERVER_PORT:        "8888"
       ORGSERVERNEW_PORT: "8087"
-	  
   database:
     image: mysql
     ports:
@@ -35,7 +32,6 @@ services:
     environment:
         - MYSQL_ROOT_PASSWORD=Gold1Silver2
         - MYSQL_DATABASE=emall
-     
   licensingservice:
     image: huajwang/ttmall-licensing-service:chapter6
     ports:
@@ -49,7 +45,6 @@ services:
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-    
   organizationservice:
     image: huajwang/ttmall-organization-service:chapter6
     ports:
@@ -63,3 +58,29 @@ services:
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+  orgservice-new:
+    image: huajwang/ttmall-orgservice-new:chapter6
+    ports:
+      - "8087:8087"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8087"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:        "8761"
+      DATABASESERVER_PORT:      "3306"
+      CONFIGSERVER_PORT:        "8888"
+      ENCRYPT_KEY:       "IMSYMMETRIC"
+  specialroute-service:
+    image: huajwang/ttmall-specialroute-service:chapter6
+    ports:
+      - "8910:8910"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8910"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:        "8761"
+      DATABASESERVER_PORT:      "3306"
+      CONFIGSERVER_PORT:        "8888"
+      ENCRYPT_KEY: "IMSYMMETRIC"
