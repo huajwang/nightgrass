@@ -1,4 +1,6 @@
-
+server:
+  port: 8282
+  
 logging:
   level:
     com.netflix: WARN

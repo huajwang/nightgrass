@@ -53,7 +53,7 @@ public class SpecialRoutesFilter extends ZuulFilter {
 
     @Override
     public String filterType() {
-        return filterUtils.ROUTE_FILTER_TYPE;
+        return FilterUtils.ROUTE_FILTER_TYPE;
     }
 
     @Override
@@ -72,7 +72,7 @@ public class SpecialRoutesFilter extends ZuulFilter {
         ResponseEntity<AbTestingRoute> restExchange = null;
         try {
             restExchange = restTemplate.exchange(
-                             "http://specialroutesservice/v1/route/abtesting/{serviceName}",
+                             "http://specialrouteservice/v1/route/abtesting/{serviceName}",
                              HttpMethod.GET,
                              null, AbTestingRoute.class, serviceName);
         }
