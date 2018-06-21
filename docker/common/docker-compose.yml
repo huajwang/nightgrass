@@ -58,19 +58,19 @@ services:
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-  orgservice-new:
-    image: huajwang/ttmall-orgservice-new:chapter6
-    ports:
-      - "8087:8087"
-    environment:
-      PROFILE: "default"
-      SERVER_PORT: "8087"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:        "8761"
-      DATABASESERVER_PORT:      "3306"
-      CONFIGSERVER_PORT:        "8888"
-      ENCRYPT_KEY:       "IMSYMMETRIC"
+  authenticationservice:
+      image: huajwang/ttmall-authentication-service:chapter7
+      ports:
+        - "8901:8901"
+      environment:
+        PROFILE: "default"
+        SERVER_PORT: "8901"
+        DATABASE_PORT:     3306
+        CONFIGSERVER_PORT: 8888
+        EUREKASERVER_PORT: 8761
+        CONFIGSERVER_URI: "http://configserver:8888"
+        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        ENCRYPT_KEY: "IMSYMMETRIC"
   specialroute-service:
     image: huajwang/ttmall-specialroute-service:chapter6
     ports:
