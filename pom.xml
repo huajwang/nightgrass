@@ -21,8 +21,8 @@
 	<module>eurekasvr</module>
 	<module>zuulsvr</module>
 	<module>auth-server</module>
-	<module>organization-service</module>
     <module>licensing-service</module>
+	<module>organization-service</module>
 	<module>specialroutes-service</module>
   </modules>
   <build>
