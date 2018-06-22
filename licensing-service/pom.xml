@@ -22,8 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<start-class>com.example.demo.LicensingServiceApplication</start-class>
-		<docker.image.name>huajwang/ttmall-licensing-service</docker.image.name>
-		<docker.image.tag>chapter6</docker.image.tag>
+		<docker.image.name>huajwang/licensing-service</docker.image.name>
+		<docker.image.tag>ttmall</docker.image.tag>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
 	</properties>

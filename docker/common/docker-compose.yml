@@ -1,11 +1,11 @@
 version: '3'
 services:
   eurekaserver:
-    image:   huajwang/ttmall-eurekasvr:chapter6
+    image:   huajwang/eurekasvr:ttmall
     ports:
       - "8761:8761"
   configserver:
-    image: huajwang/ttmall-confsvr:chapter6
+    image: huajwang/confsvr:ttmall
     ports:
        - "8888:8888"
     environment:
@@ -13,7 +13,7 @@ services:
       EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   zuulserver:
-    image: huajwang/ttmall-zuulsvr:chapter6
+    image: huajwang/zuulsvr:ttmall
     ports:
       - "5555:5555"
     environment:
@@ -25,15 +25,8 @@ services:
       DATABASESERVER_PORT:      "3306"
       CONFIGSERVER_PORT:        "8888"
       ORGSERVERNEW_PORT: "8087"
-  database:
-    image: mysql
-    ports:
-      - "3306:3306"
-    environment:
-        - MYSQL_ROOT_PASSWORD=Gold1Silver2
-        - MYSQL_DATABASE=emall
   licensingservice:
-    image: huajwang/ttmall-licensing-service:chapter6
+    image: huajwang/licensing-service:ttmall
     ports:
       - "8080:8080"
     environment:
@@ -46,7 +39,7 @@ services:
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice:
-    image: huajwang/ttmall-organization-service:chapter6
+    image: huajwang/organization-service:ttmall
     ports:
       - "8181:8181"
     environment:
@@ -59,20 +52,20 @@ services:
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   authenticationservice:
-      image: huajwang/ttmall-authentication-service:chapter7
+      image: huajwang/authentication-service:ttmall
       ports:
         - "8901:8901"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8901"
-        DATABASE_PORT:     3306
-        CONFIGSERVER_PORT: 8888
-        EUREKASERVER_PORT: 8761
+        DATABASE_PORT:     "3306"
+        CONFIGSERVER_PORT: "8888"
+        EUREKASERVER_PORT: "8761"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
         ENCRYPT_KEY: "IMSYMMETRIC"
   specialroute-service:
-    image: huajwang/ttmall-specialroute-service:chapter6
+    image: huajwang/specialroute-service:ttmall
     ports:
       - "8910:8910"
     environment:

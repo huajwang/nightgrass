@@ -15,13 +15,13 @@ notifications:
 script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - mvn clean package docker:build
-- docker push huajwang/ttmall-licensing-service:chapter6
-- docker push huajwang/ttmall-confsvr:chapter6
-- docker push huajwang/ttmall-eurekasvr:chapter6
-- docker push huajwang/ttmall-organization-service:chapter6
-- docker push huajwang/ttmall-zuulsvr:chapter6
-- docker push huajwang/ttmall-specialroute-service:chapter6
-- docker push huajwang/ttmall-authentication-service:chapter7
+- docker push huajwang/licensing-service:ttmall
+- docker push huajwang/confsvr:ttmall
+- docker push huajwang/eurekasvr:ttmall
+- docker push huajwang/organization-service:ttmall
+- docker push huajwang/zuulsvr:ttmall
+- docker push huajwang/specialroute-service:ttmall
+- docker push huajwang/authentication-service:ttmall
 env:
   global:
   - secure: KYjMQ+CybqP7P3uwSqpIOqio/q3PxkHbmj01W+03JPsKrKNH8KZ/U4iVstVyEKN/S64w0XP62oMQVjLSyfGgfWcscslr7etQxfye1YGlUrtCGoUIuerJvYrRtC2DsHRlOwWT+1Xmwzq4//czALVbZjYNmof0kDyGXY1+l7nAQNkLl2uJJEIpwLeSsTh1xkVzMdyHrUAGeiLHK0kJ5jvtA4fWnDOsRzfPyxo/P44Za3u571kPbS9IfNMyPKdKWZULE50xCgf8dMyYlcPjhJai7aMhBAtTE8g845KVFN5/F/8v4xu5zuKocKsIDPobuYQLpXXTt2QoNkViD2RMwaLao1y7GjKIRLXA98yiYTe2Qso0pSyOmRkvrRHYvpP/Udqi0rTISl5dzKUr4XJnzUtNWciOM5ZbAE2IADwdNhV14sKp4o5QuZbP/9unNP6pB/ONVKEdKcpcKyv83Y7shgLUtryV6ODXuRw1f1H+0xJDbwLyXwBX5uArYtEUhrpwjXDN+bvxkd2TALhAL4bnF2NhuWjSVw+5vrU2CH6e/yd/dkf9LDDJDKKYPwIDAgseDl3pT6H8litHX08/UaxsqarFpHkxi336IMwUVI6/GJQCR+AaAeIsR3ZkFDLQeQtCctWzVXZzU1xPgSw9cSYNU+x6T7bjih8k6wXYPNGussrnMKs=

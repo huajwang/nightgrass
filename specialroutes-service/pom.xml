@@ -24,8 +24,8 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
 		<start-class>com.longmaple.ttmall.specialroute.SpecialroutesServiceApplication</start-class>
-		<docker.image.name>huajwang/ttmall-specialroute-service</docker.image.name>
-		<docker.image.tag>chapter6</docker.image.tag>
+		<docker.image.name>huajwang/specialroute-service</docker.image.name>
+		<docker.image.tag>ttmall</docker.image.tag>
 	</properties>
 
 	<dependencies>
