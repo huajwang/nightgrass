@@ -9,11 +9,13 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 
 import com.longmaple.ttmall.zuulsvr.utils.UserContextInterceptor;
 
 @SpringBootApplication
 @EnableZuulProxy
+@EnableOAuth2Sso
 public class ZuulsvrApplication {
 
 	@LoadBalanced
