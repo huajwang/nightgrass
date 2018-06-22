@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.longmaple.ttmall.licensesvr.config.ServiceConfig;
+import com.longmaple.ttmall.licensesvr.client.OrganizationRestTemplateClient;
 import com.longmaple.ttmall.licensesvr.model.License;
+import com.longmaple.ttmall.licensesvr.model.Organization;
 import com.longmaple.ttmall.licensesvr.services.LicenseService;
+import com.longmaple.ttmall.licensesvr.utils.UserContext;
 import com.longmaple.ttmall.licensesvr.utils.UserContextHolder;
 
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,18 +29,16 @@ public class LicenseServiceController {
 	
     @Autowired
     private LicenseService licenseService;
-
-    @Autowired
-    private ServiceConfig serviceConfig;
     
-    @RequestMapping("/test")
-    public void test() {
-    	System.out.println("vvvvvvvvvvvvvvvvvvvvv = " + serviceConfig.getExampleProperty());
-    }
+    @Autowired
+    private OrganizationRestTemplateClient templateClient;
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
-    	logger.debug("LicenseServiceController Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+    	UserContextHolder.getContext();
+		logger.debug("LicenseServiceController Correlation id: {}", UserContext.getCorrelationId());
+    	Organization org = templateClient.getOrganization(organizationId);
+    	logger.info("the name of organization = " + org.getContactName());
         return licenseService.getLicensesByOrg(organizationId);
     }
 
