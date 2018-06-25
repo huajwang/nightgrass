@@ -1,7 +1,6 @@
 package com.longmaple.ttmall.zuulsvr.filters;
 
 import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,30 +29,9 @@ public class TrackingFilter extends ZuulFilter{
         return SHOULD_FILTER;
     }
 
-    private boolean isCorrelationIdPresent(){
-      if (filterUtils.getCorrelationId() !=null){
-          return true;
-      }
-
-      return false;
-    }
-
-    private String generateCorrelationId(){
-        return java.util.UUID.randomUUID().toString();
-    }
-
     public Object run() {
-
-        if (isCorrelationIdPresent()) {
-           logger.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
-        }
-        else{
-            filterUtils.setCorrelationId(generateCorrelationId());
-            logger.debug("tmx-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
-        }
-
-        RequestContext ctx = RequestContext.getCurrentContext();
-        logger.debug("Processing incoming request for {}.",  ctx.getRequest().getRequestURI());
+    	
+    	logger.debug("Zuul tracking filter running...");
         return null;
     }
 }
