@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.longmaple.ttmall.licensesvr.client.OrganizationRestTemplateClient;
+import com.longmaple.ttmall.licensesvr.client.OrganizationFeignClient;
 import com.longmaple.ttmall.licensesvr.model.License;
 import com.longmaple.ttmall.licensesvr.model.Organization;
 import com.longmaple.ttmall.licensesvr.services.LicenseService;
@@ -31,13 +31,13 @@ public class LicenseServiceController {
     private LicenseService licenseService;
     
     @Autowired
-    private OrganizationRestTemplateClient templateClient;
+    private OrganizationFeignClient organizationFeignClient;
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
     	UserContextHolder.getContext();
 		logger.debug("LicenseServiceController Correlation id: {}", UserContext.getCorrelationId());
-    	Organization org = templateClient.getOrganization(organizationId);
+    	Organization org = organizationFeignClient.getOrganization(organizationId);
     	logger.info("the name of organization = " + org.getContactName());
         return licenseService.getLicensesByOrg(organizationId);
     }
@@ -45,7 +45,6 @@ public class LicenseServiceController {
     @RequestMapping(value="/{licenseId}",method = RequestMethod.GET)
     public License getLicenses( @PathVariable("organizationId") String organizationId,
                                 @PathVariable("licenseId") String licenseId) {
-	System.out.println("La La laND");
         return licenseService.getLicense(organizationId,licenseId);
     }
 
