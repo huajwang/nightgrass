@@ -41,7 +41,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		security.passwordEncoder(passwordEncoder()).tokenKeyAccess("permitAll()");
+		security
+		.passwordEncoder(passwordEncoder())
+		.tokenKeyAccess("permitAll()")
+		.checkTokenAccess("isAuthenticated()");
 	}
 
 	@Bean
