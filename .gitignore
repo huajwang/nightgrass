@@ -8,6 +8,8 @@ mvnw.cmd
 target
 /target/
 */bin/
+/ui/node
+/ui/node_modules
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
