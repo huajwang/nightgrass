@@ -26,12 +26,6 @@ zuul:
     user:
       path: /user/**
       url: http://localhost:9999/uaa/user
-    organizationservice: 
-      path: /organization/**
-      url: http://localhost:8181
-    licensingservice: 
-      path: /licensing/**
-      url: http://localhost:9001
       
 logging:
   level:
