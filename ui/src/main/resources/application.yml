@@ -1,3 +1,11 @@
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 spring:
   aop:
     proxy-target-class: true
@@ -12,6 +20,8 @@ security:
     client:
       accessTokenUri: http://localhost:9999/uaa/oauth/token
       userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      scope:
+        user:profile:read user:profile:write
       clientId: webapp
       clientSecret: abcd1234
     resource:
