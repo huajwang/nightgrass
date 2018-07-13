@@ -2,16 +2,8 @@ logging:
   level:
     com.netflix: WARN
     org.springframework.web: WARN
-    com.longmaple: DEBUG  
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-        defaultZone: http://localhost:8761/eureka/
-        
+    com.longmaple: DEBUG
+    
 spring:
   security:
     user:
