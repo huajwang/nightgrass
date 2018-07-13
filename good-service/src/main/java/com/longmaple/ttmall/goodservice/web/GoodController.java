@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.longmaple.ttmall.goodservice.data.TMallGood;
 import com.longmaple.ttmall.goodservice.service.GoodService;
 
-@Controller
-@RequestMapping("/sys/goods/")
+@RestController
+@RequestMapping("/good")
 public class GoodController {
 	
 	@Autowired
@@ -25,8 +25,7 @@ public class GoodController {
 	 * @param gId - id of goods
 	 * @return map containing product and its photos
 	 */
-	@RequestMapping("/getGoodsById.api")
-	@ResponseBody
+	@GetMapping("/get-good-by-id")
 	public Map<String, Object> getGoodsById(long gId) {
 		Map<String, Object> goodsMap = new HashMap<String, Object>();
 		TMallGood tMallGood = goodsService.findOneById(gId).get();
