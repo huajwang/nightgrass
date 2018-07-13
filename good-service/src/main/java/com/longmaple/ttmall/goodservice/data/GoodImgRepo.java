@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface GoodImgRepo extends CrudRepository<TMallGoodImg, Long> {
 
-	List<TMallGood> findAllById(long gId);
+	List<TMallGoodImg> findAllByGId(long gId);
 
 }

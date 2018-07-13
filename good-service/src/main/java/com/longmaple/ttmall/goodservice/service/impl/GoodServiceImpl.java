@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.longmaple.ttmall.goodservice.data.GoodImgRepo;
 import com.longmaple.ttmall.goodservice.data.GoodRepo;
 import com.longmaple.ttmall.goodservice.data.TMallGood;
+import com.longmaple.ttmall.goodservice.data.TMallGoodImg;
 import com.longmaple.ttmall.goodservice.service.GoodService;
 
 @Service
@@ -26,8 +27,8 @@ public class GoodServiceImpl implements GoodService {
 	}
 
 	@Override
-	public List<TMallGood> findByGId(long gId) {
-		return goodImgRepo.findAllById(gId);
+	public List<TMallGoodImg> findImgByGId(long gId) {
+		return goodImgRepo.findAllByGId(gId);
 	}
 
 }

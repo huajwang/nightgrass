@@ -16,7 +16,7 @@ public class TMallGoodImg implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createTime;
 
-	private int gId;
+	private long gId;
 
 	private String imgUrl;
 
@@ -39,11 +39,11 @@ public class TMallGoodImg implements Serializable {
 		this.createTime = createTime;
 	}
 
-	public int getGId() {
+	public long getGId() {
 		return this.gId;
 	}
 
-	public void setGId(int gId) {
+	public void setGId(long gId) {
 		this.gId = gId;
 	}
 

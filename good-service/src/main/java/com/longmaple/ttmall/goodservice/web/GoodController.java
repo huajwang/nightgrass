@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.longmaple.ttmall.goodservice.data.TMallGood;
+import com.longmaple.ttmall.goodservice.data.TMallGoodImg;
 import com.longmaple.ttmall.goodservice.service.GoodService;
 
 @RestController
@@ -29,7 +30,7 @@ public class GoodController {
 	public Map<String, Object> getGoodsById(long gId) {
 		Map<String, Object> goodsMap = new HashMap<String, Object>();
 		TMallGood tMallGood = goodsService.findOneById(gId).get();
-		List<TMallGood> imgList = goodsService.findByGId(gId);
+		List<TMallGoodImg> imgList = goodsService.findImgByGId(gId);
 		goodsMap.put("tMallGood", tMallGood);
 		goodsMap.put("imageList", imgList);
 		return goodsMap;
