@@ -9,8 +9,10 @@ spring:
         encrypt.enabled: false
         git:
           uri: https://github.com/huajwang/config-repo/
-          searchPaths: licensingservice,organizationservice,messageservice,specialrouteservice,authenticationservice,address,goodservice
-
+          searchPaths:  > 
+                licensingservice,organizationservice,
+                messageservice,specialrouteservice,authenticationservice,address,
+                goodservice
 eureka:
   instance:
     preferIpAddress: true

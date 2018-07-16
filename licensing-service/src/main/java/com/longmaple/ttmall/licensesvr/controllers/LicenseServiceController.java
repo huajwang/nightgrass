@@ -6,9 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.OAuth2Request;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.longmaple.ttmall.licensesvr.client.OrganizationClient;
 import com.longmaple.ttmall.licensesvr.client.OrganizationFeignClient;
+import com.longmaple.ttmall.licensesvr.model.EMallUser;
 import com.longmaple.ttmall.licensesvr.model.License;
 import com.longmaple.ttmall.licensesvr.model.Organization;
 import com.longmaple.ttmall.licensesvr.services.LicenseService;
@@ -20,6 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value="v1/organizations/{organizationId}/licenses")
@@ -31,13 +37,13 @@ public class LicenseServiceController {
     private LicenseService licenseService;
     
     @Autowired
-    private OrganizationFeignClient organizationFeignClient;
+    private OrganizationClient organizationClient;
 
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
+    public List<License> getLicenses(OAuth2Authentication auth, @PathVariable("organizationId") String organizationId) {
     	UserContextHolder.getContext();
 		logger.debug("LicenseServiceController Correlation id: {}", UserContext.getCorrelationId());
-    	Organization org = organizationFeignClient.getOrganization(organizationId);
+    	Organization org = organizationClient.getOrganization(organizationId);
     	logger.info("the name of organization = " + org.getContactName());
         return licenseService.getLicensesByOrg(organizationId);
     }
