@@ -54,10 +54,10 @@ services:
   authenticationservice:
       image: huajwang/authentication-service:ttmall
       ports:
-        - "8901:8901"
+        - "9999:9999"
       environment:
         PROFILE: "default"
-        SERVER_PORT: "8901"
+        SERVER_PORT: "9999"
         DATABASE_PORT:     "3306"
         CONFIGSERVER_PORT: "8888"
         EUREKASERVER_PORT: "8761"
