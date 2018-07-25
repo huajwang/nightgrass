@@ -17,13 +17,13 @@
     <version>2.0.3.RELEASE</version>
   </parent>
   <modules>
+    <module>eurekasvr</module>
     <module>confsvr</module>
-	<module>eurekasvr</module>
-	<module>zuulsvr</module>
-	<module>auth-server</module>
+    <module>auth-server</module>
+    <module>ui</module>
     <module>licensing-service</module>
-	<module>organization-service</module>
-	<module>specialroutes-service</module>
+    <module>organization-service</module>
+    <module>specialroutes-service</module>
   </modules>
   <build>
     <plugins>
