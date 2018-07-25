@@ -1,4 +1,4 @@
-package demo;
+package com.longmaple.ttmall.ui;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
