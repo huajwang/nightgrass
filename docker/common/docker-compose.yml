@@ -12,26 +12,38 @@ services:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-  zuulserver:
-    image: huajwang/zuulsvr:ttmall
-    ports:
-      - "5555:5555"
-    environment:
-      PROFILE: "default"
-      SERVER_PORT: "5555"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:        "8761"
-      DATABASESERVER_PORT:      "3306"
-      CONFIGSERVER_PORT:        "8888"
-      ORGSERVERNEW_PORT: "8087"
-  licensingservice:
-    image: huajwang/licensing-service:ttmall
+  authenticationservice:
+      image: huajwang/authentication-service:ttmall
+      ports:
+        - "9999:9999"
+      environment:
+        PROFILE: "${PROFILE_ACTIVE}"
+        SERVER_PORT: "9999"
+        DATABASE_PORT:     "3306"
+        CONFIGSERVER_PORT: "8888"
+        EUREKASERVER_PORT: "8761"
+        CONFIGSERVER_URI: "http://configserver:8888"
+        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        ENCRYPT_KEY: "IMSYMMETRIC"
+  ui:
+    image: huajwang/ui:ttmall
     ports:
       - "8080:8080"
     environment:
       PROFILE: "default"
       SERVER_PORT: "8080"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:        "8761"
+      DATABASESERVER_PORT:      "3306"
+      CONFIGSERVER_PORT:        "8888"
+  licensingservice:
+    image: huajwang/licensing-service:ttmall
+    ports:
+      - "8282:8282"
+    environment:
+      PROFILE: "${PROFILE_ACTIVE}"
+      SERVER_PORT: "8282"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT:   "8761"
       CONFIGSERVER_PORT:   "8888"
@@ -43,7 +55,7 @@ services:
     ports:
       - "8181:8181"
     environment:
-      PROFILE: "default"
+      PROFILE: "${PROFILE_ACTIVE}"
       SERVER_PORT: "8181"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT:   "8761"
@@ -51,19 +63,6 @@ services:
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-  authenticationservice:
-      image: huajwang/authentication-service:ttmall
-      ports:
-        - "9999:9999"
-      environment:
-        PROFILE: "default"
-        SERVER_PORT: "9999"
-        DATABASE_PORT:     "3306"
-        CONFIGSERVER_PORT: "8888"
-        EUREKASERVER_PORT: "8761"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        ENCRYPT_KEY: "IMSYMMETRIC"
   specialroute-service:
     image: huajwang/specialroute-service:ttmall
     ports:
@@ -77,3 +76,15 @@ services:
       DATABASESERVER_PORT:      "3306"
       CONFIGSERVER_PORT:        "8888"
       ENCRYPT_KEY: "IMSYMMETRIC"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+
+  kafkaserver:
+    image: spotify/kafka
+    ports:
+      - 2181:2181
+      - 9092:9092 
+    

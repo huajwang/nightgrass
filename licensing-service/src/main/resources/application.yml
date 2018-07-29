@@ -21,6 +21,6 @@ logging:
     
 example.property: "I AM IN THE DEFAULT - directly from project config "
 
-
-    
-    
+redis:
+  server: redis
+  port: 6379
