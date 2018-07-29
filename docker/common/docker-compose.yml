@@ -31,6 +31,7 @@ services:
       - "8080:8080"
     environment:
       PROFILE: "default"
+      AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "8080"
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
@@ -43,6 +44,7 @@ services:
       - "8282:8282"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
+      AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "8282"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT:   "8761"
@@ -56,6 +58,7 @@ services:
       - "8181:8181"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
+      AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "8181"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT:   "8761"
@@ -63,19 +66,6 @@ services:
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-  specialroute-service:
-    image: huajwang/specialroute-service:ttmall
-    ports:
-      - "8910:8910"
-    environment:
-      PROFILE: "default"
-      SERVER_PORT: "8910"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:        "8761"
-      DATABASESERVER_PORT:      "3306"
-      CONFIGSERVER_PORT:        "8888"
-      ENCRYPT_KEY: "IMSYMMETRIC"
 
   redis:
     image: redis:alpine
