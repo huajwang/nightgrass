@@ -19,7 +19,7 @@ script:
 - docker push huajwang/confsvr:ttmall
 - docker push huajwang/eurekasvr:ttmall
 - docker push huajwang/organization-service:ttmall
-- docker push huajwang/zuulsvr:ttmall
+- docker push huajwang/ui-service:ttmall
 - docker push huajwang/specialroute-service:ttmall
 - docker push huajwang/authentication-service:ttmall
 env:
