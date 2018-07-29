@@ -26,7 +26,7 @@ services:
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
         ENCRYPT_KEY: "IMSYMMETRIC"
   ui:
-    image: huajwang/ui:ttmall
+    image: huajwang/ui-service:ttmall
     ports:
       - "8080:8080"
     environment:
