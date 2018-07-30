@@ -23,7 +23,7 @@
     <module>ui</module>
     <module>licensing-service</module>
     <module>organization-service</module>
-    <module>specialroutes-service</module>
+    <module>message-service</module>
   </modules>
   <build>
     <plugins>
