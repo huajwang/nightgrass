@@ -32,10 +32,10 @@ zuul:
   routes:
     resource:
       path: /resource/**
-      url: http://localhost:9000
+      service-id: MESSAGESERVICE
     user:
       path: /user/**
-      url: http://localhost:9999/uaa/user
+      service-id: AUTHENTICATIONSERVICE
       
 logging:
   level:
