@@ -66,6 +66,22 @@ services:
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+  messageservice:
+    image: huajwang/message-service:ttmall
+    ports:
+      - "9000:9000"
+    environment:
+      PROFILE: "${PROFILE_ACTIVE}"
+      AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
+      SERVER_PORT: "9000"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT:   "8761"
+      CONFIGSERVER_PORT:   "8888"
+      DATABASESERVER_PORT: "3306"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      ENCRYPT_KEY:       "IMSYMMETRIC"
+
+
 
   redis:
     image: redis:alpine
