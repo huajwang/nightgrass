@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'node:6-alpine'
+    dockerfile {
+      filename 'docker/common/docker-compose.yml'
     }
 
   }
