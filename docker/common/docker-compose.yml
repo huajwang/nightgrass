@@ -1,3 +1,4 @@
+version: '3.0'
 services:
   eurekaserver:
     image:   huajwang/eurekasvr:ttmall
