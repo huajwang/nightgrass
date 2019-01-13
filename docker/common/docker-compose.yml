@@ -25,6 +25,15 @@ services:
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
         ENCRYPT_KEY: "IMSYMMETRIC"
+  db-mysql:
+    image: 'mysql:5.7.20'
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=Gold1Silver2
+      - MYSQL_DATABASE=db-demo
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
   ui:
     image: huajwang/ui-service:ttmall
     ports:
