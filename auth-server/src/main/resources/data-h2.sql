@@ -6,7 +6,7 @@ CREATE TABLE client_user (
   access_token varchar(700) DEFAULT NULL,
   access_token_validity datetime DEFAULT NULL,
   refresh_token varchar(100) DEFAULT NULL,
-  enabled bit(1) DEFAULT b'1',
+  enabled bit(1) DEFAULT 1,
   PRIMARY KEY (id)
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE e_mall_user (
   id bigint(20) NOT NULL,
   username varchar(20) NOT NULL,
   password varchar(100) NOT NULL,
-  enabled bit(1) NOT NULL DEFAULT b'1',
+  enabled bit(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (id)
 );
 

@@ -9,6 +9,11 @@ echo "********************************************************"
 while ! `nc -z eurekaserver  $EUREKASERVER_PORT`; do sleep 3; done
 echo "******* Eureka Server has started"
 
+echo "********************************************************"
+echo "Waiting for the configuration server to start on port $CONFIGSERVER_PORT"
+echo "********************************************************"
+while ! `nc -z configserver $CONFIGSERVER_PORT`; do sleep 3; done
+echo "*******  Configuration Server has started"
 
 echo "********************************************************"
 echo "Starting UI Server with Configuration Service via Eureka :  $EUREKASERVER_URI" ON PORT: $SERVER_PORT;
