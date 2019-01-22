@@ -9,6 +9,8 @@ eureka:
 spring:
   aop:
     proxy-target-class: true
+  application:
+    name: ui 
 
 security:
   user:

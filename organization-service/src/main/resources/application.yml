@@ -7,10 +7,7 @@ spring:
             content-type: application/json
       kafka:
         binder:
-          brokers: localhost
-server:
-  port: 8181
-
+          brokers: kafkaserver 
 eureka:
   instance:
     preferIpAddress: true

@@ -8,11 +8,8 @@ spring:
           group: licensingGroup
       kafka:
         binder:
-          brokers: localhost
+          brokers: kafkaserver 
 
-server:
-  port: 9001
-  
 logging:
   level:
     com.netflix: WARN
