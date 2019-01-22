@@ -18,6 +18,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		.hasRole("ADMIN")
 		.anyRequest()
 		.authenticated()
-                .and().headers().frameOptions().disable();
+                .and().headers().frameOptions().sameOrigin();
 	}
 }

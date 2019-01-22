@@ -14,10 +14,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()  
+                .antMatchers("/h2-console/**").permitAll()
 		.antMatchers(HttpMethod.DELETE, "/v1/organizations/**")  
 		.hasRole("ADMIN")
 		.anyRequest()
-		.authenticated();
+		.authenticated()
+                .and()
+                .headers().frameOptions().sameOrigin();
 	}
 
 }
