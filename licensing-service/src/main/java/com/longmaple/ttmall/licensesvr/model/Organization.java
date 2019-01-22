@@ -1,7 +1,10 @@
 package com.longmaple.ttmall.licensesvr.model;
 
-public class Organization {
-    String id;
+import java.io.Serializable;
+
+public class Organization implements Serializable {
+	private static final long serialVersionUID = 6695890534178169888L;
+	String id;
     String name;
     String contactName;
     String contactEmail;
