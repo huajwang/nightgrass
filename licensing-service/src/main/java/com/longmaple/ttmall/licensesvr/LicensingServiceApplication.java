@@ -30,8 +30,7 @@ public class LicensingServiceApplication {
 		return new UserFeignClientInterceptor();
 	}
 
-	@Bean
-	public JedisConnectionFactory jedisConnectionFactory() {
+	private JedisConnectionFactory jedisConnectionFactory() {
 		RedisStandaloneConfiguration redisStandaloneConfiguration =
 				new RedisStandaloneConfiguration(serviceConfig.getRedisServer(),
 						serviceConfig.getRedisPort());
