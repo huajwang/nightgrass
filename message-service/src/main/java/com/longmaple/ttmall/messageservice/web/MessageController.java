@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.longmaple.ttmall.messageservice.client.OrganizationFeignClient;
+import com.longmaple.ttmall.messageservice.client.LicenseFeignClient;
 
 @RestController
 public class MessageController {
 	
 	@Autowired
-	private OrganizationFeignClient feignClient;
+	private LicenseFeignClient feignClient;
 
 	@RequestMapping("/")
 	public Message home() {

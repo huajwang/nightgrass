@@ -11,7 +11,7 @@ import com.longmaple.ttmall.messageservice.data.License;
 
 
 @FeignClient("licensingservice")
-public interface OrganizationFeignClient {
+public interface LicenseFeignClient {
     @RequestMapping(
             method= RequestMethod.GET,
             value="v1/organizations/{organizationId}/licenses/",
