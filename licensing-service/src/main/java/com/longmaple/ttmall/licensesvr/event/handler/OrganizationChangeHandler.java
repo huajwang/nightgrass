@@ -20,21 +20,19 @@ public class OrganizationChangeHandler {
 
 	@StreamListener("inboundOrgChanges")
 	public void loggerSink(OrganizationChangeModel orgChange) {
-		logger.debug("Received an event for organization id {}", orgChange.getOrganizationId());
+		String orgId = orgChange.getOrganizationId();
+		logger.debug("Received an event for organization id {}", orgId);
 		switch(orgChange.getAction()) {
 		case "UPDATE":
-			logger.debug("Update ");
+			logger.debug("接收到来自organization service的Update事件: {}", orgId);
+			orgRedisRepo.deleteOrganization(orgId);
 			break;
 		case "DELETE":
-			logger.debug("Delete");
-			break;
-		case "Add":
-			logger.debug("Add");
+			logger.debug("接收到来自organization service的Delete事件: {}", orgId);
 			break;
 		default:
-			logger.debug("unsupported action");
+			logger.debug("unsupported action: {}", orgChange.getAction());
 			break;
-			
 		}
 	}
 }

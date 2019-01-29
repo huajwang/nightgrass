@@ -7,6 +7,7 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -29,12 +30,11 @@ public class LicensingServiceApplication {
 		return new UserFeignClientInterceptor();
 	}
 
-	@Bean
-	public JedisConnectionFactory jedisConnectionFactory() {
-		JedisConnectionFactory jedisConnFactory = new JedisConnectionFactory();
-		jedisConnFactory.setHostName(serviceConfig.getRedisServer());
-		jedisConnFactory.setPort(serviceConfig.getRedisPort() );
-		return jedisConnFactory;
+	private JedisConnectionFactory jedisConnectionFactory() {
+		RedisStandaloneConfiguration redisStandaloneConfiguration =
+				new RedisStandaloneConfiguration(serviceConfig.getRedisServer(),
+						serviceConfig.getRedisPort());
+	    return new JedisConnectionFactory(redisStandaloneConfiguration);
 	}
 	
     @Bean

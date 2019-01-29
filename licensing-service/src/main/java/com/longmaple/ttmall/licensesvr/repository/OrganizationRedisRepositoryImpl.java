@@ -11,17 +11,17 @@ import javax.annotation.PostConstruct;
 
 @Repository
 public class OrganizationRedisRepositoryImpl implements OrganizationRedisRepository {
+	
     private static final String HASH_NAME ="organization";
-
     private RedisTemplate<String, Organization> redisTemplate;
-    private HashOperations hashOperations;
+    private HashOperations<String, String, Organization> hashOperations;
 
     public OrganizationRedisRepositoryImpl(){
         super();
     }
 
     @Autowired
-    private OrganizationRedisRepositoryImpl(RedisTemplate redisTemplate) {
+    private OrganizationRedisRepositoryImpl(RedisTemplate<String, Organization> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
@@ -29,7 +29,6 @@ public class OrganizationRedisRepositoryImpl implements OrganizationRedisReposit
     private void init() {
         hashOperations = redisTemplate.opsForHash();
     }
-
 
     @Override
     public void saveOrganization(Organization org) {
