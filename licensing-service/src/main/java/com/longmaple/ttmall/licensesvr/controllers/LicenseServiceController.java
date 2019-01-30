@@ -32,7 +32,8 @@ public class LicenseServiceController {
     private OrganizationClient organizationClient;
 
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public List<License> getLicenses(OAuth2Authentication auth, @PathVariable("organizationId") String organizationId) {
+    public List<License> getLicenses(OAuth2Authentication auth, 
+    		@PathVariable("organizationId") String organizationId) {
     	UserContextHolder.getContext();
 		logger.debug("LicenseServiceController Correlation id: {}", UserContext.getCorrelationId());
     	Organization org = organizationClient.getOrganization(organizationId);

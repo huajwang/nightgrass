@@ -33,7 +33,7 @@ zuul:
   sensitive-headers: Cookie,Set-Cookie
   routes:
     resource:
-      path: /resource/**
+      path: /message/**
       service-id: MESSAGESERVICE
     user:
       path: /user/**

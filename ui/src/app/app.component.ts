@@ -22,7 +22,8 @@ export class AppComponent {
     this.http.get('user/uaa/user').subscribe(response => {
         if (response['name']) {
             this.authenticated = true;
-            this.http.get('resource').subscribe(data => this.greeting = data);
+            this.http.get('message/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses').subscribe(
+            data => this.greeting = data);
         } else {
             this.authenticated = false;
         }
