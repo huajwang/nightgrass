@@ -94,12 +94,9 @@ services:
       ZIPKIN_URI: "http://zipkin:9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   zipkin:
-    image: huajwang/zipkinsvr:ttmall
+    image: openzipkin/zipkin
     ports:
       - "9411:9411"
-    environment: 
-      SERVER_PORT: "9411"
-      ZIPKIN_URI: http://zipkin:9411
   redis:
     image: redis:alpine
     ports:
