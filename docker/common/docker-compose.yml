@@ -24,6 +24,7 @@ services:
         EUREKASERVER_PORT: "8761"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        ZIPKIN_URI: "http://zipkin:9411"
         ENCRYPT_KEY: "IMSYMMETRIC"
   db-mysql:
     image: 'mysql:5.7.20'
