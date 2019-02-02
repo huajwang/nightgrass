@@ -47,6 +47,7 @@ services:
       EUREKASERVER_PORT:        "8761"
       DATABASESERVER_PORT:      "3306"
       CONFIGSERVER_PORT:        "8888"
+      ZIPKIN_URI: "http://zipkin:9411"
   licensingservice:
     image: huajwang/licensing-service:ttmall
     ports:
@@ -60,6 +61,7 @@ services:
       CONFIGSERVER_PORT:   "8888"
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
+      ZIPKIN_URI: "http://zipkin:9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice:
     image: huajwang/organization-service:ttmall
@@ -74,6 +76,7 @@ services:
       CONFIGSERVER_PORT:   "8888"
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
+      ZIPKIN_URI: "http://zipkin:9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   messageservice:
     image: huajwang/message-service:ttmall
@@ -88,10 +91,15 @@ services:
       CONFIGSERVER_PORT:   "8888"
       DATABASESERVER_PORT: "3306"
       CONFIGSERVER_URI: "http://configserver:8888"
+      ZIPKIN_URI: "http://zipkin:9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
-
-
-
+  zipkin:
+    image: huajwang/zipkinsvr:ttmall
+    ports:
+      - "9411:9411"
+    environment: 
+      SERVER_PORT: "9411"
+      ZIPKIN_URI: http://zipkin:9411
   redis:
     image: redis:alpine
     ports:
