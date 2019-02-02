@@ -24,7 +24,6 @@
     <module>licensing-service</module>
     <module>organization-service</module>
     <module>message-service</module>
-    <module>zipkinsvr</module>
   </modules>
   <build>
     <plugins>
