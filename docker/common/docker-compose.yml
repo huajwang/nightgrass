@@ -94,6 +94,11 @@ services:
       CONFIGSERVER_URI: "http://configserver:8888"
       ZIPKIN_URI: "http://zipkin:9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+  logspout:
+   image: gliderlabs/logspout
+   command: syslog+tls://logs7.papertrailapp.com:17316
+   volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
   zipkin:
     image: openzipkin/zipkin
     ports:
