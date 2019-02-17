@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-jenkins-deploy 
+spec:
+  selector:
+    matchLabels:
+      run: kube-jenkins
+  template:
+    metadata:
+      labels:
+        run: kube-jenkins
+    spec:
+      serviceAccountName: jenkins-sa 
+      containers:
+      - name: kube-jenkins 
+        image: huajwang/kube-jenkins:custom 
+        readinessProbe:          
+          initialDelaySeconds: 40          
+          tcpSocket:            
+            port: 8080        
+        volumeMounts:         
+        - mountPath: /var/run/docker.sock          
+          name: docker-sock         
+        - mountPath: /var/jenkins_home          
+          name: jenkins-data      
+      volumes:       
+      - name: docker-sock        
+        hostPath:           
+          path: /var/run/docker.sock
+      - name: jenkins-data        
+        hostPath:          
+          path: /data/jenkins-data
+
