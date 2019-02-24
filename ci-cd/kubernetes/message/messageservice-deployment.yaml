@@ -1,0 +1,47 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: messageservice
+  name: messageservice
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: messageservice
+    spec:
+      containers:
+      - env:
+        - name: AUTHSERVER_PORT
+        - name: CONFIGSERVER_PORT
+          value: "8888"
+        - name: CONFIGSERVER_URI
+          value: http://configserver:8888
+        - name: DATABASESERVER_PORT
+          value: "3306"
+        - name: ENCRYPT_KEY
+          value: IMSYMMETRIC
+        - name: EUREKASERVER_PORT
+          value: "8761"
+        - name: EUREKASERVER_URI
+          value: http://eurekaserver:8761/eureka/
+        - name: PROFILE
+          value: dev
+        - name: SERVER_PORT
+          value: "9000"
+        - name: ZIPKIN_URI
+          value: http://zipkin:9411
+        image: huajwang/message-service:ttmall
+        name: messageservice
+        ports:
+        - containerPort: 9000
+        resources: {}
+      restartPolicy: Always
+status: {}
