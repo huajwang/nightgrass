@@ -22,7 +22,7 @@ spec:
         - name: AUTHSERVER_PORT
           value: "9999"
         - name: security.oauth2.client.userAuthorizationUri
-          value: http://localhost:9999/uaa/oauth/authorize
+          value: http://localhost:30099/uaa/oauth/authorize
         - name: CONFIGSERVER_PORT
           value: "8888"
         - name: CONFIGSERVER_URI
