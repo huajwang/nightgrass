@@ -13,6 +13,8 @@ spec:
   - name: "9999"
     port: 9999
     targetPort: 9999
+    nodePort: 30099
+  type: NodePort
   selector:
     io.kompose.service: authenticationservice
 status:
