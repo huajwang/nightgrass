@@ -1,15 +1,3 @@
-DROP TABLE IF EXISTS licenses;
-
-CREATE TABLE licenses (
-  license_id        VARCHAR(100) PRIMARY KEY NOT NULL,
-  organization_id   TEXT NOT NULL,
-  license_type      TEXT NOT NULL,
-  product_name      TEXT NOT NULL,
-  license_max       INT   NOT NULL,
-  license_allocated INT,
-  comment           VARCHAR(100));
-
-
 INSERT INTO licenses (license_id,  organization_id, license_type, product_name, license_max, license_allocated)
 VALUES ('f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a', 'e254f8c-c442-4ebe-a82a-e2fc1d1ff78a', 'user','customer-crm-co', 100,5);
 INSERT INTO licenses (license_id,  organization_id, license_type, product_name, license_max, license_allocated)
