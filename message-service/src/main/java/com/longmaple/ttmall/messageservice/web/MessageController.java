@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.Authentication;
 
 import com.longmaple.ttmall.messageservice.client.LicenseFeignClient;
+import com.longmaple.ttmall.messageservice.data.TMallOrder;
 
 @RestController
 @RequestMapping(value = "/")
@@ -26,6 +28,12 @@ public class MessageController {
 		logger.debug("获取许可证号");
 		return new Message("许可证号 - " + 
 				feignClient.getLicenses(organizationId).get(0).getProductName());
+	}
+	
+	@GetMapping("pendingOrder")
+	public TMallOrder pendingOrder(Authentication auth) {
+		logger.debug("getting order of " + auth.getName());
+		return null;
 	}
 }
 
