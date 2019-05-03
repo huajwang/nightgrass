@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-slim
+FROM openjdk:8-jdk-alpine
 RUN apk update && apk upgrade && apk add netcat-openbsd
 RUN mkdir -p /usr/local/organizationservice
 ARG JAR_FILE
