@@ -153,22 +153,21 @@
 				<version>1.4.13</version>
 				<configuration>
 					<dockerfile>${basedir}/target/docker/Dockerfile</dockerfile>
-				    <repository>${docker.image.name}</repository>
-                    <tag>${docker.image.tag}</tag>
+				        <repository>${docker.image.name}</repository>
+                                        <tag>${docker.image.tag}</tag>
 					<buildArgs>
-      					<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-      					<RUN_SH_FILE>target/docker/run.sh</RUN_SH_FILE>
-    				</buildArgs>
-
+      					   <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+      					   <RUN_SH_FILE>target/docker/run.sh</RUN_SH_FILE>
+    				        </buildArgs>
 				</configuration>
 				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>build</goal>
-							<goal>push</goal>
-						</goals>
-					</execution>
+				  <execution>
+				    <id>default</id>
+				    <goals>
+					<goal>build</goal>
+					<goal>push</goal>
+				    </goals>
+				  </execution>
 				</executions>
 
 			</plugin>
