@@ -3,106 +3,116 @@ services:
   eurekaserver:
     image:   huajwang/eurekasvr:ttmall
     ports:
-      - "8761:8761"
+      - "${EUREKASERVER_PORT}:${EUREKASERVER_PORT}"
+
   configserver:
     image: huajwang/confsvr:ttmall
     ports:
-       - "8888:8888"
+       - "${CONFIGSERVER_PORT}:${CONFIGSERVER_PORT}"
     environment:
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT: "8761"
+      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
+      EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+    depends_on:
+      - eurekaserver
+
   authenticationservice:
       image: huajwang/authentication-service:ttmall
       ports:
-        - "9999:9999"
+        - "${AUTHSERVER_PORT}:${AUTHSERVER_PORT}"
       environment:
         PROFILE: "${PROFILE_ACTIVE}"
-        SERVER_PORT: "9999"
-        DATABASE_PORT:     "3306"
-        CONFIGSERVER_PORT: "8888"
-        EUREKASERVER_PORT: "8761"
-        CONFIGSERVER_URI: "http://configserver:8888"
-        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-        ZIPKIN_URI: "http://zipkin:9411"
+        SERVER_PORT: "${AUTHSERVER_PORT}"
+        EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
+        CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
+        CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
+        EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
         ENCRYPT_KEY: "IMSYMMETRIC"
+      depends_on:
+       - eurekaserver
+       - configserver
+
   db-mysql:
     image: 'mysql:5.7.20'
     ports:
-      - "3306:3306"
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
     environment:
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=Gold1Silver2
       - MYSQL_DATABASE=db-demo
     command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+
   ui:
     image: huajwang/ui-service:ttmall
     ports:
       - "8080:8080"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
+      EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
+      CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
       AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "8080"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:        "8761"
-      DATABASESERVER_PORT:      "3306"
-      CONFIGSERVER_PORT:        "8888"
-      ZIPKIN_URI: "http://zipkin:9411"
+      CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
+      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
+    depends_on:
+      - eurekaserver
+      - configserver
+      - authenticationservice
+ 
   licensingservice:
     image: huajwang/licensing-service:ttmall
     ports:
       - "8282:8282"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
+      EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
+      CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
       AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "8282"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:   "8761"
-      CONFIGSERVER_PORT:   "8888"
-      DATABASESERVER_PORT: "3306"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      ZIPKIN_URI: "http://zipkin:9411"
-      ENCRYPT_KEY:       "IMSYMMETRIC"
+      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
+      CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
+      ENCRYPT_KEY: "IMSYMMETRIC"
+    depends_on:
+      - eurekaserver
+      - configserver
+      - authenticationservice
+
   organizationservice:
     image: huajwang/organization-service:ttmall
     ports:
       - "8181:8181"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
+      EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
+      CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
       AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "8181"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:   "8761"
-      CONFIGSERVER_PORT:   "8888"
-      DATABASESERVER_PORT: "3306"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      ZIPKIN_URI: "http://zipkin:9411"
-      ENCRYPT_KEY:       "IMSYMMETRIC"
+      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
+      CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
+      ENCRYPT_KEY: "IMSYMMETRIC"
+    depends_on:
+      - eurekaserver
+      - configserver
+      - authenticationservice
+
   messageservice:
     image: huajwang/message-service:ttmall
     ports:
       - "9000:9000"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
+      EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
+      CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
       AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       SERVER_PORT: "9000"
-      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT:   "8761"
-      CONFIGSERVER_PORT:   "8888"
-      DATABASESERVER_PORT: "3306"
-      CONFIGSERVER_URI: "http://configserver:8888"
-      ZIPKIN_URI: "http://zipkin:9411"
-      ENCRYPT_KEY:       "IMSYMMETRIC"
-  logspout:
-   image: gliderlabs/logspout
-   command: syslog+tls://logs7.papertrailapp.com:17316
-   volumes:
-     - /var/run/docker.sock:/var/run/docker.sock
-  zipkin:
-    image: openzipkin/zipkin
-    ports:
-      - "9411:9411"
+      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
+      CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
+      ENCRYPT_KEY: "IMSYMMETRIC"
+    depends_on:
+      - eurekaserver
+      - configserver
+      - authenticationservice
+  
   redis:
     image: redis:alpine
     ports:
