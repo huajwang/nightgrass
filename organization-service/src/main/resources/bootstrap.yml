@@ -3,7 +3,7 @@ spring:
     name: organizationservice
   cloud:
     config:
-      enabled: true
       discovery:
         enabled: true
-        service-id: configserver
+        serviceId: configserver
+
