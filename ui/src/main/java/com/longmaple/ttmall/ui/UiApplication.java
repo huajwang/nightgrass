@@ -7,8 +7,12 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+
 
 @SpringBootApplication
+@EnableEurekaClient
 @EnableZuulProxy
 @EnableOAuth2Sso
 public class UiApplication extends WebSecurityConfigurerAdapter {
