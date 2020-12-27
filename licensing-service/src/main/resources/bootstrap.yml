@@ -1,16 +1,3 @@
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-      
 spring:
   application:
     name: licensingservice
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        serviceId: configserver
-

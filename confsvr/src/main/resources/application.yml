@@ -1,2 +1,17 @@
-server:
-  port: 8888
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        encrypt.enabled: false
+        git:
+          uri: https://github.com/huajwang/config-repo/
+          searchPaths: >
+            licensingservice,organizationservice,
+            messageservice,specialrouteservice,authenticationservice,address,
+            goodservice,ui-service
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5

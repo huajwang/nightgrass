@@ -1,9 +1,4 @@
 spring:
   application:
     name: organizationservice
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        serviceId: configserver
 

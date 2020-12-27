@@ -1,8 +1,3 @@
 spring:
   application:
     name: messageservice
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        serviceId: configserver

@@ -4,10 +4,6 @@ services:
     image:   huajwang/eurekasvr:ttmall
     ports:
       - "${EUREKASERVER_PORT}:${EUREKASERVER_PORT}"
-    environment:
-      SERVER_PORT: "${EUREKASERVER_PORT}"
-      CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
-      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
 
   configserver:
     image: huajwang/confsvr:ttmall
@@ -15,9 +11,11 @@ services:
        - "${CONFIGSERVER_PORT}:${CONFIGSERVER_PORT}"
     environment:
       SERVER_PORT: "${CONFIGSERVER_PORT}"
-      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
       EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
+      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+    depends_on:
+      - eurekaserver
 
   authenticationservice:
       image: huajwang/authentication-service:ttmall
