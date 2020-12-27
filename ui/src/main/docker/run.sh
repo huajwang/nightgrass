@@ -28,4 +28,5 @@ java -Dserver.port=$SERVER_PORT                                           \
      -Deureka.client.serviceUrl.defaultZone=$EUREKASERVER_URI             \
      -Dspring.cloud.config.uri=$CONFIGSERVER_URI                          \
      -Dspring.profiles.active=$PROFILE                                    \
+     -Dspring.zipkin.baseUrl=$ZIPKIN_URI                                  \
      -jar /usr/local/ui/@project.build.finalName@.jar
