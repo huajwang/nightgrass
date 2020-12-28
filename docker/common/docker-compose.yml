@@ -32,6 +32,7 @@ services:
       depends_on:
        - eurekaserver
        - configserver
+       - db-mysql
 
   db-mysql:
     image: 'mysql:5.7.20'
@@ -60,7 +61,6 @@ services:
     depends_on:
       - eurekaserver
       - configserver
-      - authenticationservice
  
   licensingservice:
     image: huajwang/licensing-service:ttmall
@@ -78,7 +78,7 @@ services:
     depends_on:
       - eurekaserver
       - configserver
-      - authenticationservice
+      - db-mysql
 
   organizationservice:
     image: huajwang/organization-service:ttmall
@@ -96,7 +96,7 @@ services:
     depends_on:
       - eurekaserver
       - configserver
-      - authenticationservice
+      - db-mysql
 
   messageservice:
     image: huajwang/message-service:ttmall
@@ -114,7 +114,6 @@ services:
     depends_on:
       - eurekaserver
       - configserver
-      - authenticationservice
 
   logspout:
     image: gliderlabs/logspout

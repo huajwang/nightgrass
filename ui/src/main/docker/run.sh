@@ -24,7 +24,8 @@ echo "*******  Authorization Server has started"
 echo "********************************************************"
 echo "Starting UI Server with Configuration Service via Eureka :  $EUREKASERVER_URI" ON PORT: $SERVER_PORT;
 echo "********************************************************"
-java -Dserver.port=$SERVER_PORT                                           \
+java -Djava.security.egd=file:/dev/./urandom                              \
+     -Dserver.port=$SERVER_PORT                                           \
      -Deureka.client.serviceUrl.defaultZone=$EUREKASERVER_URI             \
      -Dspring.cloud.config.uri=$CONFIGSERVER_URI                          \
      -Dspring.profiles.active=$PROFILE                                    \

@@ -6,14 +6,14 @@ INSERT INTO client_user VALUES ('1', 'frodob', '$2a$04$Puc/VaZUTRl6X4B7xMn39eDmT
 -- ----------------------------
 -- Records of e_mall_address
 -- ----------------------------
-INSERT INTO e_mall_address VALUES ('1', '175 Columnbia Sreet h2', 'Waterloo', 'Ontario', 'N2K3Z5');
-INSERT INTO e_mall_address VALUES ('2', '200 University Ave. h2', 'Waterloo', 'Ontario', 'N2K6L3');
+INSERT INTO e_mall_address VALUES ('1', '175 Columnbia Sreet mysql', 'Waterloo', 'Ontario', 'N2K3Z5');
+INSERT INTO e_mall_address VALUES ('2', '200 University Ave. mysql', 'Waterloo', 'Ontario', 'N2K6L3');
 
 -- ----------------------------
 -- Records of e_mall_user
 -- ----------------------------
-INSERT INTO e_mall_user VALUES ('1', 'joe', '$2a$04$hnaFvgWWwsEH7CZy1qRUQulqRJHs5/j3ld0zhtI1Yk6i/viSRJkJO', 1);
-INSERT INTO e_mall_user VALUES ('2', 'stanley', '$2a$04$Am63DU0W1.ybjqIOB/gZG.LbMyFX7vdYN8FEa9s7HWexyWi7.H3/m', 1);
+INSERT INTO e_mall_user VALUES ('1', 'tiger', '$2a$04$hnaFvgWWwsEH7CZy1qRUQulqRJHs5/j3ld0zhtI1Yk6i/viSRJkJO', 1);
+INSERT INTO e_mall_user VALUES ('2', 'lion', '$2a$04$Am63DU0W1.ybjqIOB/gZG.LbMyFX7vdYN8FEa9s7HWexyWi7.H3/m', 1);
 
 -- ----------------------------
 -- Records of oauth_client_details
