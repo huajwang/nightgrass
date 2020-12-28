@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+
 @SpringBootApplication
 @EnableEurekaClient
 @SessionAttributes("authorizationRequest")
@@ -33,6 +36,10 @@ public class AuthServerApplication implements WebMvcConfigurer {
 	}
 
 	public static void main(String[] args) {
+                BCryptPasswordEncoder bcEncoder = new BCryptPasswordEncoder(4);
+                System.out.println("yc903355 = " + bcEncoder.encode("yc903355"));
+                System.out.println("abcd1234 = " + bcEncoder.encode("abcd1234"));
+                System.out.println("danderlion = " + bcEncoder.encode("danderlion"));
 		SpringApplication.run(AuthServerApplication.class, args);
 	}
 }

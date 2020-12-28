@@ -57,6 +57,7 @@ services:
       CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
       EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
       ZIPKIN_URI: "http://zipkin:${ZIPKIN_PORT}"
+      DOMAIN_NAME: "${DOMAIN_NAME}"
       ENCRYPT_KEY: "IMSYMMETRIC"
     depends_on:
       - eurekaserver
