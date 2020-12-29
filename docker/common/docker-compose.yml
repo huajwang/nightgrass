@@ -58,6 +58,7 @@ services:
       EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
       ZIPKIN_URI: "http://zipkin:${ZIPKIN_PORT}"
       DOMAIN_NAME: "${DOMAIN_NAME}"
+      CLIENT_SECRET: ${CLIENT_SECRET}
       ENCRYPT_KEY: "IMSYMMETRIC"
     depends_on:
       - eurekaserver
