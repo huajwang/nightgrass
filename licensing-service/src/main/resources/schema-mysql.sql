@@ -7,5 +7,6 @@ CREATE TABLE licenses (
   product_name VARCHAR(50) DEFAULT NULL,
   license_max INT DEFAULT 0,
   license_allocated INT DEFAULT 0,
+  comments VARCHAR(100) DEFAULT NULL,
   PRIMARY KEY (license_id)
 );

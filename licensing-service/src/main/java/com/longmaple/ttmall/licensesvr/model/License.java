@@ -28,7 +28,7 @@ public class License{
   @Column(name = "license_allocated", nullable = false)
   private Integer licenseAllocated;
 
-  @Column(name="comment")
+  @Column(name="comments")
   private String comment;
 
 

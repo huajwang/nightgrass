@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping(value="v1/organizations/{organizationId}/licenses")
 public class LicenseServiceController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
+    private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
 	
     @Autowired
     private LicenseService licenseService;
@@ -35,9 +35,8 @@ public class LicenseServiceController {
     public List<License> getLicenses(OAuth2Authentication auth, 
     		@PathVariable("organizationId") String organizationId) {
     	UserContextHolder.getContext();
-		logger.debug("LicenseServiceController Correlation id: {}", UserContext.getCorrelationId());
+        logger.debug("LicenseServiceController Correlation id: {}", UserContext.getCorrelationId());
     	Organization org = organizationClient.getOrganization(organizationId);
-    	logger.info("the name of organization = " + org.getContactName());
         return licenseService.getLicensesByOrg(organizationId);
     }
 

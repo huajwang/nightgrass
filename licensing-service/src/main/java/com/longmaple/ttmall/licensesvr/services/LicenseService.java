@@ -1,5 +1,7 @@
 package com.longmaple.ttmall.licensesvr.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,8 @@ import java.util.UUID;
 
 @Service
 public class LicenseService {
+        
+        private static final Logger logger = LoggerFactory.getLogger(LicenseService.class);
 
 	@Autowired
 	private LicenseRepository licenseRepository;
@@ -39,8 +43,9 @@ public class LicenseService {
 				@HystrixProperty(name="metrics.rollingStats.timeInMilliseconds", value="15000"),
 				@HystrixProperty(name="metrics.rollingStats.numBuckets", value="5")}
 			)
-	public List<License> getLicensesByOrg(String organizationId){
-		return licenseRepository.findByOrganizationId( organizationId );
+	public List<License> getLicensesByOrg(String organizationId) {
+                logger.debug("If it fails obtaining licenses, it will fallback to buildFallbackLicenseList method.");
+		return licenseRepository.findByOrganizationId(organizationId);
 	}
 	
 	@SuppressWarnings("unused")
