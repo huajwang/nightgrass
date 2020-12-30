@@ -10,7 +10,7 @@ spring:
           searchPaths: >
             licensingservice,organizationservice,
             messageservice,specialrouteservice,authenticationservice,address,
-            goodservice,ui-service
+            goodservice,ui-service,course-service
 
 eureka:
   client:

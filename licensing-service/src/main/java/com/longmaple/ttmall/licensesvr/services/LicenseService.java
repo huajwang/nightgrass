@@ -26,7 +26,7 @@ public class LicenseService {
 	@Autowired
 	ServiceConfig config;
 
-	public License getLicense(String organizationId,String licenseId) {
+	public License getLicense(String organizationId, String licenseId) {
 		License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 		return license.withComment(config.getExampleProperty());
 	}

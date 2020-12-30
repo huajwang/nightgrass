@@ -23,7 +23,7 @@ logging:
     org.springframework.web: WARN
     com.longmaple: DEBUG
     
-example.property: "I AM IN THE DEFAULT - directly from project config "
+example.property: "Flowers and Moon around Spring River"
 
 redis:
   server: redis

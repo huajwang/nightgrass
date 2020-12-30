@@ -1,13 +1,10 @@
-package com.longmaple.ttmall.licensesvr.config;
+package com.longmaple.edu.coursesvr.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ServiceConfig{
-
-  @Value("${example.property}")
-  private String exampleProperty;
   
   @Value("${redis.server}")
   private String redisServer;
@@ -20,10 +17,7 @@ public class ServiceConfig{
   }
 
   public Integer getRedisPort(){
-    return new Integer( redisPort ).intValue();
+    return new Integer(redisPort).intValue();
   }
 
-  public String getExampleProperty(){
-    return exampleProperty;
-  }
 }

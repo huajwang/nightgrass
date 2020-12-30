@@ -1,0 +1,29 @@
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+server:
+  servlet:
+    context-path: /edu
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://authenticationservice:9999/uaa/oauth/token_key
+
+redis:
+  server: redis
+  port: 6379
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework: WARN
+    com.longmaple: DEBUG
+
+
+    

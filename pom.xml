@@ -24,5 +24,6 @@
     <module>licensing-service</module>
     <module>organization-service</module>
     <module>message-service</module>
+    <module>course-service</module>
   </modules>
 </project>

@@ -16,12 +16,6 @@ while ! `nc -z configserver $CONFIGSERVER_PORT`; do sleep 3; done
 echo "*******  Configuration Server has started"
 
 echo "********************************************************"
-echo "Waiting for the authorization server to start on port $AUTHSERVER_PORT"
-echo "********************************************************"
-while ! `nc -z authenticationservice $AUTHSERVER_PORT`; do sleep 3; done
-echo "*******  Authorization Server has started"
-
-echo "********************************************************"
 echo "Starting UI Server with Configuration Service via Eureka :  $EUREKASERVER_URI" ON PORT: $SERVER_PORT;
 echo "********************************************************"
 java -Djava.security.egd=file:/dev/./urandom                              \
