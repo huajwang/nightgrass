@@ -32,10 +32,13 @@ zuul:
   routes:
     resource:
       path: /message/**
-      service-id: MESSAGESERVICE
+      serviceId: MESSAGESERVICE
+    course:
+      path: /edu/**
+      serviceId: course-service
     user:
       path: /user/**
-      service-id: AUTHENTICATIONSERVICE
+      serviceId: AUTHENTICATIONSERVICE
       
 logging:
   level:

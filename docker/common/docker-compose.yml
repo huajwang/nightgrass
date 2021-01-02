@@ -42,6 +42,8 @@ services:
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=Gold1Silver2
       - MYSQL_DATABASE=db-demo
+    volumes:
+      - dbdata:/var/lib/mysql
     command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
 
   ui-service:
@@ -153,3 +155,6 @@ services:
     ports:
       - 2181:2181
       - 9092:9092
+
+volumes:
+  dbdata:
