@@ -139,6 +139,7 @@ services:
       - eurekaserver
       - configserver
       - db-mysql
+      - authenticationservice
           
   zipkin:
     image: openzipkin/zipkin
