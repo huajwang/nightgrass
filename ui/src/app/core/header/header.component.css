@@ -1,0 +1,177 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0;
+}
+
+/* side bar */
+
+nav.fixed-sidebar {
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  background-color: #FFEBCD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+
+nav.fixed-sidebar > .sidebar-item {
+  display: flex;
+  width: 80px;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px auto;
+}
+
+.side-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-item > i {
+  color: rgb(0, 204, 95);
+  font-size: 45px;
+  height: 45px;
+}
+
+.side-pop {
+  position: absolute;
+  display: none;
+  width: 180px;
+}
+
+/* The actual content */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: beige;
+  position: relative;
+  border-radius: 6px;
+  color: #333;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: -10px;
+  border: medium solid beige;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+div.side-pop > img {
+  width: 100%;
+}
+
+div.sidebar-item:hover .side-pop {
+  display: block;
+  left: -190px;
+}
+
+/* chat */
+
+.chat-popup {
+  background: LightYellow;
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  height: 500px;
+  left: 5px;
+  z-index: 9;
+  border: 3px solid #f1f1f1;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px 5px 5px 5px;
+}
+
+.chat-popup_title {
+  height: 25px;
+}
+
+.chat-popup_title_1 {
+  position: absolute;
+  left: 5px;
+}
+
+.chat-popup_title_2 {
+  position: absolute;
+  text-align: center; /* these two lines place it in the middle */
+  width: 100%;
+}
+
+.chat-popup_title_3 {
+  position: absolute;
+  right: 5px;
+}
+
+.chat-popup_title a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.chat-popup > input {
+  position: absolute;
+  max-width: 300px;
+  border: 2px solid green;
+  bottom: inherit;
+}
+
+.chat-popup > input:hover,
+.chat-popup > input:focus {
+  background-color: DodgerBlue;
+}
+
+
+.container {
+  background-color: #f1f1f1;
+  padding: 10px;
+  max-width: 300px;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 50px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}

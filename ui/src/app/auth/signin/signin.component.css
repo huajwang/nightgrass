@@ -1,0 +1,102 @@
+.bg-img {
+  /* The image used */
+  background-image: url("/assets/img/bar3.jpg");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.login-top-tab {
+  display: flex;
+}
+
+.student-tab {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.teacher-tab {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.active-tab {
+  background-color: gray;
+}
+
+/* Add styles to the form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* acrss main axis. that is vertical.*/
+  margin: 10px;
+  max-width: 500px;
+  width: 50%;
+  height: 450px;
+  padding: 16px;
+  background-color: white;
+}
+
+h3 {
+  text-align: center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.form-container > a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-recover-password {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-msg {
+  color: red;
+}

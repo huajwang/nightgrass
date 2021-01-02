@@ -10,6 +10,7 @@ target
 */bin/
 /ui/node
 /ui/node_modules
+/ui/dist
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

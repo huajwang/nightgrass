@@ -1,0 +1,32 @@
+<div class="bg-img">
+  <form (ngSubmit)="login(f)" #f="ngForm" class="form-container">
+    <div class="login-top-tab">
+      <div class="student-tab" [ngClass]="student_login ? 'active-tab' : ''" (click)="studentLogin()">
+        学生
+      </div>
+      <div class="teacher-tab" [ngClass]="!student_login ? 'active-tab' : ''" (click)="teacherLogin()">
+        老师
+      </div>
+    </div>
+    <div>
+      <div class="form-group">
+        <label for="email">电子邮件:</label>
+        <input type="text" id="email" name="email" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" class="form-control" ngModel>
+      </div>
+    </div>
+    <span *ngIf="errorMsg" class="error-msg">{{ errorMsg }}</span>
+    <div></div>
+    <div class="btn-bottom">
+      <button type="submit" name="button" class="btn"
+      [disabled]="!f.valid">登录</button>
+      <div class="reg-recover-password">
+        <a routerLink="/signup">立即注册</a>
+        <a routerLink="/resetPassword">忘记密码</a>
+      </div>
+    </div>
+  </form>
+</div>
