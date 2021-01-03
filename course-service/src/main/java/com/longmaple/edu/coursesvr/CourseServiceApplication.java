@@ -44,7 +44,7 @@ public class CourseServiceApplication extends ResourceServerConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/courses/**").permitAll()
+		.antMatchers("/courses/**", "/payCheck/**").permitAll()
 		.anyRequest().authenticated();
 	}
 
