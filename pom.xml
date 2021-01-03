@@ -21,9 +21,6 @@
     <module>confsvr</module>
     <module>auth-server</module>
     <module>ui</module>
-    <module>licensing-service</module>
-    <module>organization-service</module>
-    <module>message-service</module>
     <module>course-service</module>
   </modules>
 </project>

@@ -6,10 +6,14 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
 import com.longmaple.edu.coursesvr.config.ServiceConfig;
 
 
@@ -17,7 +21,7 @@ import com.longmaple.edu.coursesvr.config.ServiceConfig;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableResourceServer
-public class CourseServiceApplication {
+public class CourseServiceApplication extends ResourceServerConfigurerAdapter {
 
 	@Autowired
 	private ServiceConfig serviceConfig;
@@ -35,6 +39,15 @@ public class CourseServiceApplication {
         template.setConnectionFactory(jedisConnectionFactory());
         return template;
     }
+
+	@Override
+	public void configure(HttpSecurity http) throws Exception {
+		http
+		.authorizeRequests()
+		.antMatchers("/courses/**").permitAll()
+		.anyRequest().authenticated();
+	}
+
 
 
 	public static void main(String[] args) {
