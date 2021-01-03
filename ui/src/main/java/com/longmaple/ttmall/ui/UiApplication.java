@@ -26,7 +26,7 @@ public class UiApplication extends WebSecurityConfigurerAdapter {
 		http
 		.logout().logoutSuccessUrl("/").and()
 		.authorizeRequests()
-		.antMatchers("/", "/edu/**", "/login", "/*.js", "/assets/**").permitAll()
+		.antMatchers("/", "/edu/**", "/login", "/*.js", "/assets/**", "/fontawesome-webfont.*").permitAll()
 		.anyRequest().authenticated();
 	}
 }
