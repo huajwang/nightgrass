@@ -9,7 +9,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>OAuth2 UI</name>
+	<name>Zuul UI</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

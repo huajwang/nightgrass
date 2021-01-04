@@ -17,23 +17,6 @@ services:
     depends_on:
       - eurekaserver
 
-  authenticationservice:
-      image: huajwang/authentication-service:ttmall
-      ports:
-        - "${AUTHSERVER_PORT}:${AUTHSERVER_PORT}"
-      environment:
-        PROFILE: "${PROFILE_ACTIVE}"
-        SERVER_PORT: "${AUTHSERVER_PORT}"
-        EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
-        CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
-        CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
-        EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
-        ENCRYPT_KEY: "IMSYMMETRIC"
-      depends_on:
-       - eurekaserver
-       - configserver
-       - db-mysql
-
   db-mysql:
     image: 'mysql:5.7.20'
     ports:
@@ -55,7 +38,6 @@ services:
       SERVER_PORT: "8080"
       EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
       CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
-      AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
       EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
       ZIPKIN_URI: "http://zipkin:${ZIPKIN_PORT}"
@@ -67,7 +49,6 @@ services:
     depends_on:
       - eurekaserver
       - configserver
-      - authenticationservice
  
   course-service:
     image: huajwang/course-service:ttmall
@@ -78,14 +59,12 @@ services:
       SERVER_PORT: "9001"
       EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
       CONFIGSERVER_PORT: "${CONFIGSERVER_PORT}"
-      AUTHSERVER_PORT: "${AUTHSERVER_PORT}"
       EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
       CONFIGSERVER_URI: "http://configserver:${CONFIGSERVER_PORT}"
     depends_on:
       - eurekaserver
       - configserver
       - db-mysql
-      - authenticationservice
           
   zipkin:
     image: openzipkin/zipkin

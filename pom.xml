@@ -19,7 +19,6 @@
   <modules>
     <module>eurekasvr</module>
     <module>confsvr</module>
-    <module>auth-server</module>
     <module>ui</module>
     <module>course-service</module>
   </modules>

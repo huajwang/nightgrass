@@ -37,9 +37,6 @@ zuul:
     course:
       path: /edu/**
       serviceId: course-service
-    user:
-      path: /user/**
-      serviceId: AUTHENTICATIONSERVICE
       
 logging:
   level:
