@@ -15,15 +15,18 @@ security:
   
   oauth2:
     client:
-      accessTokenUri: http://authenticationservice:9999/uaa/oauth/token
-      userAuthorizationUri: http://${DOMAIN_NAME:localhost}:9999/uaa/oauth/authorize
-      scope:
-        user:profile:read user:profile:write
-      clientId: webapp
-      clientSecret: abcd1234
-    resource:
-      jwt:
-        key-value: "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAznHR5IiARyC3FW6eHWHneAPdVekj24zv+eSSJQtdhYO/WYu8dJAlurom70IPIV8WjUktYIKEXCnfRz1rWCQPTignoE6/5HPgcfvIz5EwX5r5idM1tkg3TtxOeaVwF47wSauFlv1dAklo7SWTD7Dpf8LU/pXxwCuP5h62TXhX0ld0eGiiyg3qm2EW1mey1EZibrPMbXxRrIR2jWY7a65UZl3ujS+b9cBB7dfC4WVlisgBUOk4J/QZfQg7VezgkdIidMPs3gNBcolsFrsc7qS79OsOpCqWHKnhuV5oPONY5Qzb1JUdDgrcAvMJRg81O3L7P6Xi3wCeB9f9mY9WDF9RXQIDAQAB\n-----END PUBLIC KEY-----" 
+      registration:
+        facebook:
+          accessTokenUri: https://graph.facebook.com/oauth/access_token
+          userAuthorizationUri: https://www.facebook.com/dialog/oauth
+          tokenName: oauth_token
+          clientId: ${FACEBOOK_APP_ID}
+          clientSecret: ${FACEBOOK_APP_SECRET}
+          authenticationScheme: query
+          clientAuthenticationScheme: form
+          resource:
+            userInfoUri: https://graph.facebook.com/me
+
 
 zuul:
   sensitive-headers: Cookie,Set-Cookie
