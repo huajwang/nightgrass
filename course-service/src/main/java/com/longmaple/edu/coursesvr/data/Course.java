@@ -27,7 +27,7 @@ public class Course {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer courseId;
 	private String courseName;
-	private String category;
+	private String contains;
 	private String displayName;
 	private String courseDescription;
 //	private Integer teacherId;
@@ -107,11 +107,11 @@ public class Course {
 	public void setPreviewUrl(String previewUrl) {
 		this.previewUrl = previewUrl;
 	}
-	public String getCategory() {
-		return category;
+	public String getContains() {
+		return contains;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setContains(String contains) {
+		this.contains = contains;
 	}
 	public List<CourseContent> getCourseContents() {
 		return courseContents;

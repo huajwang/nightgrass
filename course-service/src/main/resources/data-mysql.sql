@@ -2,11 +2,11 @@
 -- Records of t_edu_course
 -- ----------------------------
 
-INSERT INTO `t_edu_course` VALUES ('00000000001', 'ccc', 'competition', '计算机编程竞赛', '辅导计算机编程大赛。通过讲解历年大赛的竞赛题目, 提高学员的分析问题,解决问题的能力。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
-INSERT INTO `t_edu_course` VALUES ('00000000002', 'python', 'python', 'Python Programming', 'Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!', '1', '59.99', '6', '5', '2020-05-30 20:17:05', '23.3', '/python/python-1/python-1.mp4');
-INSERT INTO `t_edu_course` VALUES ('00000000003', 'java', 'java', 'Java Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。', '1', '199.99', '29', '5', '2020-06-28 13:57:30', '11.3', '/python/python-2/python-2.mp4');
-INSERT INTO `t_edu_course` VALUES ('00000000004', 'cplus', 'cplus', 'C++ Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
-INSERT INTO `t_edu_course` VALUES ('00000000005', 'scratch', 'scratch', 'Scratch Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
+INSERT INTO `t_edu_course` VALUES ('00000000001', 'ccc', '22 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', '计算机编程竞赛', 'The Canadian Computing Competition (CCC) is a fun challenge for secondary school students with an interest in programming. It is an opportunity for students to test their ability in designing, understanding and implementing algorithms.辅导计算机编程大赛。通过讲解历年大赛的竞赛题目, 提高学员的分析问题,解决问题的能力。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
+INSERT INTO `t_edu_course` VALUES ('00000000002', 'python', '25 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Python Programming', 'Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!', '1', '59.99', '6', '5', '2020-05-30 20:17:05', '23.3', '/python/python-1/python-1.mp4');
+INSERT INTO `t_edu_course` VALUES ('00000000003', 'java', '26 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Java Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。', '1', '199.99', '29', '5', '2020-06-28 13:57:30', '11.3', '/python/python-2/python-2.mp4');
+INSERT INTO `t_edu_course` VALUES ('00000000004', 'cplus', '27 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'C++ Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
+INSERT INTO `t_edu_course` VALUES ('00000000005', 'scratch', '28 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Scratch Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
 
 -- ---------------------------
 -- Records of t_edu_teacher

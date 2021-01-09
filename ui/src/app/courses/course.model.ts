@@ -5,7 +5,7 @@ export class Course {
 
   public courseId: number;
   public courseName: string;
-  public category: string;
+  public contains: string;
   public displayName: string;
   public courseDescription: string;
   public author: string;

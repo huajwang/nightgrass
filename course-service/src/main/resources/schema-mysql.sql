@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `t_edu_course`;
 CREATE TABLE `t_edu_course` (
   `course_id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `course_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `category` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `contains` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `display_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `course_description` varchar(500) NOT NULL,
   `teacher_id` int(11) NOT NULL,
