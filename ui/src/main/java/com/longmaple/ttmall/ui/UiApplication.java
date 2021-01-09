@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 
@@ -24,9 +23,8 @@ public class UiApplication extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http
-		.logout().logoutSuccessUrl("/").and()
 		.authorizeRequests()
-		.antMatchers("/", "/edu/**", "/login", "/*.js", "/assets/**", "/fontawesome-webfont.*").permitAll()
+		.antMatchers("/", "/*.js", "/assets/**", "/edu/**", "/fontawesome-webfont.*").permitAll()
 		.anyRequest().authenticated();
 	}
 }
