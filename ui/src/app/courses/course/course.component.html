@@ -19,15 +19,13 @@
       </mat-card-actions>
       <mat-card-content>
         <p>
+          {{ course.courseDescription }}
+        </p>
+        <p>
         这个课程包括:
         </p>
         <ul>
-          <li>22 hours on-demand video</li>
-          <li>15 articles </li>
-          <li>19 coding exercises</li>
-          <li>Full lifetime access</li>
-          <li>Access on mobile and TV</li>
-          <li>Certificate of Completion</li>
+          <li *ngFor="let courseContain of course_contains;">{{ courseContain }}</li>
         </ul>
       </mat-card-content>
     </mat-card>
@@ -71,22 +69,12 @@
                </svg>
               </span>
               <div class="lecture-left_top">
-                <ng-template [ngIf]="lecturePart.preview || paidStatus">
-                  <div class="lecture-title" (click)="play(lecturePart)">
-                    {{ lecturePart.partName }}
-                    <!-- <a class="arrow-down">
-                      <span>down arrow</span>
-                    </a> -->
-                  </div>
-                </ng-template>
-                <ng-template [ngIf]="!(lecturePart.preview || paidStatus)">
-                  <div class="lecture-title-disabled">
-                    {{ lecturePart.partName }}
-                    <!-- <a class="arrow-down">
-                      <span>down arrow</span>
-                    </a> -->
-                  </div>
-                </ng-template>
+                <div class="lecture-title" (click)="play(lecturePart)">
+                  {{ lecturePart.partName }}
+                  <!-- <a class="arrow-down">
+                    <span>down arrow</span>
+                  </a> -->
+                </div>
 
                 <div class="lecture-description">
                   {{ lecturePart.partDescription }}

@@ -1,0 +1,73 @@
+<div class="lesson-article">
+<h2 class="article-title">Problem S3: Searching for Strings</h2>
+<h3>Problem Description</h3>
+<p>You’re given a string N, called the needle, and a string H, called the haystack, both of which
+contain only lowercase letters “a”..“z”.
+Write a program to count the number of distinct permutations of N which appear as a substring of
+H at least once. Note that N can have anywhere between 1 and |N|! distinct permutations in total
+– for example, the string “aab” has 3 distinct permutations (“aab”, “aba”, and “baa”).
+</p>
+<h3>Input Specification</h3>
+<ul>
+  <li>The first line contains N (1 ≤ |N| ≤ 200 000), the needle string.</li>
+  <li>The second line contains H (1 ≤ |H| ≤ 200 000), the haystack string.</li>
+  <li>For 3 of the 15 available marks, |N| ≤ 8 and |H| ≤ 200.</li>
+  <li>For an additional 2 of the 15 available marks, |N| ≤ 200 and |H| ≤ 200.</li>
+  <li>For an additional 2 of the 15 available marks, |N| ≤ 2000 and |H| ≤ 2000.</li>
+</ul>
+<h3>Output Specification</h3>
+<p>Output consists of one integer, the number of distinct permutations of N which appear as a substring of H.</p>
+<h3>Sample Input</h3>
+<pre>
+aab
+abacabaa
+</pre>
+<h3>Output for Sample Input</h3>
+<pre>2</pre>
+<h3>Explanation of Output for Sample Input</h3>
+<p>The permutations “aba” and “baa” each appear as substrings of H (the former appears twice),
+while the permutation “aab” does not appear.
+</p>
+<h3>Analyze:</h3>
+<p>p</p>
+<h3>Solution:</h3>
+<pre>
+  def find_needle_correct(needle, haystack):
+    if len(haystack) < len(needle):
+        return 0
+
+    m = {}
+    for c in set(haystack):
+        m[c] = 0
+
+    needed = m.copy()
+    # needed map stores the frequency of needle's character
+    for ch in needle:
+        if ch not in needed:
+            return 0
+        needed[ch] += 1
+
+    # first section in haystack
+    for i in range(len(needle)):
+        m[haystack[i]] += 1
+    ans = set()
+    # print(m)
+    for i in range(len(needle), len(haystack)):
+        for t in m:
+            if m[t] != needed[t]:
+                break
+        else:
+            ans.add(haystack[i - len(needle):i])
+        m[haystack[i]] += 1
+        m[haystack[i - len(needle)]] -= 1
+
+    # miss 2 - forget calculate the last one
+    for t in m:
+        if m[t] != needed[t]:
+            break
+    else:
+        ans.add(haystack[len(haystack) - len(needle):len(haystack)])
+
+    return len(ans)
+
+</pre>

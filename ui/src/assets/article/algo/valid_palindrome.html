@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">回文字符串</h2>
+  <h3>问题描述:</h3>
+  <p>
+    给定一个字符串，确定它是否是回文(palindrome)。
+  </p>
+  <h3>例子:</h3>
+  <pre>
+    输入: "a    man, A plan, a canal: Panama"
+    输出: true
+  </pre>
+  <pre>
+    输入: "there is a will, there is a way"
+    输出: false
+  </pre>
+  <p>听到这个题目以后, 当时你也许会心花怒放, 怎么这么简单? 急急忙忙, 三下五除二地在白板上给出你的答案:</p>
+  <pre>
+    def is_palindrome(s):
+        for i in range(len(s) // 2):
+            if s[i] != s[len(s) - i - 1]:
+                return False
+        return True
+  </pre>
+  <p>或者, 用两个指针的方法:</p>
+  <pre>
+    def is_palindrome(s):
+        lo, hi = 0, len(s) - 1
+        while lo < hi:
+            if s[lo] != s[hi]:
+                return False
+            lo += 1
+            hi -= 1
+        return True
+  </pre>
+
+  <h3>分析:</h3>
+  <p>有关回文 palindrome 的面试题看起来不难。但是, 在回答这类题目的时候, 你应该先问清楚下面这些问题:</p>
+  <ul>
+    <li>是否空白字符应该被考虑在内?</li>
+    <li>是否忽略标点符号?</li>
+    <li>是否要区分字符的大小写?</li>
+    <li>空字符串是否为合法的回文?</li>
+  </ul>
+  <p>
+    在面试的过程中, 招聘单位的一个考察重点是观察你思考问题是否全面。在有疑问的时候, 能提出问题寻求
+    任务的正确定义和要求。这往往可以让你在众多求职者中脱颖而出。在计算机领域, 在各种不同的数据输入情况下
+    都能按要求, 正确地解决问题是至关重要的。
+  </p>
+  <p>
+    在你提出这些问题后, 如果面试官告诉你只考虑英文字母和数字字符, 忽略空白字符以及英文字母的大小写。
+    空字符串为合法的回文字符串。那么, 我们就可以开始动手设计和实现算法了。
+  </p>
+  <h3>算法:</h3>
+  <pre>
+    def is_palindrome(s):
+        lo, hi = 0, len(s) - 1
+        while lo < hi:
+            # 从头开始, while 循环用于找到第一个英文字母或数字。并且不能越界。
+            while lo < hi and not s[lo].isalnum():
+                lo += 1
+            # 从尾部开始, while 循环查找第一个英文字母或数字。并且不能越界。
+            while lo < hi and not s[hi].isalnum():
+                hi -= 1
+            # 不区分大小写
+            if lo < hi and s[lo].lower() != s[hi].lower():
+                return False
+            lo += 1
+            hi -= 1
+        return True
+  </pre>
+
+
+</div>
+
+</body>
+</html>

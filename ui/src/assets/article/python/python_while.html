@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+code {
+  color: #85144b;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #7FDBFF;
+  color: white;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">Python While 循环</h2>
+  <article class="">
+    <h3>Python 循环</h3>
+    <p>Python 提供两种基本的循环:</p>
+      <ul>
+        <li><code> while </code> loop</li>
+        <li><code> for </code> loop</li>
+      </ul>
+  </article>
+  <article class="">
+    <h3>while loop</h3>
+    <p>With the while loop we can execute a set of statements as long as a condition is true.
+      例如, 使用下面的 <code> while </code>循环来打印 0 - 4 的数字:</p>
+    <pre>
+      i = 0 # 定义 loop variable i
+      while i < 5: # while 的循环条件
+          print(f"the value of i is { i }")
+          i += 1   # update the value of loop variable i
+      # program statements after while loop
+      print('after while loop')
+    </pre>
+    <p><code>while </code>循环有三个基本的要素:</p>
+    <ul>
+      <li>循环变量(loop variable);</li>
+      <li><code>while </code>循环条件;</li>
+      <li>在<code> while </code>循环体内修改循环变量值的语句;</li>
+    </ul>
+    <p>在使用<code> while </code>循环时, 我们一般要先初始化一个循环变量(<code>i = 0</code>)。
+      对这个循环变量进行某种逻辑运算(<code>循环条件 i < 5</code>)。如果循环条件成立的话, 程序可以
+      进入到<code> while </code>循环体内运行。如果条件不成立的话, 程序不会进入<code> while </code>循环体内,
+      而是跳过<code> while </code>循环去执行<code> while </code>循环之后的程序。
+    </p>
+    <p>在循环体内一般应该有修改 loop variable <code> i </code>的程序语句(<code> i + = 1 </code>),
+      否则, 循环会永远执行下去。
+    </p>
+  </article>
+
+  <article class="">
+    <h3>break statement</h3>
+    <p>With the <code> break </code> statement we can stop the loop even if the while condition is true:</p>
+    <pre>
+      i = 1
+      while i < 6:
+          print(f"i = { i }")
+          if i == 3:
+              break
+          i += 1
+      print(f"after while loop, i = { i }")
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>continue statement</h3>
+    <p>With the <code> continue </code>statement we can stop the current iteration, and continue with the next:</p>
+    <pre>
+      i = 0
+      while i < 6:
+          i += 1
+          if i == 3:
+              continue
+          print(i)
+    </pre>
+    <p>在上面的程序片段中, 当 <code> i </code>的值等于 3 时, continue 语句被执行,
+      那么当前循环的剩余语句, <code> print(i) </code>就被略过, 而直接去执行下个循环。</p>
+  </article>
+
+  <article class="">
+    <h3>else statement</h3>
+    <p>With the <code> else </code>statement we can run a block of code once when the condition no longer is true:
+    </p>
+    <pre>
+      i = 1
+      while i < 6:
+          print(i)
+          i += 1
+      else: # while loop 可以有 else 语句, 在循环条件不(再)满足时执行。
+          print(f"此时, i = { i }, i < 6 的循环条件不再满足。")
+    </pre>
+    <p><strong>注意:</strong><code> while </code>的 <code> else </code>代码块只有在循环"正常"结束才会被执行。
+      如果循环是因为执行了<code> break </code>语句而退出的, 那么<code> else </code>里的程序语句是不会被执行的。请
+      看下面的例子:
+    </p>
+    <pre>
+      i = 0
+      while i < 6:
+          print(i)
+          if i == 3:
+              break # i 等于 3 时, 退出循环
+          i += 1
+      else:
+          print(f"i = { i }") # 这个语句不会被执行
+    </pre>
+  </article>
+
+</div>
+
+</body>
+
+</html>

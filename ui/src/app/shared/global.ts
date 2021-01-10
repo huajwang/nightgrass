@@ -1,6 +1,6 @@
 'use strict';
 export const BACK_END_ADDR: string = "/edu";
-export const OSS_ARTICLE_URL: string = "https://copperpea.oss-cn-hangzhou.aliyuncs.com";
+export const OSS_ARTICLE_URL: string = "/assets/article"; // "https://copperpea.oss-cn-hangzhou.aliyuncs.com";
 // const BACK_END_ADDR: string = "http://121.199.12.135/api";
 
 export const COURSE_URL: string = BACK_END_ADDR + '/courses';

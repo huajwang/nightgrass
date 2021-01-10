@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">将文档拆分成块</h2>
+  <h3>问题描述:</h3>
+  <p>
+    假设我们有一个文档存储在云端。这个文档要被发送给客户端, 并显示在屏幕上。但是, 这个文档可能很大,
+    我们不希望以整个文档为单位, 一次性在网络上发送。我们要先把它拆分成若干份合适大小的块, 然后在网络
+    上分开传输。你的任务是设计一个算法, 按照一定的规则来拆分文档。规则如下:
+  </p>
+  <ol style="list-style-type: decimal;">
+      <li>每一个文档块包含 5000 或以下的字符, 除非有下面所提的情况发生;</li>
+      <li>每个文档块只能包含完整的段落(paragraph)。也就是说, 一个段落不能分散在不同的文档块中;</li>
+      <li>文档的段落由 ':' 分开;</li>
+      <li>文档块的顺序必须维持原有文档的顺序;</li>
+      <li>如果一个段落的长度大于 5000 个字符, 那么它应该被放在一个单独的块中。这是第 1 点所提的例外;</li>
+      <li>让每一个文档块尽可能包含更多的字符(尽可能接近 5000 个字符);</li>
+      <li>保留段落的分隔符 ':';</li>
+  </ol>
+
+  <h3>例子:</h3>
+  <p><em>为了方便说明, 我们使用 5 作为文档块的大小, 而不是上面说的 5000。</em></p>
+  <pre>
+    输入: a:bb:cc:abcdef:ab:c:d:
+    输出: ['a:bb:', 'cc:', 'abcdef:', 'ab:c:', 'd:']
+  </pre>
+  <p>
+    按照上面的要求, 提供的文档被分成五块: chunk 1: <code>a:bb:</code>, chunk 2: <code>cc:</code>, chunk 3:
+    <code>abcdef:</code>, chunk 4: <code>ab:c:</code>, chunk 5: <code>d:</code>
+    <br>
+    其中, 第二块只能包含 3 个字符。第三块包含了 7 个字符, 因为这些字符属于一个段落。
+  </p>
+
+  <h3>分析:</h3>
+  <p>
+    这是一个文档(字符串)分割的问题。这类问题在面试中非常常见, 大家一定要多花些时间把这类问题弄明白。
+    解决这类问题有两种基本思路:
+    <br>
+    一种是, 以字符为单位, 一个字符一个字符地进行处理。根据当前的字符的种类(普通字符或是段落分隔符),
+    当前块的大小, 当前段落的大小, 来进行不同的处理;
+    <br>
+    另一种是先使用 <code>split()</code> 方法, 把文档按 <code>:</code> 号把各个段落分开。再以段落为单位
+    进行处理。这种方法仍然要按当前块的大小, 当前段落的大小进行不同的处理。
+  </p>
+
+  <h3>算法:</h3>
+  <p>算法一(以字符为单位进行处理):</p>
+  <pre>
+    def chunkgify(document):
+        chunk_size = 0 # 当前块的大小
+        chunk = "" # 当前块
+        paragraph_size = 0 # 当前段落的大小
+        paragraph = "" # 当前段落
+        ans = []
+        for c in document:
+            paragraph += c
+            paragraph_size += 1
+
+            if c == ':':
+                # 如果当前字符是段落分隔符
+                if paragraph_size > THE_SIZE:
+                    # 当前段落太长, 应自成一块
+                    if chunk_size > 0:
+                        # 当前块已经包含了前面的段落, 那么先把当前块加入到答案中。
+                        ans.append(chunk)
+                        chunk_size = 0
+                        chunk = ""
+                    # 把超长段落单独作为一块加入答案中
+                    ans.append(paragraph)
+                    paragraph = ""
+                    paragraph_size = 0
+
+                else:
+                    if chunk_size + paragraph_size > THE_SIZE:
+                        ans.append(chunk)
+                        chunk = paragraph
+                        chunk_size = paragraph_size
+                        paragraph = ""
+                        paragraph_size = 0
+                    elif chunk_size + paragraph_size == THE_SIZE:
+                        # 当前块和当前段落刚好可以凑成一块
+                        chunk += paragraph
+                        ans.append(chunk)
+                        chunk = ""
+                        chunk_size = 0
+                        paragraph = ""
+                        paragraph_size = 0
+                    else:
+                        # 当前块加上当前段落后可能还有空间可以容纳更多的段落到当前块
+                        chunk += paragraph
+                        chunk_size += paragraph_size
+                        paragraph = ""
+                        paragraph_size = 0
+
+        # 在循环之后, 别忘了处理的最后的段落和块
+        if chunk_size + paragraph_size <= THE_SIZE:
+            ans.append(chunk + paragraph)
+        else:
+            ans.append(chunk)
+            ans.append(paragraph)
+        return ans
+  </pre>
+
+  <p>算法二(以段落为单位进行处理):</p>
+  <pre>
+    def chunkgify_with_split(document):
+        ans = []
+        chunk = ""
+        # 记得把 ':'再加回去。
+        paras = [p + ':' for p in document.split(':') if p != '']
+        for p in paras:
+            if len(p) >= THE_SIZE:
+                if len(chunk) != 0:
+                    ans.append(chunk)
+                    chunk = ""
+                ans.append(p)
+            else:
+                if len(p) + len(chunk) > THE_SIZE:
+                    if len(chunk) != 0:
+                        # 如果当前块不为空时, 应将当前块先加入到 ans
+                        ans.append(chunk)
+                        chunk = ""
+                    # 把当前段落加入到当前块
+                    chunk += p
+
+                elif len(p) + len(chunk) == THE_SIZE:
+                    ans.append(chunk + p)
+                    chunk = ""
+                else:
+                    chunk += p
+        # 别忘了处理 for 循环里还没加到 ans 的遗留部分
+        if chunk:
+            ans.append(chunk)
+        return ans
+  </pre>
+
+  <p>
+    在第二种方法, 我们使用字符串的 <code>split(':')</code>方法把文档分割成段落。
+    <br>
+    <strong>注意:</strong>
+    <br>
+    'a:bb:cc:d:'.split(':')得到的列表为 <code>['a', 'bb', 'cc', 'd', '']</code>,
+    所以我们使用<code>paras = [p + ':' for p in document.split(':') if p != '']</code>把
+    冒号加回去, 并把列表种的空字符串去掉。
+  </p>
+
+</div>
+
+</body>
+</html>

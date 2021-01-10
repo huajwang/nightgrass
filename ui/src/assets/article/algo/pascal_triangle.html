@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">帕斯卡三角形</h2>
+  <h3>问题描述:</h3>
+  <p>
+    给定一个非负整数<em> rows </em>，生成<em> rows </em>层的 Pascal 三角形。在帕斯卡三角形中，
+    每个数都是正上方两个数之和。如下图所示:
+  </p>
+  <div style="display: flex; justify-content: center;">
+    <img style="width: 260px; height: 240px;"
+      src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif">
+  </div>
+  <h3>分析:</h3>
+  <p>
+    大家可能都知道斐波那契数列 (Fibonacci sequence)数列: <code>1, 1, 2, 3, 5, 8, 13, 21, 34, ...</code>
+    在数学上，斐波那契数列可以用如下的数学公式以递推的方法定义:
+    <br>
+    <code>F(1)=1，F(2)=1, F(n)=F(n - 1) + F(n - 2)（n ≥ 3）</code>
+    <br>
+    数列的第一, 第二个数都为 1。在这个基础上, 后面的每一个数为前面两个数之和。我们使用相同的递推技术, 用计算机来解决这个问题。
+  </p>
+  <p>
+    Pascal 三角形的第一层为 <code>1</code>, 从第二层开始,我们可以在上一层的基础上, 逐层生成下一层。
+    在计算机算法术语中, 我们称这种方法为 dynamic programming。也
+    就是在已知的(已解决部分)的情况下, 按照一定的规则推导出下一情况。这实际上就是数学上的递推方法在计算机
+    编程上的应用。
+  </p>
+  <h3>算法:</h3>
+  <pre>
+    def pascal_triangle(rows):
+        # 处理边界情况
+        if rows == 0: return []
+        if rows == 1: return [[1]]
+        # 定义三角形的第一层, 并以此为基础逐层生成三角形
+        triangle = [[1]]
+        level = 2
+        while level <= rows:
+            # 上一层的元素
+            above = triangle[-1]
+            # 要计算的当前层的第一个元素为 1
+            current = [1]
+            for i in range(len(above) - 1):
+                current.append(above[i] + above[i + 1])
+            # 当前层的最后一个元素为 1
+            current.append(1)
+            # 把计算完成后的当前层数据添加到 triangle
+            triangle.append(current)
+            level += 1
+        return triangle
+  </pre>
+
+</div>
+
+</body>
+</html>

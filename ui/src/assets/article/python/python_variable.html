@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+.output {
+  border: 0;
+  background-color: #DDDDDD;
+  color: #0074D9;
+}
+
+.note {
+  color: #FF851B;
+}
+
+code {
+  color: #85144b;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #7FDBFF;
+  color: white;
+}
+
+ul.list-item {
+  list-style: circle;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">Python 变量</h2>
+  <article class="">
+    <h3>创建 Python Variables</h3>
+    <p>
+      Variables are containers for storing data values. Unlike other programming languages,
+      Python has no command for declaring a variable. A variable is created the moment you
+      first assign a value to it.
+    </p>
+    <pre>
+      name = "John Winters"
+      age = 30
+      gender = "M"
+    </pre>
+    <P>Variables do not need to be declared with any particular type and
+      can even change type after they have been set.
+    </P>
+    <pre>
+      x = 4 # x is of type int
+      x = "Grace" # x is now of type str
+      print(x)
+    </pre>
+    <p>
+      String variables can be declared either by using single or double quotes:
+    </p>
+    <pre>
+      s1 = "The Great Wall"
+      s2 = 'The Great Wall'
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>Variable Names</h3>
+    <p>
+      A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume).
+      Rules for Python variables:
+    </p>
+    <ul>
+      <li>A variable name must start with a letter or the underscore character;</li>
+      <li>A variable name cannot start with a number;</li>
+      <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+      <li>Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
+    </ul>
+    <p>下面为合法的变量名:</p>
+    <pre>
+      dogname = "stone"
+      dog_name = "stone"
+      _dog_name = "stone"
+      dogName = "stone"
+      DOGNAME = "stone"
+      dogname1 = "stone"
+    </pre>
+    <p>下面所列的变量名是非法的:</p>
+    <pre style="border-left: 3px solid red;">
+      3dogname = "stone"
+      dog-name = "stone"
+      dog name = "stone"
+    </pre>
+  </article>
+  <article class="">
+    <h3>Assign Value to Multiple Variables</h3>
+    <p>
+      Python allows you to assign values to multiple variables in one line:
+    </p>
+    <pre>
+      x, y, z = 3, 4, 5
+      f1, f2 = "apple", "cherry"
+    </pre>
+    <p>
+      And you can assign the same value to multiple variables in one line:
+    </p>
+    <pre>
+      x = y = z = "Apple"
+    </pre>
+  </article>
+  <article class="">
+    <h3>Output Variables</h3>
+    <p>
+      The Python <code>print</code> statement is often used to output the value of a variable.
+      To combine both text and a variable, Python uses the <code>+</code> character:
+    </p>
+    <pre>
+      age = 12
+      print("I am " + age)
+    </pre>
+    <p>我们可以使用 Python 的 <code>F-strings</code> 机制来格式化字符串文本。要创建一个
+      <code>F-string</code>, 只要在字符串前面加上字母 <code>f</code> 即可。<code>F-strings</code>
+      提供了一种简洁的方法, 让我们可以将 Python 表达式嵌入字符串文本中进行格式化。比如:
+    </p>
+    <pre>
+      name = "Michael Waters"
+      age = 12
+      s = f"My name is {name}. I am {age} years old."
+      print(s)
+      print(f"Hello {name}. Nice to meet you.")
+    </pre>
+    <p>运行上面的程序片段, 你会看到如下输出:</p>
+    <pre class="output">
+
+  My name is Michael Waters. I am 12 years old.
+  Hello Michael Waters. Nice to meet you.
+    </pre>
+
+  </article>
+</div>
+
+</body>
+
+</html>

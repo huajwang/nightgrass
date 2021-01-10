@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">对三类不同元素进行排序</h2>
+  <h3>问题描述:</h3>
+  <p>
+    给定一个数组, 数组中只包含'S', 'M' 和 'L'。它们分别代表着小号、中号或大号三种尺寸。设计一个算法, 将它们由小到大排序，
+  </p>
+  <h3>例子:</h3>
+  <pre>
+    输入: ['L', 'S', 'L', 'M', 'M', 'S']
+    输出: ['S', 'S', 'M', 'M', 'L', 'L']
+  </pre>
+
+  <pre>
+    输入: ['L', 'S', 'M']
+    输出: ['S', 'M', 'L']
+  </pre>
+  <h3>分析:</h3>
+  <p>
+    这类问题是对<strong>三种</strong>不同类型的元素进行<strong>排序</strong>。这三种元素可以是 0, 1, 2。
+    可以是 'S', 'M', 'L'。可以是三种水果 'Apple', 'Banana', 'Kiwi'。解决问题的思路是一样的。我们可以用两
+    个指针的方法来解决这类问题。假设, 我们定义了两个指针 <code>p1 和 p2</code>。如果我们维持<code>p1</code>指针的
+    左边全部为第一类元素, <code>p2</code>指针的右边全部为第三类元素。这里, 我们定义第三个指针<code>i</code>用来从
+    头扫描数组的元素。那么, 当<code>i</code>指针和<code>p2</code>指针相遇之后, 任务就完成了。因为, <code>p1</code>
+    和 <code>p2</code>之间的元素一定是第二种元素。
+  </p>
+
+  <h3>算法:</h3>
+  <pre>
+    def sort_size(sizes):
+        p1, p2 = 0, len(sizes) - 1
+        i = 0
+        while i <= p2:
+            size = sizes[i]
+            if size == 'S':
+                sizes[p1], sizes[i] = sizes[i], sizes[p1]
+                p1 += 1
+                # 别忘了修改 i 的值
+                i += 1
+            elif color == 'L':
+                sizes[p2], sizes[i] = sizes[i], sizes[p2]
+                p2 -= 1
+            else:
+                i += 1
+  </pre>
+  <p>
+    请认真思考以下问题:
+    <br>
+    在上面的程序中, 当 <code>size == 'S'</code>时, 指针的修改为 <code>p1 += 1; i += 1</code>;
+    当<code>size == 'L'</code>时, 指针修改为<code>p2 -= 1</code>; 当<code>size == 'M'</code>时,
+    指针修改为<code>i += 1</code>。为什么指针要这样修改呢?
+  </p>
+
+</div>
+
+</body>
+</html>

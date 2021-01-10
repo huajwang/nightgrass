@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">公交车站的距离</h2>
+  <h3>问题描述:</h3>
+  <p>
+    一辆公共汽车有 n 个车站，编号从 0 到 n - 1，形成一个圆圈。给定所有相邻站点对之间距离的数组 distance, 其中
+    distance[i] 是站点编号 i 和 (i + 1) % n 之间的距离。公共汽车可以沿两个方向行驶, 即顺时针和逆时针。
+    编写一个算法, 返回给定起点(start)和终点站(destination)之间的最短距离。
+  </p>
+  <h3>例子:</h3>
+  <pre>
+    输入: distance = [1, 2, 3, 4], start = 0, destination = 1
+    输出: 1
+  </pre>
+  <pre>
+    输入: distance = [1, 2, 3, 4], start = 0, destination = 2
+    输出: 3
+  </pre>
+  <pre>
+    输入: distance = [1, 2, 3, 4], start = 0, destination = 3
+    输出: 4
+  </pre>
+
+  <h3>分析:</h3>
+  <p>给定起点和终点, 由于公交车可以按顺时针行驶, 也可以按逆时针行驶, 因此有两种行驶路线。计算出两种路线的行驶距离,
+    返回短的距离即可。顺时针行驶的路线为 start, (start + 1) % n, (start + 2) % n, ..., destination;
+    逆时针的行驶路线是不是相应为: start, (start - 1) % n, (start - 2) % n, ..., destination 呢? 显然不是。
+    逆时针的行驶路线应该为: start, start - 1, start - 2 + n, start - 3 + n, ..., destination
+
+
+  </p>
+
+  <h3>算法:</h3>
+  <pre>
+    def bus_distance(distance: [int], start: int, destination: int) -> int:
+        clock_wise_dist = 0
+        start,  (start + 1
+  </pre>
+
+
+</div>
+
+</body>
+</html>

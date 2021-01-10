@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+code {
+  color: #85144b;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #7FDBFF;
+  color: white;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">Python List 2</h2>
+  <article class="">
+    <h3>增添数据到列表中</h3>
+    <p>使用列表的<code> append() </code>方法, 将数据项添加到列表的末尾:</p>
+    <pre>
+      fruits = ["apple", "banana", "cherry"]
+      fruits.append("kiwi")
+      print(fruits)
+    </pre>
+    <p>
+      <code> append() </code>方法将新的数据添加到列表的末尾。要想把数据添加到列表的特定位置,
+      我们应该使用 <code> insert() </code>方法:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", "cherry"]
+      # List 的 insert() 方法有两个参数, 第一个参数代表新数据的加入位置( index )。
+      fruits.insert(1, "blackberry")
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>从列表中删除数据</h3>
+    <p>List 提供了几种不同的方法, 从列表中删除数据。调用 <code> remove() </code> 方法从列表中
+      删除指定的数据项:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", 'orange', "cherry"]
+      fruits.remove("orange")
+      print(fruits)
+    </pre>
+
+    <p>调用 List 的<code> pop() </code>方法来删除数据:</p>
+    <pre>
+      fruits = ["apple", "banana", 'orange', "cherry"]
+      # 从列表中删除 index 为 1 的数据
+      f = fruits.pop(1)
+      print(f"The deleted fruit is { f }")
+      print(f"The current fruits = { fruits }")
+    </pre>
+    <p>
+      在调用 <code> pop() </code> 方法时, 如果你没有指定 index 参数,
+      那么列表的最后一个数据项将会被删除:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", 'orange', "cherry"]
+      # pop() 方法里没有指定 index
+      f = fruits.pop()
+      print(f"The deleted fruit is { f }")
+      print(f"The current fruits = { fruits }")
+    </pre>
+    <p>
+      除了 <code> remove(), pop() </code>方法之外, 我们还可以用<code> del </code>关键字
+      来删除指定位置的元素:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", "kiwi"]
+      del fruits[0]
+      print(fruits)
+    </pre>
+
+    <p>你如果要把整个列表的数据全部删掉, 那么就使用<code> clear() 方法, 或者 del 关键字</code>:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", "kiwi"]
+      fruits.clear()
+      print(fruits) # fruits 现在为空列表 []
+    </pre>
+    <pre>
+      fruits = ["apple", "banana", "kiwi"]
+      del fruits
+      print(fruits) # 会出现 NameError: name 'fruits' is not defined
+    </pre>
+    <p><code> clear() 和 del </code>的差别在于, <code> clear() </code>只是把列表中的数据清空。
+      而<code> del 关键字 </code>则是把整个列表变量完全删除。
+    </p>
+  </article>
+
+  <article class="">
+    <h3>Copy a List</h3>
+    <p>
+      假设我们已经定义了一个列表<code> list1 </code>, 现在你要把<code> list1 </code>的内容复制到另一个
+      列表<code> list2 </code>。如果你使用<code> list2 = list1 </code>来复制列表, 那么, <code> list1 和 list2 </code>
+      两个变量都指向同一个列表。而在<code> list1 </code>中所做的更改也将自动影响到<code> list2 </code>, 反之亦然,
+      因为 <code> list1 和 list2 </code>都指向同一个列表。请看下面的代码:
+    </p>
+    <pre>
+      list1 = [1, 2, 3, 4, 5]
+      list2 = list1
+      # is 关键字用来判断两个变量是否指向同一 object
+      print(list1 is list2) # True
+      print(list2 is list1) # True
+      list1[0] = 6
+      print(list1) # [6, 2, 3, 4, 5]
+      print(list2) # [6, 2, 3, 4, 5]
+    </pre>
+    <p>
+      你可以使用列表的 built-in 方法<code> copy() </code>:
+    </p>
+    <pre>
+      list1 = [1, 2, 3, 4, 5]
+      # 调用 List 的 copy() 方法。list1 和 list2 指向两个不同的列表
+      list2 = list1.copy()
+      print(list1 is list2) # False
+      print(list2 is list1) # False
+      print(list1 == list2) # True。因为它们的值都是 [1, 2, 3, 4, 5]
+      list1[0] = 6
+      print(list1) # [6, 2, 3, 4, 5]
+      print(list2) # list2 不受影响, 仍然是 [1, 2, 3, 4, 5]
+    </pre>
+    <p>
+      除了使用 List 的 built-in <code> copy() </code> 之外, 你也可以使用 Python 提供的<code> list() </code>
+      方法来达到相同的目的:
+    </p>
+    <pre>
+      list1 = [1, 2, 3]
+      list2 = list(list1) # list1 和 list2 指向两个不同的列表, 虽然两个列表的值都为 [1, 2, 3]
+      print(list1 is list2) # False
+      print(list2 is list1) # False
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>Join Two Lists</h3>
+    <p>在 Python 中，有几种方法可以连接(join)两个或多个列表。最简单的方法就是使用<code> + </code>运算符:
+    </p>
+    <pre>
+      list1 = ["a", "b" , "c"]
+      list2 = [1, 2, 3]
+      list3 = list1 + list2
+      print(list3)
+    </pre>
+    <p>
+      连接两个列表的另一种方法是将列表2中的所有项逐个附加到列表1中：
+    </p>
+    <pre>
+      list1 = ["a", "b" , "c"]
+      list2 = [1, 2, 3]
+      # 使用 append() 方法将 list2 中的数据一个个加入到 list1
+      for x in list2:
+          list1.append(x)
+      print(list1)
+    </pre>
+
+    <p>或者，使用<code> extend() </code>方法，将元素从一个列表添加到另一个列表:</p>
+    <pre>
+      list1 = ["a", "b" , "c"]
+      list2 = [1, 2, 3]
+      list1.extend(list2)
+      print(list1)
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>常用的 List 方法</h3>
+    <p>除了以上介绍的方法之外, Python 还有其它常用的列表方法:</p>
+    <table>
+      <tr>
+        <th>方法</th>
+        <th>描述</th>
+        <th>例子</th>
+      </tr>
+      <tr>
+        <td><code>count()</code></td>
+        <td>返回列表中指定值的元素个数。</td>
+        <td><code>nums.count(1)</code> # 返回nums列表中1的个数</td>
+      </tr>
+      <tr>
+        <td><code>index()</code></td>
+        <td>返回列表中指定值的第一个元素的 index 位置</td>
+        <td><code>nums.index(1)</code></td>
+      </tr>
+      <tr>
+        <td><code>reverse()</code></td>
+        <td>reverse the order of the list</td>
+        <td><code>nums.reverse()</code></td>
+      </tr>
+      <tr>
+        <td><code>sort()</code></td>
+        <td>sort the list</td>
+        <td><code>nums.sort()</code></td>
+      </tr>
+    </table>
+
+  </article>
+
+
+
+
+  <article>
+    <h2>作业:</h2>
+    <p>我们定义了一个 List 变量:
+      <pre>
+        fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+      </pre>
+      <ol>
+        <li>在 fruits 列表的第一个位置加入 'grape';</li>
+        <li>列出删除列表数据的各种方法;</li>
+        <li>比较<code> copy(), list() 和 = </code>在拷贝列表时的差别;</li>
+        <li>比较<code> is </code>和<code> == </code>的差别;</li>
+      </ol>
+
+    </p>
+  </article>
+
+
+</div>
+
+</body>
+
+</html>

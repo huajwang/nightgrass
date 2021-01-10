@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">移动数字零</h2>
+  <h3>问题描述:</h3>
+  <p>
+    给定一个数组<em>nums</em>，编写一个函数将所有<em>0</em>移到数组的末尾，同时保持非零元素的相对顺序。
+    要求: 必须使用<em>O(1)</em>的额外空间, 就地 (in-place) 执行此操作。
+  </p>
+  <h3>例如:</h3>
+  <pre>
+    输入: [0, 0, 2, 0, 3, 12]
+    输出: [2, 3, 12, 0, 0, 0]
+  </pre>
+
+  <h3>分析:</h3>
+  <p>所有非零元素在前面, 所有的零元素在后面。我们可以定义一个位置变量<code>p</code>, 用来指向下一个非零元素的存放位置。
+     从头开始扫描数组的每一个元素。对零元素和非零元素分别做不同的处理。
+  </p>
+
+  <h3>算法:</h3>
+  <pre>
+    def moving_zero(nums):
+        # p 指向存放下一个非零元素的位置
+        p, i = 0, 0
+        while i < len(nums):
+            if nums[i] != 0:
+                # 当前元素nums[i]为非零元素时, 把nums[i]移动到p指向的位置。
+                # 然后把p向后移一位。
+                nums[p], nums[i] = nums[i], nums[p]
+                p += 1
+            i += 1
+  </pre>
+  <p>在碰到数组的第一个零元素前, <code>p</code> 和 <code>i</code>是齐头并进的(两个变量都指向同一个位置)。
+     只有在碰到零元素后, <code>p</code>指针才开始落后于<code>i</code>指针。并且在这之后, <code>p</code>
+     指针指向的数组元素为零, 准备接受下一个非零元素。
+  </p>
+
+</div>
+
+</body>
+</html>

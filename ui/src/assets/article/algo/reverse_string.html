@@ -1,0 +1,75 @@
+<div class="lesson-article">
+  <h2 class="article-title">reverse字符串中的单词</h2>
+  <h4>问题描述:</h4>
+  <p>给定一个字符串，逐词反转该字符串。</p>
+
+  <h4>例子:</h4>
+  <pre>
+    输入: "the sky is blue"
+    输出: "blue is sky the"
+  </pre>
+  <pre>
+    输入: "  hello world!  "
+    输出: "world! hello"
+   </pre>
+   <p>输出的反向字符串不应包含前导或尾随空格。</p>
+   <pre>
+     输入: "a good   example"
+     输出: "example good a"
+   </pre>
+   <p>结果应将两个单词之间的多个空格缩减为反向字符串中的单个空格。</p>
+
+  <h4>分析:</h4>
+  <p>这个问题看起来挺简单, 但是却很容易搞错。在解决这个问题之前, 请大家要注意以下几点:</p>
+  <ul>
+    <li>在反转字符串时, 以单词为单位进行反转。单词本身并不反转。</li>
+    <li>原字符串的前导和尾随空白字符应该被去掉;</li>
+    <li>单词之间的多个空白字符要缩减成一个;</li>
+    <li>在Python中, 字符串(str)类型是 immutable 的;也就是说, 你不能对原字符串进行修改。</li>
+  </ul>
+
+  <p>在反转的过程中, 要以单词为基本单位。因此, 我们可以定义一个变量来跟踪记录单个单词;</p>
+  <p>除了单词之外, 当碰到一个空白字符时，我们需要区分它是前导空白字符, 尾随空白字符, 还是
+     单词之间的空白字符;</p>
+
+  <div>
+    <h4>算法:</h4>
+    <pre>
+class Solution:
+    def reverse_string_by_word(s):
+        word = ""
+        ans = ""
+        # 从头开始, 逐个字符进行处理。一个字符要么是非空白字符, 要么是空白字符。
+        for i, c in enumerate(s):
+            if c != ' ': # case1 非空白字符
+                word += c # 把当前字符添加到word变量的后面
+            else: # case2 当前字符为空白字符。这里, 我们要区分它是哪一种空白字符。
+                ans = word + ans # 把word变量添加到ans前面, 进行反序。word在这里有可能为空字符串, 但是不会有什么影响。
+                word = ""
+                # 当前这个空白字符只有在下面这种情况下, 才需要被添加到ans前。
+                if i < len(s) - 1 and s[i + 1] != ' ' and ans != "":
+                    ans = ' ' + ans
+        # for 循环后, 我们已经处理了原字符串中的所有字符。但是, 我们可能还有word没被加入到ans中。
+        if word:
+            ans = word + ans
+        return ans
+    </pre>
+
+    <p>在设计算法时, 有两个地方特别值得注意:</p>
+    <ul>
+      <li>忘记处理最后一个单词。在上面的算法中, 我们只有在碰到空白字符时, 才会把单词添加到 ans 中。当
+          输入的字符串是以单词结尾的时候, 最后这个单词并没有在 <code>for</code>循环中被处理。以此,
+          我们要在<code>for</code>循环后对它进行处理;
+      </li>
+      <li>在碰到空白字符时, 我们使用下面的<code>if</code>语句来判断它应不应该被加入到ans中:
+        <pre>
+          if i < len(s) - 1 and s[i + 1] != ' ' and ans != "":
+              ans = ' ' + ans
+        </pre>
+        <p>这个<code>if</code>语言用来判断该空白字符后面是否还有单词。如果有, 并且 <code>ans != ""</code>(不是前导空白符)时,
+           这个空白符才会被加入ans中。</p>
+      </li>
+    </ul>
+
+  </div>
+</div>

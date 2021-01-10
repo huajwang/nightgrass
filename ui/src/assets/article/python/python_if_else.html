@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+.output {
+  border: 0;
+  background-color: #DDDDDD;
+  color: #0074D9;
+}
+
+.note {
+  color: #FF851B;
+}
+
+code {
+  color: #85144b;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #7FDBFF;
+  color: white;
+}
+
+ul.list-item {
+  list-style: circle;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">Python 分支逻辑判断</h2>
+  <article class="">
+    <h3>Python Conditions and If statements</h3>
+    <p>
+      Python 支持如下的比较逻辑运算, 用于比较两个值的大小:
+    </p>
+    <ul class="list-item">
+      <li>a == b</li>
+      <li>a != b</li>
+      <li>a < b</li>
+      <li>a <= b</li>
+      <li>a > b</li>
+      <li>a >= b</li>
+      其中 a, b 是两个 Python 变量
+    </ul>
+    <p>
+      在 Python 的逻辑运算中, 我们还经常使用到如下的逻辑运算:
+      <ul>
+        <li>and</li>
+        <li>or</li>
+        <li>not</li>
+      </ul>
+    </p>
+    <p>
+      These conditions can be used in several ways, most commonly in "if statements" and loops.
+      今天我们先介绍 <code>if</code> statements.
+    </p>
+    <p>
+      An "if statement" is written by using the <code>if</code> keyword:
+    </p>
+    <pre>
+      x = 18
+      y = 15
+      if x > y:
+          print(f"{ x } > { y }")
+    </pre>
+    <p>
+      在上面这个例子中，我们使用两个变量 x 和 y, 它们被用作 <code>if</code> 语句的一部分来测试 x 是否大于 y。
+      因为 x 是 18, y 是 15, 我们知道 18 大于 15，所以屏幕上会打印 <code>18 > 15</code>。
+    </p>
+  </article>
+  <article class="">
+    <h3>elif</h3>
+    <p>
+      The <code>elif</code> keyword 表示 "if the previous conditions were not true, then try this condition".
+      在 <code>if</code> 语句的后面, 我们可以用 <code>elif</code> 语句来检查另外的条件是否满足:
+    </p>
+    <pre>
+      x = 18
+      y = 18
+      if x > y: # the first condition
+          print(f"{ x } > { y }")
+      elif x == y: # the seocnd condition
+          print(f"{ x } == { y }")
+    </pre>
+    <p>如果 <code>x > y</code>, 那么就运行 <code>print(f"{ x } > { y }")</code>。否则, 继续检查 <code>x == y</code>
+      是否成立, 如果成立程序就会执行 <code>print(f"x == y")</code>
+    </p>
+  </article>
+
+  <article class="">
+    <h3>else</h3>
+    <p>
+      The <code>else</code> keyword catches anything which isn't caught by the preceding conditions.
+    </p>
+    <pre>
+      x = 15
+      y = 18
+      if x > y: # the first condition
+          print(f"{ x } > { y }")
+      elif x == y: # the seocnd condition
+          print(f"{ x } == { y }")
+      else: # 如果前面的条件都不成立, 那么程序就会执行 else 的部分
+          print(f"{x} < {y}")
+    </pre>
+    <p>
+      In this example the first condition is not true, also the <code>elif</code> condition is not true,
+      so the program goes to the <code>else</code> condition and execute <code>print(f"{x} < {y}")</code>
+      statement.
+      You can also have an <code>else</code> without the <code>elif</code>:
+    </p>
+    <pre>
+      x = 15
+      y = 15
+      if x > y:
+          print(f"{x} > {y}")
+      else: # 除非满足第一个条件, 不然所有其它的情况都执行 else 部分
+          print(f"{x} <= {y}")
+    </pre>
+    <p>如果程序只需要分别处理两种不同情况, 那么可以使用下面的简短形式:</p>
+    <pre>
+      x = 15
+      y = 15
+      print(f"{x} > {y}") if x > y else print(f"{x} <= {y}")
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>and 逻辑运算</h3>
+    <p>The <code>and</code> keyword is a logical operator, and is used to combine conditional statements:</p>
+    <pre>
+      x = 3
+      y = 4
+      z = 5
+      if z > x and z > y:
+          print("Both conditions are True")
+    </pre>
+    <p>在上面的例子中, 只有当 <code>z > x</code> 和 <code>z > y</code>两个条件都满足的时候,
+      <code>print("Both conditions are True")</code> 才会被执行。
+    </p>
+  </article>
+  <article class="">
+    <h3>or 逻辑运算</h3>
+    <p>The <code>or</code> keyword is a logical operator, and is used to combine conditional statements:</p>
+    <pre>
+      x = 8
+      y = 4
+      z = 5
+      if z > x or z > y:
+          print("At lieast one condition is True")
+    </pre>
+    <p>只要 <code>z > x</code> <strong>或者</strong> <code>z > y</code> 中有一个条件满足,
+      <code>print("At lieast one condition is True")</code> 语句就会被执行。
+    </p>
+  </article>
+
+  <article class="">
+    <h3>not 逻辑运算</h3>
+    <p>not 逻辑运算符将 <code>True</code> 变成 <code>False</code>, 把 <code>False</code> 变成
+      <code>True</code>。例如:
+    </p>
+    <pre>
+      if not 5 > 6:
+          print("5 <= 6")
+    </pre>
+    <p>上面的 <code>if</code> 条件判断语句, 先计算<code>5 > 6</code> 的值, 其
+      运算结果为 <code>False</code>, 再经过 <code>not False</code> 运算, 最终结果为 <code>True</code>。
+      所以, <code>print("5 <= 6")</code> 会被运行。
+      从上面的例子中, <code>if not 5 > 6</code> 语句中涉及到了两种不同的运算符号: <code>not</code> 和 <code> > </code>。
+      下一节课, 我们将会介绍运算符号的计算优先级问题。
+    </p>
+  </article>
+  <article class="">
+    <h3>nested if</h3>
+    <p>
+      You can have <code>if</code> statements inside <code>if</code> statements, this is called nested if statements.
+    </p>
+    <pre>
+      mark = int(input("Enter your mark: "))
+      if mark >= 60: # outter if
+          if mark > 90: # nested if
+              print("Excellent!")
+          else:
+              print("Pass")
+      else:
+          print("Fail!")
+    </pre>
+  </article>
+</div>
+
+</body>
+
+</html>

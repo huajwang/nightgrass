@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">对字符串进行编码和解码</h2>
+  <h3>问题描述:</h3>
+  <p>
+    给定一个由大写英文字母组成的字符串。设计一个算法按下面的规则对该字符串进行编码:
+    字符串中连续的相同英文字母压缩成: 英文字母的个数 + 英文字母。
+    然后, 再设计一个相应的解码算法, 将其还原成只由英文字母组成的字符串。
+  </p>
+  <h3>例子:</h3>
+  <pre>
+    # 编码
+    输入: ABBCCCDDD
+    输出: 1A2B3C3D
+  </pre>
+  <pre>
+    # 解码
+    输入: 3A2B1D
+    输出: AAABBD
+  </pre>
+  <p>
+    说明:
+  </p>
+  <ul>
+    <li>原始字符串只包含大写的英文字母, 不含数字。</li>
+    <li>连续的相同英文字母可能很长。</li>
+  </ul>
+
+  <h3>分析:</h3>
+  <p>
+    对字符串的编码, 我们只要定义一个计数器, 计算每一个英文字母的连续的个数, 然后再将其逐一拼装起来即可。
+    而对于解码, 我们要注意的一点是: 代表字母个数的数字可能不止一位数。比如, 120A。
+  </p>
+
+  <h3>编码算法:</h3>
+  <pre>
+    def encode(s):
+        if s == "":
+            return ""
+        count = 0
+        ans = ""
+        i = 0
+        while i < len(s) - 1:
+            if s[i] == s[i + 1]:
+                count += 1
+            else:
+                ans += str(count + 1) + s[i]
+                count = 0
+            i += 1
+        # 注意: while 循环并没有处理字符串的最后一个字母。因为循环条件为 i < len(s) - 1
+        # 这里, 有两种情况要考虑。
+        if count > 0:
+            # case1 - 最后一个字母和倒数第二个字母是相同的
+            ans += str(count + 1) + s[-1]
+        else:
+            # case2 - 最后一个字母和倒数第二个字母是不一样的
+            ans += '1' + s[-1]
+        return ans
+  </pre>
+  <p>上面所示的算法中, 有一点要注意: 我们需要处理输入字符串为空的情况。否则, <code>while</code>
+    循环之后, <code>s[-1]</code>会抛出<code>index out of range</code>异常。
+  </p>
+
+  <h3>解码算法:</h3>
+  <p>方法一</p>
+  <pre>
+    def decode(s):
+        count = ""
+        ans = ""
+        for c in s:
+            if c.isnumeric():
+                count += c
+            else:
+                ans += c * int(count)
+                count = ""
+        return ans
+  </pre>
+
+  <p>方法二</p>
+  <pre>
+    def decode2(s):
+        ans = ''
+        i = 0
+        while i < len(s):
+            count = 0
+            # 内循环用于把连续的数字字符转换成整数
+            while s[i].isdigit():
+                count = count * 10 + int(s[i])
+                i += 1
+            ans += s[i] * count
+            i += 1
+        return ans
+  </pre>
+
+</div>
+
+</body>
+</html>

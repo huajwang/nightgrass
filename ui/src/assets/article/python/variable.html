@@ -1,0 +1,67 @@
+<div class="lesson-article">
+  <h2 class="article-title">Python 变量</h2>
+  <div>
+    <h3>定义变量</h3>
+    <p>
+      在计算机程序中，变量是存储数据值的容器。通过变量，我们就可以存储，读取和修改数据的值。
+      与其他编程语言不同，Python不需要对变量的类型进行声明。
+      变量的类型是在您第一次为其赋值时自动识别的。
+    </p>
+    <h4>例如:</h4>
+    <div class="source-code">
+      <p>在程序中，定义如下两个变量:</p>
+      <pre>
+        num = 5 # num 变量的类型为数字类型
+        name = "Michael Winters" # name 变量为字符串类型
+      </pre>
+      <p>
+        前面我们说过，在定义 Python 变量时不需要对其类型进行声明。这一点和 Java, C++ 等其他语言很不一样。在 Python 程序，
+        你甚至可以在定义变量后，通过赋值更改变量的类型。比如：
+      </p>
+      <pre>
+        num = 'Apple' # 现在 num 变量的类型变成了字符串类型
+        name = 6      # name 的变量类型变成了数字类型
+      </pre>
+    </div>
+  </div>
+
+
+  <div>
+    <h3>变量名</h3>
+    <p>
+      变量可以有一个短名称（如, x 和 y）或一个更具描述性的名称（age、carmodel、total_volume）。
+      Python变量名有如下规则：
+    </p>
+    <ul>
+      <li>变量名必须以字符或下划线(underscore)开头;</li>
+      <li>变量名不能用数字开头</li>
+      <li>变量名只能包含阿拉伯数字，英文字母和下划线(A-z, 0-9, and _ )</li>
+      <li>在Python语言中，变量名区分大小写。比如，(age, Age 和 AGE代表的是三个不同的变量)</li>
+    </ul>
+  </div>
+
+
+  <div>
+    <h3>同时给不同的变量赋值</h3>
+    <p>在Python程序中，你可以在一行程序语句中对多个变量赋值。如下所示:</p>
+    <pre>
+      x, y, z = 3, 4, 5
+      name, age, gender = "Tom Waters", 15, "M"
+    </pre>
+    <p>你也可以在一行程序语句中，对不同的变量赋相同的值。比如:</p>
+    <pre>
+      x, y, z = 5
+    </pre>
+  </div>
+
+  <div>
+    <h3>输出变量的值</h3>
+    <p>在Python程序中，我们可以使用<code>print</code>语句来打印出变量的值:</p>
+    <pre>
+      name = "Michael Winters"
+      print(name)
+    </pre>
+  </div>
+
+</div>
+

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">字符分区</h2>
+  <h3>问题描述:</h3>
+  <p>
+    给定一个小写英文字母串。设计一个算法将这个字符串分成尽可能多的部分，以便每个字母最多出现在一个部分中，
+    并返回表示这些部分(分区)大小的整数列表。
+  </p>
+  <h3>例子:</h3>
+  <pre>
+    输入:  s = "ababcbacadefegdehijhklij"
+    输出: [9, 7, 8]
+  </pre>
+  <p>
+    字符串应该被拆分成 <code>"ababcbaca"、"defegde"、"hijhklij"</code> 三个分区。
+    字符串中的每个相同的字母只能出现在一个分区(比如, 字母 <code>a</code>只出现在第一个分区中)。
+    并且, 字符串应该拆分成尽可能多的分区。比如, 字符串拆分成
+    <code> "ababcbacadefegde"、"hijhklij" </code> 这样的分区是不正确的, 因为它可以拆分更多的部分。
+  </p>
+  <h3>分析:</h3>
+  <p>要把字符串拆分成尽可能多的部分, 并且相同的字母只能出现在同一分区中。我们可以采用逐个字母进行试探,
+    根据实际情况, 动态地更新结果, 来求解它的最终答案。
+  </p>
+
+  <h3>算法:</h3>
+  <pre>
+    def partition_label(s: str) -> [int]:
+        # 下面的 dictionary comprehension 语句用于把每个字母在字符串中的最后 index 位置放入字典中。
+        m = { c: i for i, c in enumerate(s) }
+        ans = []
+        i = 0
+        while i < len(s): # 外循环用于遍历字符串中的每个字母
+            # 初始化 last_idx 变量, 把字母 s[i] 在字符串中最靠后的位置从字典中取出来
+            last_idx = m[s[i]]
+            # 从位置 i 开始探索下一个分区
+            j = i
+            while j < last_idx:
+                if m[s[j]] > last_idx:
+                    # 当前字母 s[j] 在字符串中的位置落在 last_idx 外, 因此动态更新 last_idx
+                    last_idx = m[s[j]]
+                j += 1
+            # 在内循环之后, j == last_idx, 一个分区的探索结束(这个分区里的所有字母都落在这个分区里)
+            ans.append(last_idx - i + 1)
+            # 下个分区从 last_idx + 1 开始探索
+            i = last_idx + 1
+        return ans
+  </pre>
+  <p>
+    大家应该熟悉 Python 语言中<code> m = { c: i for i, c in enumerate(s) } </code>dictionary comprehension
+    的用法。我们的算法使用了 dynamic programming 方法来解决这个问题。dynamic programming 方法是计算机
+    很重要的一种解决实际问题的方法, 用法也很灵活, 大家可以多花些时间来掌握它。
+  </p>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<div class="lesson-article">
+  <h2 class="article-title">三数之和</h2>
+  <h3>问题:</h3>
+  <p>给定一个整数数组, 找出其中的三个数 a, b, c, 使得 <strong>a + b + c = 0</strong>。
+    要求找出<strong>所有的不同</strong>组合, 使得每个组合的三个数之和等于零。</p>
+  <h3>例子:</h3>
+  <pre>
+    给定整数数列 nums = [-1, 0, 1, 2, -1, -4],
+    结果返回:
+    [ [-1, 0, 1], [-1, -1, 2] ]
+  </pre>
+  <h3>分析:</h3>
+  <ul>
+    <li>给定的整数数组是无序的;</li>
+    <li>要求找出所有的组合;</li>
+    <li>每个组合都是不同的;</li>
+  </ul>
+  <p>如果以原始的无序数组为基础进行运算, 我们就需要穷尽数组中所有三个数的组合。这意味着算法复杂度为
+  <code>n * (n - 1) * (n - 2), O(n3)</code>。</p>
+  <p>如果我们先对数组进行排序，那么我们就可以用比较巧妙的方法找出所有的不同组合。<strong>对于数组中
+     一个特定的数, 我们把有这个数参与的所有组合都找出来。</strong>
+     在排完序后, 对于数组中的每一个数(index 为 i), 只要在位置 [i + 1, len(nums) - 1]的范围内，
+     找出其它的另外两个数,满足三数之和等于零就可以了。注意, 我们不需要考虑index位于[0, i - 1]的数，
+     因为前面已经处理过来。
+   </p>
+  <pre>
+class Solution:
+    def three_sum(nums):
+        nums.sort()
+        ans = set()
+        for i in range(len(nums)):
+            l, r = i + 1, len(nums) - 1
+            while l < r:
+                n = nums[i] + nums[l] + nums[r]
+                # 分成三种 case
+                if n == 0: # case1 三者之和等于零, 找到一个组合
+                    ans.add((nums[i], nums[l], nums[r]))
+                    # 记得修改 l 和 r 的位置
+                    l += 1
+                    r -= 1
+                elif n > 0: # case2 三者之和大于零
+                    r -= 1
+                else: # case3 三者之和小于零
+                    l += 1
+        # for 循环完成后, 我们找到了所有的答案。
+        return ans
+  </pre>
+  <p>
+    对于上面的算法, 要注意下面几点:
+    <ul>
+      <li><code>for</code>循环里的<cood>while l < r</cood>循环用于找出有<code>nums[i]</code>参与的所有组合。</li>
+      <li>在成功找到一个组合之后, 要记得<code>l += 1</code>和<code>r -= 1</code>修改位置变量。</li>
+      <li><code>nums[i] + nums[l] + nums[r]</code>之和, 共有三种情况。分别是, 等于零, 大于零和小于零。这三种情况我们要分别进行处理。</li>
+    </ul>
+  </p>
+</div>

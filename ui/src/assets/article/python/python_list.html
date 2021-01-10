@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">Python List</h2>
+  <article>
+    <h3>Python编程语言中有四种集合(Collection)数据类型:</h3>
+    <ul>
+      <li>List是一种有顺序, 且可更改(mutable)的集合。允许重复成员。</li>
+      <li>Tuple是一种有顺序, 但不可更改(immutable)的集合。允许重复成员。</li>
+      <li>Set是一个无序, 且未编制索引的集合。没有重复的成员。</li>
+      <li>Dictionary是一个无序的、可变的key-value集合。不能有重复的key。</li>
+    </ul>
+    <p>
+      上面列出的集合类型可以用来存储批量的数据, 并利用集合提供的方法对这些数据进行操作(比如, 增加数据,
+      删除数据, 查找数据或者修改数据等等)。这四种集合类型各有不同特点, 我们应该根据实际的应用需要来选择
+      合适的集合类型。为我们的数据选择正确的数据类型, 意味着数据操作的效率或安全性。在知道如何选择合适的
+      集合类型前, 我们必须先了解它们各自的特性。
+    </p>
+    <p>这一节我们先介绍 List 数据类型。</p>
+  </article>
+  <article class="">
+    <h3>List</h3>
+    <p>
+      List 是一种有序, 并且可以更改的集合。在 Python 中，List 是用方括号来表示的。如下所示:</p>
+      <pre>
+        # 定义一个 List 类型的变量 fruits
+        fruits = ["apple", "banana", "cherry"]
+        print(fruits)
+      </pre>
+  </article>
+  <article class="">
+    <p>List 里的每个数据成员都有一个对应的 index 位置。从 0 开始依次递增。我们可以使用一个数据成员的 index 来
+      访问该数据项。比如:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", "cherry"]
+      print(fruits[0]) # 第一个数据项的 index 为 0
+      print(fruits[1]) # 第二个数据项的 index 为 1
+      print(fruits[2]) # 第三个数据项的 index 为 2
+    </pre>
+    <p><strong>记住, 第一个数据项的 index 为 0 </strong></p>
+  </article>
+  <article class="">
+    <p>使用 <code>len()</code> 函数来获取一个 List 里有多少个数据项: </p>
+    <pre>
+      fruits = ["apple", "banana", "cherry"]
+      # 把 List 类型的变量 fruits 作为参数传给 len() 函数
+      # len(fruits) 函数返回 fruits 列表中的成员数量
+      print(len(fruits))
+    </pre>
+  </article>
+  <article class="">
+    <p>List 也可以使用 Negative Indexing 来 access 数据成员。比如:</p>
+    <pre>
+      fruits = ["apple", "banana", "cherry", 'blackberry']
+      print(fruits[-1]) # 倒数第一个成员的 index 为 -1
+      print(fruits[-2]) # 倒数第二个成员的 index 为 -2
+      print(fruits[-3]) # 倒数第三个成员的 index 为 -3。依次类推...
+    </pre>
+  </article>
+
+  <article class="">
+    <p>在上面的例子中, 我们使用 index 来 access 单个的数据成员, 我们可以使用 Range of Indexes
+      (用 [start_index : end_index] syntax 表示) 来 access 一部分(一个或多个)数据成员:
+    </p>
+    <pre>
+      fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+      # fruits[2:5] 返回 index 从 2 到 5 的那些数据。注意: 2 <= index < 5
+      print(fruits[2:5])
+    </pre>
+    <p><strong>注意: fruits[2:5] 包含 index = 2 的成员, 但不包含 index = 5 的成员。也就是,
+      [2:5] 代表的 range 为 2 <= index < 5。
+    </strong></p>
+    <p><em>同学们自己试试 fruits[2:2], 看它会返回什么? fruits[2:3] 呢?</em></p>
+    <p>
+      如果省略 range 的 start_index，范围将从 index = 0 开始:
+      <pre>
+        fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+        # fruits[:3] 等同于 fruits[0:3]
+        print(fruits[:3])
+      </pre>
+    </p>
+    <p>
+      类似的, 如果省略 range 的 end_index，范围将一直延伸到列表的末尾:
+      <pre>
+        fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+        # fruits[3:] 等同于 fruits[3:7]
+        print(fruits[3:])
+      </pre>
+    </p>
+  </article>
+
+  <article>
+    <h3>修改数据项的值</h3>
+    <p>使用下面的 syntax 来更改 List 中一个特定数据项的值:</p>
+    <pre>
+      fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+      fruits[0] = "strawberry"
+      print(fruits)
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>遍历一个 List 中的所有数据项</h3>
+    <p>使用下面的方法来 loop through 所有数据项:</p>
+    <pre>
+      fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+      for fruit in fruits:
+          print(fruit)
+    </pre>
+  </article>
+
+  <article class="">
+    <h3>检查数据是否存在于一个 List 中</h3>
+    <p>有时我们需要知道一个给定的数据是否已经存在于一个列表中, 使用<code>in</code>:</p>
+    <pre>
+      fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+      if "kiwi" in fruits:
+          print("Yes, 'kiwi' exists in the list")
+      else:
+          print("No!")
+    </pre>
+  </article>
+
+  <article>
+    <h2>作业:</h2>
+    <p>我们定义了一个 List 变量:
+      <pre>
+        fruits = ["apple", "banana", "cherry", "orange", "kiwi", "blackberry", "mango"]
+      </pre>
+      <ol>
+        <li>写出 3 种 access 最后一个数据项 "mango" 的方法。</li>
+        <li>fruits[-4:-1]表示哪些数据项? fruits[-1:-4]呢?</li>
+        <li>尝试使用 while loop 来遍历 fruits 里的所有数据项</li>
+      </ol>
+
+    </p>
+  </article>
+
+
+</div>
+
+</body>
+
+</html>

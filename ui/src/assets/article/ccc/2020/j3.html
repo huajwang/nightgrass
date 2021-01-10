@@ -1,0 +1,67 @@
+  <div class="lesson-article">
+  <h2 class="article-title">绘画艺术</h2>
+  <h3>问题描述:</h3>
+  <p>
+    小红一直在尝试一种新的艺术风格。她站在画布前，用画笔在画布上轻弹颜料滴。当她认为自己已经创造了一个杰作，
+    她用她的3D打印机打印一个框架来包围帆布。你的工作是帮助小红确定最小的矩形框的坐标，使每一滴油漆都位于框内。
+    框架上的点不在框架内。
+  </p>
+  <h3>例如:</h3>
+  <pre>
+    输入: [[44, 62], [34, 69], [24, 78], [42, 44], [64, 10]]
+    输出: [23,9] [65,79]
+  </pre>
+  <p>
+    输入输出说明: <br>
+  </p>
+
+  <svg width="300" height="300" style="border: 2px solid red">
+    <circle cx="0" cy="300" r="2" stroke="black" stroke-width="3" fill="black" />
+    <text x="0" y="300" fill="red">(0,0)</text>
+
+   <circle cx="132" cy="114" r="2" stroke="green" stroke-width="1" fill="yellow" />
+   <text x="138" y="114" fill="red">(44, 62)</text>
+
+   <circle cx="102" cy=" 93" r="2" stroke="green" stroke-width="1" fill="yellow" />
+   <text x="105" y="93" fill="red">(34, 69)</text>
+
+   <circle cx="72" cy="66" r="2" stroke="green" stroke-width="1" fill="yellow" />
+   <text x="75" y="66" fill="red">(24, 78)</text>
+
+   <circle cx="126" cy="168" r="2" stroke="green" stroke-width="1" fill="yellow" />
+   <text x="129" y="168" fill="red">(42, 44)</text>
+
+   <circle cx="192" cy="270" r="2" stroke="green" stroke-width="1" fill="yellow" />
+   <text x="195" y="270" fill="red">(64, 10)</text>
+   <!-- <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text> -->
+   Sorry, your browser does not support inline SVG.
+  </svg>
+
+  <ul>
+    <li>开括号必须用同一类型的括号关闭。</li>
+    <li>打开的括号必须按正确的顺序闭合。</li>
+    <li>空字符串也被认为是合法的。</li>
+  </ul>
+
+  <h3>例子:</h3>
+  <pre>
+    输入: "()"
+    输出: true
+  </pre>
+  <pre>
+    输入: "()[]{}"
+    输出: true
+  </pre>
+  <pre>
+    输入: "(}"
+    输出: false
+  </pre>
+  <pre>
+    输入: "([]{})"
+    输出: true
+  </pre>
+  <pre>
+    输入: "([{}])"
+    输出: true
+  </pre>
+</div>

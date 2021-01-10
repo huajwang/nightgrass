@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>铜豌豆教育</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="application/javascript">
+    var global = window;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+	.lesson-article {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 15px 10%;
+}
+
+.article-title {
+  align-self: center;
+}
+
+.source-code {
+  width: auto;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+pre {
+  border-left: 3px solid #4CAF50;
+}
+
+pre.output {
+  border: 0;
+  padding-top: 10px;
+  border-radius: 10px;
+  background-color: #DDDDDD;
+  color: #0074D9;
+}
+
+pre.assignment {
+  border: 0;
+  padding-top: 10px;
+  border-radius: 5px;
+  background-color: #DDDDDD;
+}
+
+.note {
+  color: #FF851B;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+code {
+  color: #85144b;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #7FDBFF;
+  color: white;
+}
+
+ul.list-item {
+  list-style: circle;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="lesson-article">
+  <h2 class="article-title">Python 字符串</h2>
+  <article class="">
+    <h3>字符串常量</h3>
+    <p>
+      Python 字符串由单引号或双引号包围。比如:
+    </p>
+    <pre>
+      s1 = 'How is everything?'
+      s2 = "How's everything?"
+      s3 = 'My favorite movie is "Lion King"'
+      print(s1)
+      print(s2)
+      print(s3)
+    </pre>
+    <pre class="output">
+      How is everything?
+      How's everything?
+      My favorite movie is "Lion King"
+    </pre>
+    <p class="note">
+      如果字符串里面要包含单引号, 那么字符串就用双引号括起来; 如果字符串里要包含双引号, 那么字符串就用单引号括起来。
+    </p>
+  </article>
+  <article class="">
+    <h3>Multiline Strings</h3>
+    <p>You can assign a multiline string to a variable by using three double quotes:</p>
+    <pre>
+      s = """A woman gets on a bus with her baby. The driver says "Ugh – that's the ugliest baby I've ever seen!"
+      The woman walks to the back of the bus and sits down.
+      She says to the man next to her: “The driver just insulted me!"
+      The man says: "You go up there and tell him off. Go on. I’ll hold your monkey for you." """
+
+      print(s)
+    </pre>
+    <p>
+      Or three single quotes:
+    </p>
+    <pre>
+      s = '''A woman gets on a bus with her baby. The driver says "Ugh – that's the ugliest baby I’ve ever seen!"
+      The woman walks to the back of the bus and sits down.
+      She says to the man next to her: "The driver just insulted me!"
+      The man says: “You go up there and tell him off. Go on. I’ll hold your monkey for you."'''
+
+      print(s)
+    </pre>
+  </article>
+  <article class="">
+    <h3>Strings are Arrays</h3>
+    <p>Like many other popular programming languages, strings in Python are arrays of bytes representing unicode characters.
+      However, Python does not have a character data type, a single character is simply a string with a length of 1.
+      Square brackets can be used to access elements of the string.
+    </p>
+    <p>Get the character at position 1 (remember that the first character has the position 0):
+    </p>
+    <pre>
+      s = "Hello, World!"
+      print(s[1])
+    </pre>
+  </article>
+  <article class="">
+    <h3>slicing</h3>
+    <p>
+      You can return a range of characters by using the slice syntax.
+      Specify the start index and the end index, separated by a colon, to return a part of the string.
+      E.g. get the characters from position 2 to position 5 (not included):
+    </p>
+    <pre>
+      s = "Hello, World!"
+      print(s[2:5])
+    </pre>
+  </article>
+  <article class="">
+    <h3>Negative Indexing</h3>
+    <p>
+      Use negative indexes to start the slice from the end of the string. E.g.
+      Get the characters from position 5 to position 1, starting the count from the end of the string:
+    </p>
+    <pre>
+      s = "Hello, World!"
+      print(s[-5:-2])
+    </pre>
+    <p>
+      You can mix up positive and negative indexes to slice a string. You can also skip the start or
+      the end index of the string:
+    </p>
+    <pre>
+      s = "Hello, World!"
+      print(s[-5:])
+      print(s[-5:12])
+      print(s[:-5])
+      print(s[2:-6])
+    </pre>
+  </article>
+  <article class="">
+    <h3>String Length</h3>
+    <p>
+      To get the length of a string, use the <code>len()</code> function:
+    </p>
+    <pre>
+      s = "Hello, World!"
+      print(len(s))
+    </pre>
+  </article>
+  <article class="">
+    <h3>String methods</h3>
+    <p>Python has a set of built-in methods that you can use on strings.</p>
+    <p>
+      The <code>split()</code> method splits the string into substrings if it finds instances of the separator:
+    </p>
+    <pre>
+      s = "Once upon a time, there is a little cabin in the woods."
+      words = s.split()
+      print(words)
+    </pre>
+    <pre class="output">
+    ['Once', 'upon', 'a', 'time,', 'there', 'is', 'a', 'little', 'cabin', 'in', 'the', 'woods.']
+    </pre>
+    <p>
+      By default, <code>split()</code> splits the string into substrings by white spaces. You can
+      specify the separator by providing it as parameter of the method. e.g.
+    </p>
+    <pre>
+      s = "Once upon  a time, there is a little cabin in the woods."
+      words = s.split(',') # specify , as separator
+      print(words)
+    </pre>
+    <pre class="output">
+    ['Once upon  a time', ' there is a little cabin in the woods.']
+    </pre>
+
+    <p>
+      The <code>strip()</code> method removes any whitespace from the beginning or the end:
+    </p>
+    <pre>
+      s = "     Hello World!  "
+      s1 = s.strip()
+      print(s1)
+    </pre>
+    <p>
+      The <code>replace()</code> method replaces a string with another string:
+    </p>
+    <pre>
+      s = "Once upon a time, there is a little cabin in the woods."
+      s1 = s.replace('cabin', 'house')
+      print(s)
+      print(s1)
+    </pre>
+    <pre class="output">
+    Once upon a time, there is a little cabin in the woods.
+    Once upon a time, there is a little house in the woods.
+    </pre>
+    <p class="note">
+      Note: The original string <code>s</code> remains unchanged. The call to <code>replace()</code> method
+      returns a new string.
+    </p>
+  </article>
+  <article class="">
+    <h3>Check String</h3>
+    <p>
+      To check if a certain phrase or character is present in a string, we can use the keywords <code>in</code> or
+      <code>not in</code>:
+    </p>
+    <pre>
+      s = "Once upon a time, there is a little cabin in the woods."
+      if 'cabin' in s: # in
+          print('yes')
+      else:
+          print('no')
+
+
+      if 'house' not in s: # not in
+          print('yes')
+      else:
+          print('no')
+    </pre>
+  </article>
+  <article class="">
+    <h3>String Concatenation</h3>
+    <p>
+      To concatenate, or combine, two strings you can use the <code>+</code> operator:
+    </p>
+    <pre>
+      s1 = 'back to'
+      s2 = 'the future'
+      s3 = s1 + " " + s2
+      print(s1)
+      print(s2)
+      print(s3)
+    </pre>
+    <p>
+      We cannot combine strings and numbers like this:
+    </p>
+    <pre>
+      s1 = "I am "
+      age = 12
+      s = s1 + age # TypeError: can only concatenate str (not "int") to str
+    </pre>
+    <p>
+      You can use f-strings to concatenate strings and numbers:
+    </p>
+    <pre>
+      s1 = "I am"
+      age = 12
+      s = f"{s1} {age}"
+      print(s)
+    </pre>
+    <p>
+      Or we can combine strings and numbers by using the <code>format()</code> method.
+      The <code>format()</code> method takes the passed arguments, formats them, and places them in the string
+      where the placeholders <code>{}</code>are:
+    </p>
+    <pre>
+      s1 = "My name is Michael, and I am {}"
+      age = 12
+      s2 = s1.format(age) # call format() on s1 and pass in age as parameter
+      print(s1)
+      print(s2)
+    </pre>
+    <p>
+      The <code>format()</code> method can take multiple numbers of arguments,
+      and are placed into the respective placeholders:
+    </p>
+    <pre>
+      name = 'Michael'
+      age = 12
+      town = 'Toronto'
+      s1 = "My name is {}. I am {}. I am from {}."
+      s2 = s1.format(name, age, town)
+      print(s1)
+      print(s2)
+    </pre>
+    <pre class="output">
+    My name is {}. I am {}. I am from {}.
+    My name is Michael. I am 12. I am from Toronto.
+    </pre>
+    <p>
+      You can use index numbers <code>{0}</code> to be sure the arguments are placed in the correct placeholders:
+    </p>
+    <pre>
+      name = 'Michael'
+      age = 12
+      town = 'Toronto'
+      s1 = "My name is {1}. I am {2}. I am from {0}."
+      s2 = s1.format(town, name, age)
+      print(s1)
+      print(s2)
+    </pre>
+  </article>
+  <article class="">
+    <h3>Escape Character</h3>
+    <p>
+      To insert characters that are illegal in a string, use an escape character.
+      An escape character is a backslash <code>\</code> followed by the character you want to insert.
+      An example of an illegal character is a double quote inside a string that is surrounded by double quotes:
+    </p>
+    <pre>
+      s = "My favorite movie is \"Lion King\"."
+      print(s)
+    </pre>
+    <p>For the above example, you can use a single quote instead of using <code>\</code>:
+    </p>
+    <pre>
+      s = 'My favorite movie is "Lion King".'
+      print(s)
+    </pre>
+    <p>
+      There are some other escape characters used in Python. e.g.:
+    </p>
+    <pre>
+      s = "Welcome!\nPython is awesome!" # \n
+      print(s)
+    </pre>
+    <pre class="output">
+    Welcome!
+    Python is awesome!
+    </pre>
+  </article>
+
+</div>
+
+</body>
+
+</html>

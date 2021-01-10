@@ -67,16 +67,26 @@ INSERT INTO `t_edu_course_content` VALUES ('40', '5', 'Case分支判断');
 -- ----------------------------
 -- Records of t_edu_lecture
 -- ----------------------------
-INSERT INTO `t_edu_lecture` VALUES ('1', '1', 'Canadian Computing Competition - 2020');
-INSERT INTO `t_edu_lecture` VALUES ('2', '1', 'Canadian Computing Competition - 2019');
-INSERT INTO `t_edu_lecture` VALUES ('3', '1', 'Canadian Computing Competition - 2018');
-INSERT INTO `t_edu_lecture` VALUES ('4', '1', 'Canadian Computing Competition - 2017');
-INSERT INTO `t_edu_lecture` VALUES ('5', '1', 'Canadian Computing Competition - 2016');
-INSERT INTO `t_edu_lecture` VALUES ('6', '1', 'Canadian Computing Competition - 2015');
-INSERT INTO `t_edu_lecture` VALUES ('7', '1', 'Canadian Computing Competition - 2014');
-INSERT INTO `t_edu_lecture` VALUES ('8', '1', 'Canadian Computing Competition - 2013');
-INSERT INTO `t_edu_lecture` VALUES ('9', '1', 'Canadian Computing Competition - 2012');
-INSERT INTO `t_edu_lecture` VALUES ('10', '1', 'Canadian Computing Competition - 2011');
+INSERT INTO `t_edu_lecture` VALUES ('1', '1', 'Canadian Computing Competition - 2020 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('2', '1', 'Canadian Computing Competition - 2020 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('3', '1', 'Canadian Computing Competition - 2019 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('4', '1', 'Canadian Computing Competition - 2019 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('5', '1', 'Canadian Computing Competition - 2018 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('6', '1', 'Canadian Computing Competition - 2018 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('7', '1', 'Canadian Computing Competition - 2017 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('8', '1', 'Canadian Computing Competition - 2017 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('9', '1', 'Canadian Computing Competition - 2016 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('10', '1', 'Canadian Computing Competition - 2016 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('11', '1', 'Canadian Computing Competition - 2015 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('12', '1', 'Canadian Computing Competition - 2015 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('13', '1', 'Canadian Computing Competition - 2014 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('14', '1', 'Canadian Computing Competition - 2014 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('15', '1', 'Canadian Computing Competition - 2013 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('16', '1', 'Canadian Computing Competition - 2013 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('17', '1', 'Canadian Computing Competition - 2012 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('18', '1', 'Canadian Computing Competition - 2012 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('19', '1', 'Canadian Computing Competition - 2011 Junior');
+INSERT INTO `t_edu_lecture` VALUES ('20', '1', 'Canadian Computing Competition - 2011 Senior');
 
 
 INSERT INTO `t_edu_lecture` VALUES ('101', '2', 'Python 介绍');
@@ -223,44 +233,50 @@ INSERT INTO `t_edu_lecture_part` VALUES ('6', '1', 'Art', 'video lecture', '/ccc
 INSERT INTO `t_edu_lecture_part` VALUES ('7', '1', 'Cyclic Shifts ', '2020 Canadian Computing Competition - Junior Problem 4', '/ccc/2020/j4.html', '1.27', '0', '2');
 INSERT INTO `t_edu_lecture_part` VALUES ('8', '1', 'Cyclic Shifts ', '2020 J4 video lecture', '/ccc/2020/j4.mp4', '1.27', '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('9', '1', 'Escape Room', '2020 Canadian Computing Competition - Junior Problem 5 & Senior Problem 2', '/ccc/2020/j5.html', '5.3', '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('10', '1', 'Escape Room', '2020 J5 & S2 video lecture', '/ccc/2020/j5.mp4', '5.3', '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('9', '1', 'Escape Room', '2020 Canadian Computing Competition - Junior Problem 5', '/ccc/2020/j5.html', '5.3', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('10', '1', 'Escape Room', '2020 J5 video lecture', '/ccc/2020/j5.mp4', '5.3', '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('11', '1', 'Surmising a Sprinter’s Speed', '2020 Canadian Computing Competition - Senior Problem 1', '/ccc/2020/s1.html', '2 questions', '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('12', '1', 'Surmising a Sprinter’s Speed', '2020 S1 video lecture', '/ccc/2020/s1.mp4', '2 questions', '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('11', '2', 'Surmising a Sprinter’s Speed', '2020 Canadian Computing Competition - Senior Problem 1', '/ccc/2020/s1.html', '2 questions', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('12', '2', 'Surmising a Sprinter’s Speed', '2020 S1 video lecture', '/ccc/2020/s1.mp4', '2 questions', '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('13', '1', 'Searching for Strings', '2020 Canadian Computing Competition - Senior Problem 3', '/ccc/2020/s3.html', '3 questions', '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('14', '1', 'Searching for Strings', '2020 S3 video lecture', '/ccc/2020/s3.mp4', '3 questions', '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('13', '2', 'Escape Room', '2020 Canadian Computing Competition - Senior Problem 2', '/ccc/2020/j5.html', '5.3', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('14', '2', 'Escape Room', '2020 S2 video lecture', '/ccc/2020/j5.mp4', '5.3', '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('15', '1', 'Swapping Seats', '2020 Canadian Computing Competition - Senior Problem 4', '/ccc/2020/s4.html', null, '1', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('16', '1', 'Swapping Seats', '2020 CCC S4 video lecture', '/ccc/2020/s4.mp4', null, '1', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('15', '2', 'Searching for Strings', '2020 Canadian Computing Competition - Senior Problem 3', '/ccc/2020/s3.html', '3 questions', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('16', '2', 'Searching for Strings', '2020 S3 video lecture', '/ccc/2020/s3.mp4', '3 questions', '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('17', '2', 'Swapping Seats', '2020 Canadian Computing Competition - Senior Problem 4', '/ccc/2020/s4.html', null, '1', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('18', '2', 'Swapping Seats', '2020 CCC S4 video lecture', '/ccc/2020/s4.mp4', null, '1', '1');
 
 
 
 
-INSERT INTO `t_edu_lecture_part` VALUES ('17', '2', 'Winning Score', '2019 Canadian Computing Competition - Junior Problem 1', '/ccc/2019/j1.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('18', '2', 'Winning Score', '2019 CCC J1 video lecture', '/ccc/2019/j1.html', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('21', '3', 'Winning Score', '2019 Canadian Computing Competition - Junior Problem 1', '/ccc/2019/j1.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('22', '3', 'Winning Score', '2019 CCC J1 video lecture', '/ccc/2019/j1.html', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('19', '2', 'Time to Decompress', '2019 Canadian Computing Competition - Junior Problem 2', '/ccc/2019/j2.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('20', '2', 'Time to Decompress', '2019 CCC J2 video lecture', '/ccc/2019/j2.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('23', '3', 'Time to Decompress', '2019 Canadian Computing Competition - Junior Problem 2', '/ccc/2019/j2.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('24', '3', 'Time to Decompress', '2019 CCC J2 video lecture', '/ccc/2019/j2.mp4', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('21', '2', 'Cold Compress', '2019 Canadian Computing Competition - Junior Problem 3', '/ccc/2019/j3.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('22', '2', 'Cold Compress', '2019 CCC J3 video lecure', '/ccc/2019/j3.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('25', '3', 'Cold Compress', '2019 Canadian Computing Competition - Junior Problem 3', '/ccc/2019/j3.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('26', '3', 'Cold Compress', '2019 CCC J3 video lecure', '/ccc/2019/j3.mp4', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('23', '2', 'Flipper', '2019 Canadian Computing Competition - Junior Problem 4 & Senior Problem 1', '/ccc/2019/j4.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('24', '2', 'Flipper', '2019 CCC J4/S1 video lecture', '/ccc/2019/j4.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('27', '3', 'Flipper', '2019 Canadian Computing Competition - Junior Problem 4', '/ccc/2019/j4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('28', '3', 'Flipper', '2019 CCC J4 video lecture', '/ccc/2019/j4.mp4', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('25', '2', 'Rule of Three', '2019 Canadian Computing Competition - Junior Problem 5', '/ccc/2019/j5.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('26', '2', 'Rule of Three', '2019 CCC J5 video lecture', '/ccc/2019/j5.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('29', '3', 'Rule of Three', '2019 Canadian Computing Competition - Junior Problem 5', '/ccc/2019/j5.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('30', '3', 'Rule of Three', '2019 CCC J5 video lecture', '/ccc/2019/j5.mp4', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('27', '2', 'Pretty Average Primes', '2019 Canadian Computing Competition - Senior Problem 2', '/ccc/2019/s2.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('28', '2', 'Pretty Average Primes', '2019 CCC S2 video lecture', '/ccc/2019/s2.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('31', '4', 'Flipper', '2019 Canadian Computing Competition - Senior Problem 1', '/ccc/2019/j4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('32', '4', 'Flipper', '2019 CCC S1 video lecture', '/ccc/2019/j4.mp4', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('29', '2', 'Arithmetic Square', '2019 Canadian Computing Competition - Senior Problem 3', '/ccc/2019/s3.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('30', '2', 'Arithmetic Square', '2019 CCC S3 video lecture', '/ccc/2019/s3.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('33', '4', 'Pretty Average Primes', '2019 Canadian Computing Competition - Senior Problem 2', '/ccc/2019/s2.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('34', '4', 'Pretty Average Primes', '2019 CCC S2 video lecture', '/ccc/2019/s2.mp4', null, '0', '1');
 
-INSERT INTO `t_edu_lecture_part` VALUES ('31', '2', 'Tourism', '2019 Canadian Computing Competition - Senior Problem 4', '/ccc/2019/s4.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('32', '2', 'Tourism', '2019 CCC S4 video lecture', '/ccc/2019/s4.mp4', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('35', '4', 'Arithmetic Square', '2019 Canadian Computing Competition - Senior Problem 3', '/ccc/2019/s3.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('36', '4', 'Arithmetic Square', '2019 CCC S3 video lecture', '/ccc/2019/s3.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('37', '4', 'Tourism', '2019 Canadian Computing Competition - Senior Problem 4', '/ccc/2019/s4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('38', '4', 'Tourism', '2019 CCC S4 video lecture', '/ccc/2019/s4.mp4', null, '0', '1');
 
 
 

@@ -1,0 +1,10 @@
+从零开始，系统学习Python编程语言；
+学会专业地使用Python 3；
+深入学习面向对象的编程！
+理解复杂的设计模式 (design pattern)！
+使用Python创建游戏，比如 Tic Tac Toe 和 21点！
+学习高级Python特性，比如collections模块和如何使用时间戳！
+学习Python与数据库(MySQL)的交互!
+学习Python如何使用HTTP协议与后端服务器的网络通信!
+
+

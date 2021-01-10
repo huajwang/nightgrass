@@ -31,7 +31,7 @@ export class CourseComponent implements OnInit, OnDestroy {
   title: String;
   part_contents: LecturePartContent[];
 
-  url_category: string;
+  course_contains: String[] = [];
   url_index: string;
 
   @ViewChildren('lectures_container') lectures_container: QueryList<ElementRef>;
@@ -56,6 +56,8 @@ export class CourseComponent implements OnInit, OnDestroy {
         this.courseService.courseChanged.subscribe(
           (course: Course) => {
             this.course = course;
+            //
+            this.course_contains = course.contains.split("|");
             this.courseService.getCourseLectures(this.course.courseId);
             // need to check paid status here as well
             if (this.isAuthenticated()) {
@@ -119,19 +121,24 @@ export class CourseComponent implements OnInit, OnDestroy {
   }
 
   play(lecturePart: LecturePart) {
-    this.lecturePart_type = lecturePart.type;
-    this.title = lecturePart.partName;
-    if (lecturePart.type == 1) {
-      this.videoUrl = aliyun_oss_url + lecturePart.videoUrl;
-      this.video.nativeElement.load();
-      this.renderer.setStyle(this.videoModal.nativeElement, 'display', 'block');
-      this.video.nativeElement.play();
+    if (! this.isAuthenticated()) {
+      this.router.navigate(['/signin'], { queryParams: {'courseName': this.course.courseName} });
     } else {
+        this.lecturePart_type = lecturePart.type;
+        this.title = lecturePart.partName;
+        if (lecturePart.type == 1) {
+          this.videoUrl = aliyun_oss_url + lecturePart.videoUrl;
+          this.video.nativeElement.load();
+          this.renderer.setStyle(this.videoModal.nativeElement, 'display', 'block');
+          this.video.nativeElement.play();
+        } else {
 
-      // this.part_contents = lecturePart.lecturePartContents;
-      // this.renderer.setStyle(this.textModal.nativeElement, 'display', 'block');
-      this.router.navigate([lecturePart.partId],
-        { relativeTo: this.route, queryParams: {'articleUrl': lecturePart.videoUrl} });
+           // this.part_contents = lecturePart.lecturePartContents;
+           // this.renderer.setStyle(this.textModal.nativeElement, 'display', 'block');
+           // TODO
+           this.router.navigate([lecturePart.partId],
+             { relativeTo: this.route, queryParams: {'articleUrl': lecturePart.videoUrl} });
+          }
     }
   }
 

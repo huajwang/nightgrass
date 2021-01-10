@@ -1,0 +1,64 @@
+<div class="lesson-article">
+<h2 class="article-title">Problem S4: Swapping Seats</h2>
+<h3>Problem Description</h3>
+<p>There are N people sitting at a circular table for a long session of negotiations. Each person
+belongs to one of the three groups: A, B, or C. A group is happy if all of its members are sitting
+contiguously in a block of consecutive seats. You would like to make all groups happy by some
+sequence of swap operations. In each swap operation, two people exchange seats with each other.
+What is the minimum number of swaps required to make all groups happy?
+</p>
+<h3>Input Specification</h3>
+<p>The input consists of a single line containing N (1 ≤ N ≤ 1 000 000) characters, where each
+character is A, B, or C. The i-th character denotes the group of the person initially sitting at the i-th
+seat at the table, where seats are numbered in clockwise order.
+</p>
+<ul>
+  <li>For 4 of the 15 available marks, the input has no C characters and N ≤ 5 000.</li>
+  <li>For an additional 4 of the 15 available marks, the input has no C characters.</li>
+  <li>For an additional 4 of the 15 available marks, N ≤ 5 000.</li>
+</ul>
+<h3>Output Specification</h3>
+<p>Output a single integer, the minimum possible number of swaps.</p>
+<h3>Sample Input</h3>
+<pre>
+BABCBCACCA
+</pre>
+<h3>Output for Sample Input</h3>
+<pre>2</pre>
+<h3>Explanation of Output for Sample Input</h3>
+<p>In one possible sequence, the first swap results in the seating layout AABCBCBCCA. After the
+second swap, the layout is AABBBCCCCA.
+</p>
+
+<h3>Analyze:</h3>
+<p>
+p
+</p>
+<h3>Solution:</h3>
+<pre>
+  def happyGroup(N):
+    happy = ['A'*N.count('A')+'B'*N.count('B')+'C'*N.count('C')]
+    for _ in happy[0]:
+        happy.append(happy[-1][1:] + happy[-1][0])
+    happy.pop()
+
+    def recursion(string, moves, vis, sstring):
+        global ans
+        if moves >= ans:
+            return
+        if ''.join(string) in happy:
+            ans = moves
+            return
+        for n1 in range(len(string)):
+            for n2 in range(len(string)):
+                string[n1], string[n2] = string[n2], string[n1]
+                if string not in vis:
+                    vis.append(sstring)
+                    recursion(string, moves+1, vis, string)
+                    vis.pop()
+                string[n1], string[n2] = string[n2], string[n1]
+
+    recursion(list(N), 0, [list(N)], list(N))
+    print(ans)
+    return ans
+</pre>
