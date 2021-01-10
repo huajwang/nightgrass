@@ -2,11 +2,11 @@
 -- Records of t_edu_course
 -- ----------------------------
 
-INSERT INTO `t_edu_course` VALUES ('00000000001', 'ccc', '22 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', '计算机编程竞赛', 'The Canadian Computing Competition (CCC) is a fun challenge for secondary school students with an interest in programming. It is an opportunity for students to test their ability in designing, understanding and implementing algorithms.辅导计算机编程大赛。通过讲解历年大赛的竞赛题目, 提高学员的分析问题,解决问题的能力。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
-INSERT INTO `t_edu_course` VALUES ('00000000002', 'python', '25 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Python Programming', 'Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!', '1', '59.99', '6', '5', '2020-05-30 20:17:05', '23.3', '/python/python-1/python-1.mp4');
-INSERT INTO `t_edu_course` VALUES ('00000000003', 'java', '26 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Java Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。', '1', '199.99', '29', '5', '2020-06-28 13:57:30', '11.3', '/python/python-2/python-2.mp4');
-INSERT INTO `t_edu_course` VALUES ('00000000004', 'cplus', '27 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'C++ Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
-INSERT INTO `t_edu_course` VALUES ('00000000005', 'scratch', '28 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Scratch Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
+INSERT INTO `t_edu_course` VALUES ('001', 'ccc', '22 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', '计算机编程竞赛', 'The Canadian Computing Competition (CCC) is a fun challenge for secondary school students with an interest in programming. It is an opportunity for students to test their ability in designing, understanding and implementing algorithms.辅导计算机编程大赛。通过讲解历年大赛的竞赛题目, 提高学员的分析问题,解决问题的能力。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
+INSERT INTO `t_edu_course` VALUES ('002', 'python', '25 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Python Programming', 'Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!', '1', '59.99', '6', '5', '2020-05-30 20:17:05', '23.3', '/python/python-1/python-1.mp4');
+INSERT INTO `t_edu_course` VALUES ('003', 'java', '26 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Java Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。', '1', '199.99', '29', '5', '2020-06-28 13:57:30', '11.3', '/python/python-2/python-2.mp4');
+INSERT INTO `t_edu_course` VALUES ('004', 'cplus', '27 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'C++ Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
+INSERT INTO `t_edu_course` VALUES ('005', 'scratch', '28 hours on-demand video|15 articles|19 coding exercises|Full lifetime access|Access on mobile and TV|Certificate of Completion', 'Scratch Programming', '课程由浅入深讲解你在面试中可能碰到的算法设计和实现。拓展学生设计算法解决复杂问题的能力。', '1', '399.99', '0', '5', '2020-06-29 15:05:13', '20.5', null);
 
 -- ---------------------------
 -- Records of t_edu_teacher
@@ -211,28 +211,58 @@ INSERT INTO `t_edu_lecture` VALUES ('525', '5', 'Java');
 -- --------------------------------------
 -- Records of t_edu_lecture_part -- CCC
 -- --------------------------------------
-INSERT INTO `t_edu_lecture_part` VALUES ('1', '1', 'Python编程语言介绍', 'Python语言的特点；为什么Python会这么流行？', '/python/python-1/python-1.mp4', '3.57', '1', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('2', '1', '课程大纲简介', '课程讲述的内容和如何学习这门课程', '/python/python-1/course_intro.html', '5.18', '0', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('3', '2', 'Python的安装和配置', '安装Python，命令行界面，PyCharm集成开发环境的安装和配置', '/python/python-1/article_content.html', '', '1', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('4', '2', 'Python交互式命令行 ', '如何使用命令行执行Python程序', '/python/python-1/duangexing.mp4', '1.27', '0', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('5', '2', '集成开发环境PyCharm', '使用IDE编写，运行一个简单的Python程序', null, '5.3', '0', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('6', '3', 'Python程序的语法', '介绍Python的语法规则', '/python/python-1/syntax.html', '2 questions', '0', '3');
-INSERT INTO `t_edu_lecture_part` VALUES ('7', '3', 'Python注释', '如何在Python程序中使用注释来对程序进行注解', '/python/python-1/comment.html', '3 questions', '0', '4');
-INSERT INTO `t_edu_lecture_part` VALUES ('8', '4', 'Python变量', '变量的定义，类型，赋值和输出', '/python/python-1/variable.html', null, '1', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('9', '4', 'Why Use Java?', 'Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)', null, null, '0', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('10', '4', '游戏编程基础', '游戏编程基本知识', '/scratch/scratch.mp4', '120.30', '1', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('11', '5', 'while循环', '循环三要素', '/cplus/cplus-1.mp4', '53', '1', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('12', '6', 'for循环', '如何避免进入死循环', null, '98', '0', '1');
-INSERT INTO `t_edu_lecture_part` VALUES ('13', '6', '无序数组中的两数之和', '在一个无序数组中, 找出两数之和等于给定target在数组中的index位置', '/python/python-algorithm/palindrome.html', null, '1', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('14', '7', '无序数组的三数之和', '在一个无序数组中，找出所有不同的三个数的组合。每个组合中的三个数之和等于0。', '/python/python-algorithm/three_sum.html', null, '1', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('15', '8', 'reverse字符串中的单词', '给定一个字符串，逐字反转该字符串。', '/python/python-algorithm/reverse_string.html', null, '1', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('16', '8', '检查括号是否合法', '检查字符串中的括号是否合法', null, null, '0', '0');
-INSERT INTO `t_edu_lecture_part` VALUES ('17', '8', '字符串的压缩和解压缩', '设计算法对字符串按一定规则进行编码和解码', null, null, '0', '0');
-INSERT INTO `t_edu_lecture_part` VALUES ('18', '9', '字符串的加密和解密', '按一定的规则对字符串进行加密和解密', null, null, '0', '0');
-INSERT INTO `t_edu_lecture_part` VALUES ('19', '9', '狗粮', 'Canadian Computing Competition Junior Question 1', null, null, '0', '0');
-INSERT INTO `t_edu_lecture_part` VALUES ('20', '9', '传播模型', 'Canadian Computing Competition Junior Question 2', null, null, '0', '0');
-INSERT INTO `t_edu_lecture_part` VALUES ('21', '10', '绘画艺术', 'Canadian Computing Competition Junior Question 3', null, null, '0', '0');
-INSERT INTO `t_edu_lecture_part` VALUES ('22', '11', '移动数字零', '移动所有的数字零到数组的后面,并保持非零数字的相对位置', null, null, '0', '0');
+INSERT INTO `t_edu_lecture_part` VALUES ('1', '1', 'Dog Treats', '2020 Canadian Computing Competition - Junior Problem 1', '/ccc/2020/j1.html', '3.57', '1', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('2', '1', 'Dog Treats', 'video lecture', '/ccc/2020/j1.mp4', '3.57', '1', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('3', '1', 'Epidemiology', '2020 Canadian Computing Competition - Junior Problem 2', '/ccc/2020/j2.html', '5.18', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('4', '1', 'Epidemiology', 'video lecture', '/ccc/2020/j2.mp4', '5.18', '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('5', '1', 'Art', '2020 Canadian Computing Competition - Junior Problem 3', '/ccc/2020/j3.html', '', '1', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('6', '1', 'Art', 'video lecture', '/ccc/2020/j3.mp4', '', '1', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('7', '1', 'Cyclic Shifts ', '2020 Canadian Computing Competition - Junior Problem 4', '/ccc/2020/j4.html', '1.27', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('8', '1', 'Cyclic Shifts ', '2020 J4 video lecture', '/ccc/2020/j4.mp4', '1.27', '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('9', '1', 'Escape Room', '2020 Canadian Computing Competition - Junior Problem 5 & Senior Problem 2', '/ccc/2020/j5.html', '5.3', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('10', '1', 'Escape Room', '2020 J5 & S2 video lecture', '/ccc/2020/j5.mp4', '5.3', '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('11', '1', 'Surmising a Sprinter’s Speed', '2020 Canadian Computing Competition - Senior Problem 1', '/ccc/2020/s1.html', '2 questions', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('12', '1', 'Surmising a Sprinter’s Speed', '2020 S1 video lecture', '/ccc/2020/s1.mp4', '2 questions', '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('13', '1', 'Searching for Strings', '2020 Canadian Computing Competition - Senior Problem 3', '/ccc/2020/s3.html', '3 questions', '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('14', '1', 'Searching for Strings', '2020 S3 video lecture', '/ccc/2020/s3.mp4', '3 questions', '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('15', '1', 'Swapping Seats', '2020 Canadian Computing Competition - Senior Problem 4', '/ccc/2020/s4.html', null, '1', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('16', '1', 'Swapping Seats', '2020 CCC S4 video lecture', '/ccc/2020/s4.mp4', null, '1', '1');
+
+
+
+
+INSERT INTO `t_edu_lecture_part` VALUES ('17', '2', 'Winning Score', '2019 Canadian Computing Competition - Junior Problem 1', '/ccc/2019/j1.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('18', '2', 'Winning Score', '2019 CCC J1 video lecture', '/ccc/2019/j1.html', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('19', '2', 'Time to Decompress', '2019 Canadian Computing Competition - Junior Problem 2', '/ccc/2019/j2.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('20', '2', 'Time to Decompress', '2019 CCC J2 video lecture', '/ccc/2019/j2.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('21', '2', 'Cold Compress', '2019 Canadian Computing Competition - Junior Problem 3', '/ccc/2019/j3.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('22', '2', 'Cold Compress', '2019 CCC J3 video lecure', '/ccc/2019/j3.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('23', '2', 'Flipper', '2019 Canadian Computing Competition - Junior Problem 4 & Senior Problem 1', '/ccc/2019/j4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('24', '2', 'Flipper', '2019 CCC J4/S1 video lecture', '/ccc/2019/j4.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('25', '2', 'Rule of Three', '2019 Canadian Computing Competition - Junior Problem 5', '/ccc/2019/j5.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('26', '2', 'Rule of Three', '2019 CCC J5 video lecture', '/ccc/2019/j5.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('27', '2', 'Pretty Average Primes', '2019 Canadian Computing Competition - Senior Problem 2', '/ccc/2019/s2.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('28', '2', 'Pretty Average Primes', '2019 CCC S2 video lecture', '/ccc/2019/s2.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('29', '2', 'Arithmetic Square', '2019 Canadian Computing Competition - Senior Problem 3', '/ccc/2019/s3.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('30', '2', 'Arithmetic Square', '2019 CCC S3 video lecture', '/ccc/2019/s3.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('31', '2', 'Tourism', '2019 Canadian Computing Competition - Senior Problem 4', '/ccc/2019/s4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('32', '2', 'Tourism', '2019 CCC S4 video lecture', '/ccc/2019/s4.mp4', null, '0', '1');
+
+
 
 
 -- ----------------------------------------
