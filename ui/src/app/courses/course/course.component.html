@@ -60,6 +60,11 @@
         </a>
 
         <div class="lectures-container" #lectures_container>
+          <div class="lecture-container" *ngIf="lecture.show == 1">
+            <div class="lecture-left">
+              <a href="{{lecture.lectureUrl}}">{{lecture.lectureDescription}}</a>
+            </div>
+          </div>
           <div class="lecture-container" *ngFor="let lecturePart of lecture.lectureParts;">
             <div class="lecture-left">
               <span class="lecture-left_play" *ngIf="lecturePart.type == 1">

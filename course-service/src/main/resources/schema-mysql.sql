@@ -31,6 +31,9 @@ CREATE TABLE `t_edu_lecture` (
   `lecture_id` int(20) NOT NULL AUTO_INCREMENT,
   `course_id` int(11) NOT NULL,
   `lecture_name` varchar(50) NOT NULL,
+  `lecture_url` varchar(100) DEFAULT NULL,
+  `lecture_description` varchar(100) DEFAULT NULL,
+  `show` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`lecture_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8;
 
@@ -92,4 +95,3 @@ CREATE TABLE `t_edu_user_course_pay` (
   PRIMARY KEY (`id`),
   KEY `user_course` (`user_id`,`course_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-

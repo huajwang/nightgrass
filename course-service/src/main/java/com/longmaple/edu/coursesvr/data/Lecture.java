@@ -15,17 +15,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_edu_lecture")
 public class Lecture {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer lectureId;
 	private Integer courseId;
 	private String lectureName;
-	
+	private String lectureUrl;
+	private String lectureDescription;
+	private Boolean show;
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "lecture_id")
 	private List<LecturePart> lectureParts = new ArrayList<>();
-	
+
 	public Integer getLectureId() {
 		return lectureId;
 	}
@@ -49,6 +52,24 @@ public class Lecture {
 	}
 	public void setLectureParts(List<LecturePart> lectureParts) {
 		this.lectureParts = lectureParts;
+	}
+	public String getLectureUrl() {
+		return this.lectureUrl;
+	}
+	public void setLectureUrl(String lectureUrl) {
+		this.lectureUrl = lectureUrl;
+	}
+	public String getLectureDescription() {
+		return this.lectureDescription;
+	}
+	public void setLectureDescription(String lectureDescription) {
+		this.lectureDescription = lectureDescription;
+	}
+	public Boolean getShow() {
+		return this.show;
+	}
+	public void setShow(Boolean show) {
+		this.show = show;
 	}
 
 }

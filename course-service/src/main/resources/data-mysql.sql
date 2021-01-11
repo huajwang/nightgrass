@@ -67,156 +67,79 @@ INSERT INTO `t_edu_course_content` VALUES ('40', '5', 'Case分支判断');
 -- ----------------------------
 -- Records of t_edu_lecture
 -- ----------------------------
-INSERT INTO `t_edu_lecture` VALUES ('1', '1', 'Canadian Computing Competition - 2020 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('2', '1', 'Canadian Computing Competition - 2020 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('3', '1', 'Canadian Computing Competition - 2019 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('4', '1', 'Canadian Computing Competition - 2019 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('5', '1', 'Canadian Computing Competition - 2018 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('6', '1', 'Canadian Computing Competition - 2018 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('7', '1', 'Canadian Computing Competition - 2017 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('8', '1', 'Canadian Computing Competition - 2017 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('9', '1', 'Canadian Computing Competition - 2016 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('10', '1', 'Canadian Computing Competition - 2016 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('11', '1', 'Canadian Computing Competition - 2015 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('12', '1', 'Canadian Computing Competition - 2015 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('13', '1', 'Canadian Computing Competition - 2014 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('14', '1', 'Canadian Computing Competition - 2014 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('15', '1', 'Canadian Computing Competition - 2013 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('16', '1', 'Canadian Computing Competition - 2013 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('17', '1', 'Canadian Computing Competition - 2012 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('18', '1', 'Canadian Computing Competition - 2012 Senior');
-INSERT INTO `t_edu_lecture` VALUES ('19', '1', 'Canadian Computing Competition - 2011 Junior');
-INSERT INTO `t_edu_lecture` VALUES ('20', '1', 'Canadian Computing Competition - 2011 Senior');
+INSERT INTO `t_edu_lecture` VALUES ('1', '1', 'Canadian Computing Competition - 2020 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2020/ccc/juniorEF.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('2', '1', 'Canadian Computing Competition - 2020 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2020/ccc/seniorEF.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('3', '1', 'Canadian Computing Competition - 2019 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2019/stage%201/juniorEF.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('4', '1', 'Canadian Computing Competition - 2019 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2019/stage%201/seniorEF.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('5', '1', 'Canadian Computing Competition - 2018 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2018/stage%201/juniorEF.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('6', '1', 'Canadian Computing Competition - 2018 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2018/stage%201/seniorEF.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('7', '1', 'Canadian Computing Competition - 2017 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2017/stage%201/juniorEF.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('8', '1', 'Canadian Computing Competition - 2017 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2017/stage%201/seniorEF.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('9', '1', 'Canadian Computing Competition - 2016 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2016/stage%201/juniorEn.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('10', '1', 'Canadian Computing Competition - 2016 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2016/stage%201/seniorEn.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('11', '1', 'Canadian Computing Competition - 2015 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2015/stage%201/juniorEn.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('12', '1', 'Canadian Computing Competition - 2015 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2015/stage%201/seniorEn.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('13', '1', 'Canadian Computing Competition - 2014 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2014/stage%201/juniorEn.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('14', '1', 'Canadian Computing Competition - 2014 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2014/stage%201/seniorEn.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('15', '1', 'Canadian Computing Competition - 2013 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2013/stage1/juniorEn.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('16', '1', 'Canadian Computing Competition - 2013 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2013/stage1/seniorEn.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('17', '1', 'Canadian Computing Competition - 2012 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2012/stage1/juniorEn.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('18', '1', 'Canadian Computing Competition - 2012 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2012/stage1/seniorEn.pdf', 'Senior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('19', '1', 'Canadian Computing Competition - 2011 Junior', 'https://cemc.uwaterloo.ca/contests/computing/2011/stage1/juniorEn.pdf', 'Junior Problems', 1);
+INSERT INTO `t_edu_lecture` VALUES ('20', '1', 'Canadian Computing Competition - 2011 Senior', 'https://cemc.uwaterloo.ca/contests/computing/2011/stage1/seniorEn.pdf', 'Senior Problems', 1);
 
 
-INSERT INTO `t_edu_lecture` VALUES ('101', '2', 'Python 介绍');
-INSERT INTO `t_edu_lecture` VALUES ('102', '2', 'Python 安装和配置');
-INSERT INTO `t_edu_lecture` VALUES ('103', '2', 'Python 语法');
-INSERT INTO `t_edu_lecture` VALUES ('104', '2', 'Python 变量');
-INSERT INTO `t_edu_lecture` VALUES ('105', '2', 'Python 数据类型');
-INSERT INTO `t_edu_lecture` VALUES ('106', '2', 'Python Numbers');
-INSERT INTO `t_edu_lecture` VALUES ('107', '2', 'Python 数据类型转换');
-INSERT INTO `t_edu_lecture` VALUES ('108', '2', 'Python 字符串');
-INSERT INTO `t_edu_lecture` VALUES ('109', '2', 'Python Booleans');
-INSERT INTO `t_edu_lecture` VALUES ('110', '2', 'Python Operators');
-INSERT INTO `t_edu_lecture` VALUES ('111', '2', 'Python 列表');
-INSERT INTO `t_edu_lecture` VALUES ('112', '2', 'Python Tuples');
-INSERT INTO `t_edu_lecture` VALUES ('113', '2', 'Python 集合数据结构');
-INSERT INTO `t_edu_lecture` VALUES ('114', '2', 'Python 字典数据结构');
-INSERT INTO `t_edu_lecture` VALUES ('115', '2', 'Python 分支逻辑判断');
-INSERT INTO `t_edu_lecture` VALUES ('116', '2', 'Python While 循环');
-INSERT INTO `t_edu_lecture` VALUES ('117', '2', 'Python For 循环');
-INSERT INTO `t_edu_lecture` VALUES ('118', '2', 'Python 函数');
-INSERT INTO `t_edu_lecture` VALUES ('119', '2', 'Python Lambda');
-INSERT INTO `t_edu_lecture` VALUES ('120', '2', 'Python 类与对象');
-INSERT INTO `t_edu_lecture` VALUES ('121', '2', 'Python 继承');
-INSERT INTO `t_edu_lecture` VALUES ('122', '2', 'Python Iterators 迭代器');
-INSERT INTO `t_edu_lecture` VALUES ('123', '2', 'Python 变量范围 Scope');
-INSERT INTO `t_edu_lecture` VALUES ('124', '2', 'Python 模块');
-INSERT INTO `t_edu_lecture` VALUES ('125', '2', 'Python 日期数据类型');
-INSERT INTO `t_edu_lecture` VALUES ('126', '2', 'Python Math');
-INSERT INTO `t_edu_lecture` VALUES ('127', '2', 'Python JSON');
-INSERT INTO `t_edu_lecture` VALUES ('128', '2', 'Python RegEx 正则表达式');
-INSERT INTO `t_edu_lecture` VALUES ('129', '2', 'Python PIP');
-INSERT INTO `t_edu_lecture` VALUES ('130', '2', 'Python 异常抛出处理');
-INSERT INTO `t_edu_lecture` VALUES ('131', '2', 'Python 用户输入');
-INSERT INTO `t_edu_lecture` VALUES ('132', '2', 'Python 格式化输出');
-INSERT INTO `t_edu_lecture` VALUES ('133', '2', 'Python 文件处理');
-INSERT INTO `t_edu_lecture` VALUES ('134', '2', 'Python 读取文件');
-INSERT INTO `t_edu_lecture` VALUES ('135', '2', 'Python 文件的创建和写入');
-INSERT INTO `t_edu_lecture` VALUES ('136', '2', 'Python 文件删除');
+INSERT INTO `t_edu_lecture` VALUES ('101', '2', 'Python 介绍', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('102', '2', 'Python 安装和配置', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('103', '2', 'Python 语法', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('104', '2', 'Python 变量', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('105', '2', 'Python 数据类型', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('106', '2', 'Python Numbers', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('107', '2', 'Python 数据类型转换', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('108', '2', 'Python 字符串', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('109', '2', 'Python Booleans', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('110', '2', 'Python Operators', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('111', '2', 'Python 列表', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('112', '2', 'Python Tuples', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('113', '2', 'Python 集合数据结构', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('114', '2', 'Python 字典数据结构', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('115', '2', 'Python 分支逻辑判断', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('116', '2', 'Python While 循环', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('117', '2', 'Python For 循环', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('118', '2', 'Python 函数', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('119', '2', 'Python Lambda', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('120', '2', 'Python 类与对象', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('121', '2', 'Python 继承', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('122', '2', 'Python Iterators 迭代器', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('123', '2', 'Python 变量范围 Scope', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('124', '2', 'Python 模块', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('125', '2', 'Python 日期数据类型', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('126', '2', 'Python Math', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('127', '2', 'Python JSON', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('128', '2', 'Python RegEx 正则表达式', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('129', '2', 'Python PIP', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('130', '2', 'Python 异常抛出处理', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('131', '2', 'Python 用户输入', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('132', '2', 'Python 格式化输出', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('133', '2', 'Python 文件处理', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('134', '2', 'Python 读取文件', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('135', '2', 'Python 文件的创建和写入', '', '', 0);
+INSERT INTO `t_edu_lecture` VALUES ('136', '2', 'Python 文件删除', '', '', 0);
 
 ------------------------------
 -- Java lectures
 ------------------------------
-INSERT INTO `t_edu_lecture` VALUES ('201', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('202', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('203', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('204', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('205', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('206', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('207', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('208', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('209', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('210', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('211', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('212', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('213', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('214', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('215', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('216', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('217', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('218', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('219', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('220', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('221', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('222', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('223', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('224', '3', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('225', '3', 'Java');
+INSERT INTO `t_edu_lecture` VALUES ('201', '3', 'Java', '', '', 0);
 
 ------------------------------
 -- C++
 ------------------------------
-INSERT INTO `t_edu_lecture` VALUES ('301', '4', 'C++');
-INSERT INTO `t_edu_lecture` VALUES ('402', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('403', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('404', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('405', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('406', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('407', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('408', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('409', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('410', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('411', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('412', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('413', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('414', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('415', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('416', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('417', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('418', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('419', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('420', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('421', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('422', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('423', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('424', '4', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('425', '4', 'Java');
+INSERT INTO `t_edu_lecture` VALUES ('301', '4', 'C++', '', '', 0);
 
 -------------------------------
 -- Scratch Lectures
 -------------------------------
-INSERT INTO `t_edu_lecture` VALUES ('501', '5', 'Scratch');
-INSERT INTO `t_edu_lecture` VALUES ('502', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('503', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('504', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('505', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('506', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('507', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('508', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('509', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('510', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('511', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('512', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('513', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('514', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('515', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('516', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('517', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('518', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('519', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('520', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('521', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('522', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('523', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('524', '5', 'Java');
-INSERT INTO `t_edu_lecture` VALUES ('525', '5', 'Java');
-
-
-
-
-
+INSERT INTO `t_edu_lecture` VALUES ('501', '5', 'Scratch', '', '', 0);
 
 -- --------------------------------------
 -- Records of t_edu_lecture_part -- CCC
