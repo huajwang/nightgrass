@@ -10,7 +10,7 @@ import { LecturePartContent } from "../lecture-part-content.model";
 import { CourseService } from "../course.service";
 import { AuthService } from "../../auth/auth.service";
 
-const aliyun_oss_url = "https://copperpea.oss-cn-hangzhou.aliyuncs.com";
+import * as Globals from "../../shared/global";
 
 
 @Component({
@@ -127,7 +127,7 @@ export class CourseComponent implements OnInit, OnDestroy {
         this.lecturePart_type = lecturePart.type;
         this.title = lecturePart.partName;
         if (lecturePart.type == 1) {
-          this.videoUrl = aliyun_oss_url + lecturePart.videoUrl;
+          this.videoUrl = Globals.OSS_VIDEO_URL + lecturePart.videoUrl;
           this.video.nativeElement.load();
           this.renderer.setStyle(this.videoModal.nativeElement, 'display', 'block');
           this.video.nativeElement.play();
@@ -144,7 +144,7 @@ export class CourseComponent implements OnInit, OnDestroy {
 
   playPreview() {
     this.title = "Course Preview: " + this.course.courseName;
-    this.videoUrl = aliyun_oss_url + this.course.previewUrl;
+    this.videoUrl = Globals.OSS_VIDEO_URL + this.course.previewUrl;
     this.video.nativeElement.load();
     this.renderer.setStyle(this.videoModal.nativeElement, 'display', 'block');
     this.video.nativeElement.play();

@@ -22,9 +22,6 @@ security:
 zuul:
   sensitive-headers: Cookie,Set-Cookie
   routes:
-    resource:
-      path: /message/**
-      serviceId: MESSAGESERVICE
     course:
       path: /edu/**
       serviceId: course-service
