@@ -1,0 +1,21 @@
+upstream goody {
+  server        frontend:8080;
+}
+
+# This is where you are defining the port receiving the incoming requests, what domain this configuration should match, and where it should be sent to.
+server {
+  listen        ${NGINX_PORT};
+  server_name   localhost;
+
+  root /usr/share/nginx/html;
+  index index.html;
+
+  location / {
+    proxy_pass  http://goody;
+    try_files $uri $uri/ /index.html =404;
+  }
+}
+
+
+
+

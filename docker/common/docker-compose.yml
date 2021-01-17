@@ -31,6 +31,7 @@ services:
 
   ui-service:
     image: huajwang/ui-service:ttmall
+    container_name: frontend
     ports:
       - "8080:8080"
     environment:
@@ -65,22 +66,18 @@ services:
       - eurekaserver
       - configserver
       - db-mysql
-          
-  zipkin:
-    image: openzipkin/zipkin
-    ports:
-      - "${ZIPKIN_PORT}:${ZIPKIN_PORT}"
-  
-  redis:
-    image: redis:alpine
-    ports:
-      - 6379:6379
 
-  kafkaserver:
-    image: spotify/kafka
+  web:
+    image: nginx
+    volumes:
+      - ./templates:/etc/nginx/templates
     ports:
-      - 2181:2181
-      - 9092:9092
+      - "80:80"
+    environment:
+      NGINX_HOST: "${NGINX_HOST}"
+      NGINX_PORT: "${NGINX_PORT}"
+    depends_on:
+      - ui-service
 
 volumes:
   dbdata:
