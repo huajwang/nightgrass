@@ -71,6 +71,7 @@ services:
     image: nginx
     volumes:
       - ./templates:/etc/nginx/templates
+      - ./ssl:/usr/local/nginx/conf
     ports:
       - "80:80"
     environment:

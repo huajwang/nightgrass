@@ -11,14 +11,14 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a routerLink="/courses">课程体系</a></li>
-        <li routerLinkActive="active"><a routerLink="/courses/ccc">计算机编程竞赛</a></li>
-        <li routerLinkActive="active"><a routerLink="/courses/python">Python</a></li>
-        <li routerLinkActive="active"><a routerLink="/courses/java">Java</a></li>
-        <li routerLinkActive="active"><a routerLink="/courses/cplus">C++</a></li>
-        <li routerLinkActive="active"><a routerLink="/courses/scratch">Scratch图形编程</a></li>
-        <li routerLinkActive="active"><a routerLink="/download">直播软件下载</a></li>
-        <li routerLinkActive="active"><a routerLink="/contact">联系我们</a></li>
+        <li routerLinkActive="active"><a routerLink="/courses" data-toggle="collapse" data-target=".navbar-collapse.in">课程体系</a></li>
+        <li routerLinkActive="active"><a routerLink="/courses/ccc" data-toggle="collapse" data-target=".navbar-collapse.in">计算机编程竞赛</a></li>
+        <li routerLinkActive="active"><a routerLink="/courses/python" data-toggle="collapse" data-target=".navbar-collapse.in">Python</a></li>
+        <li routerLinkActive="active"><a routerLink="/courses/java" data-toggle="collapse" data-target=".navbar-collapse.in">Java</a></li>
+        <li routerLinkActive="active"><a routerLink="/courses/cplus" data-toggle="collapse" data-target=".navbar-collapse.in">C++</a></li>
+        <li routerLinkActive="active"><a routerLink="/courses/scratch" data-toggle="collapse" data-target=".navbar-collapse.in">Scratch图形编程</a></li>
+        <li routerLinkActive="active"><a routerLink="/download" data-toggle="collapse" data-target=".navbar-collapse.in">直播软件下载</a></li>
+        <li routerLinkActive="active"><a routerLink="/contact" data-toggle="collapse" data-target=".navbar-collapse.in">联系我们</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <ng-template [ngIf]="!first_layer_verify">

@@ -175,7 +175,7 @@ INSERT INTO `t_edu_lecture_part` VALUES ('18', '2', 'Swapping Seats', '2020 CCC 
 
 
 INSERT INTO `t_edu_lecture_part` VALUES ('21', '3', 'Winning Score', '2019 Canadian Computing Competition - Junior Problem 1', '/ccc/2019/j1.html', null, '0', '2');
-INSERT INTO `t_edu_lecture_part` VALUES ('22', '3', 'Winning Score', '2019 CCC J1 video lecture', '/ccc/2019/j1.html', null, '0', '1');
+INSERT INTO `t_edu_lecture_part` VALUES ('22', '3', 'Winning Score', '2019 CCC J1 video lecture', '/ccc/2019/j1.mp4', null, '0', '1');
 
 INSERT INTO `t_edu_lecture_part` VALUES ('23', '3', 'Time to Decompress', '2019 Canadian Computing Competition - Junior Problem 2', '/ccc/2019/j2.html', null, '0', '2');
 INSERT INTO `t_edu_lecture_part` VALUES ('24', '3', 'Time to Decompress', '2019 CCC J2 video lecture', '/ccc/2019/j2.mp4', null, '0', '1');
@@ -200,6 +200,40 @@ INSERT INTO `t_edu_lecture_part` VALUES ('36', '4', 'Arithmetic Square', '2019 C
 
 INSERT INTO `t_edu_lecture_part` VALUES ('37', '4', 'Tourism', '2019 Canadian Computing Competition - Senior Problem 4', '/ccc/2019/s4.html', null, '0', '2');
 INSERT INTO `t_edu_lecture_part` VALUES ('38', '4', 'Tourism', '2019 CCC S4 video lecture', '/ccc/2019/s4.mp4', null, '0', '1');
+
+
+
+
+INSERT INTO `t_edu_lecture_part` VALUES ('81', '9', 'Tournament Selection', '2016 Canadian Computing Competition - Junior Problem 1', '/ccc/2016/j1.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('82', '9', 'Tournament Selection', '2016 CCC J1 video lecture', '/ccc/2016/j1.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('83', '9', 'Magic Squares', '2016 Canadian Computing Competition - Junior Problem 2', '/ccc/2016/j2.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('84', '9', 'Magic Squares', '2016 CCC J2 video lecture', '/ccc/2016/j2.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('85', '9', 'Hidden Palindrome', '2016 Canadian Computing Competition - Junior Problem 3', '/ccc/2016/j3.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('86', '9', 'Hidden Palindrome', '2016 CCC J3 video lecure', '/ccc/2016/j3.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('87', '9', 'Arrival Time', '2016 Canadian Computing Competition - Junior Problem 4', '/ccc/2016/j4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('88', '9', 'Arrival Time', '2016 CCC J4 video lecture', '/ccc/2016/j4.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('89', '9', 'Tandem Bicycle', '2016 Canadian Computing Competition - Junior Problem 5', '/ccc/2016/j5.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('90', '9', 'Tandem Bicycle', '2016 CCC J5 video lecture', '/ccc/2016/j5.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('91', '10', 'Ragaman', '2016 Canadian Computing Competition - Senior Problem 1', '/ccc/2016/s1.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('92', '10', 'Ragaman', '2016 CCC S1 video lecture', '/ccc/2016/s1.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('93', '10', 'Tandem Bicycle', '2016 Canadian Computing Competition - Senior Problem 2', '/ccc/2016/s2.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('94', '10', 'Tandem Bicycle', '2016 CCC S2 video lecture', '/ccc/2016/s2.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('95', '10', 'Phonomenal Reviews', '2016 Canadian Computing Competition - Senior Problem 3', '/ccc/2016/s3.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('96', '10', 'Phonomenal Reviews', '2016 CCC S3 video lecture', '/ccc/2016/s3.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('97', '10', 'Combining Riceballs', '2016 Canadian Computing Competition - Senior Problem 4', '/ccc/2016/s4.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('98', '10', 'Combining Riceballs', '2016 CCC S4 video lecture', '/ccc/2016/s4.mp4', null, '0', '1');
+
+INSERT INTO `t_edu_lecture_part` VALUES ('99', '10', 'Circle of Life', '2016 Canadian Computing Competition - Senior Problem 5', '/ccc/2016/s5.html', null, '0', '2');
+INSERT INTO `t_edu_lecture_part` VALUES ('100', '10', 'Circle of Life', '2016 CCC S5 video lecture', '/ccc/2016/s5.mp4', null, '0', '1');
+
 
 
 
