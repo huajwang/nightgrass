@@ -74,6 +74,7 @@ services:
       - ./ssl:/usr/local/nginx/conf
     ports:
       - "80:80"
+      - "443:443"
     environment:
       NGINX_HOST: "${NGINX_HOST}"
       NGINX_PORT: "${NGINX_PORT}"

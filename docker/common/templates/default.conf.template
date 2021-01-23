@@ -4,18 +4,31 @@ upstream goody {
 
 # This is where you are defining the port receiving the incoming requests, what domain this configuration should match, and where it should be sent to.
 server {
-  listen        ${NGINX_PORT};
+  listen        443 ssl;
   server_name   localhost;
+
+
+  keepalive_timeout   70;
+  ssl_certificate     /usr/local/nginx/conf/nginx-selfsigned.crt;
+  ssl_certificate_key /usr/local/nginx/conf/nginx-selfsigned.key;
 
   root /usr/share/nginx/html;
   index index.html;
 
   location / {
+    proxy_set_header        Host $host;
+    proxy_set_header        X-Real-IP $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header        X-Forwarded-Proto $scheme;
+
     proxy_pass  http://goody;
     try_files $uri $uri/ /index.html =404;
   }
 }
 
+server {
+    listen 80;
+    server_name localhost;
 
-
-
+    return 301 https://$server_name$request_uri;
+}
