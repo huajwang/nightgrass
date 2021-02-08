@@ -13,6 +13,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.util.matcher.RequestHeaderRequestMatcher;
 
 import com.longmaple.edu.coursesvr.config.ServiceConfig;
 
@@ -43,6 +44,7 @@ public class CourseServiceApplication extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http
+                .requestMatcher(new RequestHeaderRequestMatcher("Authorization"))
 		.authorizeRequests()
 		.antMatchers("/courses/**", "/payCheck/**").permitAll()
 		.anyRequest().authenticated();

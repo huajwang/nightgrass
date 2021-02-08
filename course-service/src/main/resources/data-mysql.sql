@@ -352,12 +352,12 @@ INSERT INTO `t_edu_lecture_part` VALUES ('822', '412', '移动数字零', '移�
 -- ----------------------------
 -- Records of t_edu_user
 -- ----------------------------
-INSERT INTO `t_edu_user` VALUES ('1', 'huajwang@rim.com');
+INSERT INTO `t_edu_user` VALUES ('1', 'yc_whj@hotmail.com');
 INSERT INTO `t_edu_user` VALUES ('2', 'cse63152@gmail.com');
 
 
 -- ----------------------------
 -- Records of t_edu_user_course_pay
 -- ----------------------------
-INSERT INTO `t_edu_user_course_pay` VALUES ('2', '1', '2', '99.99', '2020-06-03 14:36:39');
-INSERT INTO `t_edu_user_course_pay` VALUES ('3', '1', '1', '11.98', '2020-05-27 15:28:15');
+INSERT INTO `t_edu_user_course_pay` VALUES ('1', '1', '1', '99.99', '2020-06-03 14:36:39');
+INSERT INTO `t_edu_user_course_pay` VALUES ('2', '1', '2', '11.98', '2020-05-27 15:28:15');

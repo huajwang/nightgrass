@@ -74,9 +74,9 @@ export class CourseComponent implements OnInit, OnDestroy {
         if (course) { // if we go back to the start component
           this.courseService.getCourseLectures(course.courseId);
           // another place need to check paid status
-          if (this.isAuthenticated()) {
-            this.authService.isCoursePaid(course.courseId);
-          }
+          // if (this.isAuthenticated()) {
+          //   this.authService.isCoursePaid(course.courseId);
+          // }
         }
       }
     );
@@ -122,7 +122,16 @@ export class CourseComponent implements OnInit, OnDestroy {
 
   play(lecturePart: LecturePart) {
     if (! this.isAuthenticated()) {
-      this.router.navigate(['/signin'], { queryParams: {'courseName': this.course.courseName} });
+      // after user login, go to the original url
+      let returnUrl = "/courses/" + this.course.courseName;
+      if (lecturePart.type == 1) {
+        returnUrl += "?videoUrl=" + Globals.OSS_VIDEO_URL + lecturePart.videoUrl;
+      } else {
+        returnUrl += "/" + lecturePart.partId + "?articleUrl=" + lecturePart.videoUrl;
+      }
+      
+      //  https://copperpea.oss-cn-hangzhou.aliyuncs.com/ccc/2020/j2.mp4
+      this.router.navigate(['/signin'], { queryParams: {'returnUrl': returnUrl} });
     } else {
         this.lecturePart_type = lecturePart.type;
         this.title = lecturePart.partName;

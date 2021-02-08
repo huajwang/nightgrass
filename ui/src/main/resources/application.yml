@@ -5,22 +5,30 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
 
-security:
-  oauth2:
-    client:
-      clientId: ${FACEBOOK_APP_ID}
-      clientSecret: ${FACEBOOK_APP_SECRET}
-      accessTokenUri: https://graph.facebook.com/oauth/access_token
-      userAuthorizationUri: https://www.facebook.com/dialog/oauth
-      tokenName: oauth_token
-      authenticationScheme: query
-      clientAuthenticationScheme: form
-    resource:
-      userInfoUri: https://graph.facebook.com/me
-
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: ${GOOGLE_APP_ID}
+            clientSecret: ${GOOGLE_APP_SECRET}
+          github:
+            clientId: ${GITHUB_APP_ID}
+            clientSecret: ${GITHUB_APP_SECRET}
+          facebook:
+            clientId: ${FACEBOOK_APP_ID}
+            clientSecret: ${FACEBOOK_APP_SECRET}
+            accessTokenUri: https://graph.facebook.com/oauth/access_token
+            userAuthorizationUri: https://www.facebook.com/dialog/oauth
+            tokenName: oauth_token
+            authenticationScheme: query
+            clientAuthenticationScheme: form
+      resource:
+               userInfoUri: http://frontend:8080/user
 
 zuul:
-  sensitive-headers: Cookie,Set-Cookie
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     course:
       path: /edu/**

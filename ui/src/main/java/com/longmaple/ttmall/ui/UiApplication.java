@@ -7,6 +7,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
 
 
@@ -24,7 +26,12 @@ public class UiApplication extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/", "/*.js", "/assets/**", "/edu/**", "/fontawesome-webfont.*").permitAll()
-		.anyRequest().authenticated();
+		.antMatchers("/", "/*.js", "/assets/**", "/edu/**", "/fontawesome-webfont.*", "/error").permitAll()
+		.anyRequest().authenticated()
+		.and()
+		.exceptionHandling()
+		.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+		.and()
+    .oauth2Login();
 	}
 }

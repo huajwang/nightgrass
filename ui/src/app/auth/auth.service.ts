@@ -55,12 +55,11 @@ export class AuthService implements OnInit {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(
       response => {
-        if (studentLogin) {
-          let returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/me';
-          this.router.navigateByUrl(returnUrl);
-        } else {
-          this.lookupTeacher(email);
-        }
+        console.log(this.route.snapshot.queryParams['returnUrl']);
+        let returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/me';
+        console.log("returnUrl = " + returnUrl);
+
+        this.router.navigateByUrl(returnUrl);
         this.first_layer_verify = true;
         this.first_layer_verify_changed.next(true);
         this.username = firebase.auth().currentUser.email;
