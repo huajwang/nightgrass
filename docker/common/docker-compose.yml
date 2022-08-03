@@ -58,7 +58,7 @@ services:
   course-service:
     image: huajwang/course-service:ttmall
     ports:
-      - 9001:9001
+      - "9001:9001"
     environment:
       PROFILE: "${PROFILE_ACTIVE}"
       SERVER_PORT: "9001"
