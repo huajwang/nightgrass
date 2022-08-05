@@ -17,8 +17,6 @@
     <version>2.3.12.RELEASE</version>
   </parent>
   <modules>
-    <module>eurekasvr</module>
-    <module>confsvr</module>
     <module>auth-server</module>
     <module>ui</module>
     <module>course-service</module>

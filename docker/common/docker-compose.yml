@@ -1,21 +1,5 @@
 version: '3.0'
 services:
-  eurekaserver:
-    image:   huajwang/eurekasvr:ttmall
-    ports:
-      - "${EUREKASERVER_PORT}:${EUREKASERVER_PORT}"
-
-  configserver:
-    image: huajwang/confsvr:ttmall
-    ports:
-       - "${CONFIGSERVER_PORT}:${CONFIGSERVER_PORT}"
-    environment:
-      SERVER_PORT: "${CONFIGSERVER_PORT}"
-      EUREKASERVER_PORT: "${EUREKASERVER_PORT}"
-      EUREKASERVER_URI: "http://eurekaserver:${EUREKASERVER_PORT}/eureka/"
-      ENCRYPT_KEY:       "IMSYMMETRIC"
-    depends_on:
-      - eurekaserver
 
   db-mysql:
     image: 'mysql:5.7.20'
